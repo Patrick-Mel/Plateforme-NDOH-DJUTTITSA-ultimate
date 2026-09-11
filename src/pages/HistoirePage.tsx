@@ -32,9 +32,9 @@ export const HistoirePage: React.FC = () => {
     <div className="space-y-16 pb-20">
       <PageHeader
         title="Histoire & Dynastie de Ndoh-Djuttitsa"
-        subtitle="De la fondation en 1908 à la chefferie moderne du groupement Bafou (Menoua)."
+        subtitle="De la fondation en 1908 à la chefferie moderne de Ndoh-Djuttitsa (Menoua)."
         badge="Mémoire & Dynastie"
-        bgImage="https://upload.wikimedia.org/wikipedia/commons/e/ea/Chefferie_Bafou_.jpg"
+        bgImage="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1920&q=80"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
@@ -42,13 +42,13 @@ export const HistoirePage: React.FC = () => {
           <div className="space-y-6">
             <Badge variant="emerald">Dynastie & Coutumes</Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
-              Une chefferie ancrée dans le Groupement Bafou
+              La Chefferie traditionnelle de Ndoh-Djuttitsa
             </h2>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
-              Rattaché au groupement Bafou dans l arrondissement de Nkong-Ni (Département de la Menoua), **Ndoh-Djuttitsa** est dirigé par son chef traditionnel **S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III**.
+              Située dans l arrondissement de Nkong-Ni (Département de la Menoua), la **Chefferie de Ndoh-Djuttitsa** est dirigée par son chef traditionnel **S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III**.
             </p>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
-              Créé en 1908 et officiellement érigé en chefferie en 1950, le village préserve l organisation coutumière Bamiléké avec le Conseil des Notables, la préservation des lieux sacrés et le respect de la hiérarchie traditionnelle.
+              Créé en 1908 et officiellement érigé en chefferie de 3ème degré en 1950, le village préserve l organisation coutumière Bamiléké avec le Conseil des Notables, la préservation des lieux sacrés et le respect des traditions.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2">
@@ -60,15 +60,15 @@ export const HistoirePage: React.FC = () => {
               <div className="p-4 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-sm">
                 <ShieldCheck className="w-5 h-5 text-emerald-600 mb-2" />
                 <h4 className="font-bold text-slate-900 dark:text-white text-sm">3ème Degré Officiel</h4>
-                <p className="text-xs text-slate-500 dark:text-slate-400">Rattaché à la Chefferie Supérieure Bafou (1er degré).</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Chefferie traditionnelle reconnue depuis 1950.</p>
               </div>
             </div>
           </div>
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 h-[400px]">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/77/Chefferie_Bafou_Entr%C3%A9e_principal.jpg"
-              alt="Entrée Principale Chefferie Bafou"
+              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
+              alt="Chefferie traditionnelle de Ndoh-Djuttitsa"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
