@@ -32,7 +32,7 @@ export const ServicesPage: React.FC = () => {
     { id: 'ecoles', label: 'Écoles & Lycées', icon: GraduationCap, count: MOCK_ECOLES.length },
     { id: 'sante', label: 'CMA & Santé', icon: HeartPulse, count: MOCK_CENTRES_SANTE.length },
     { id: 'entreprises', label: 'Thé & Entreprises', icon: Building, count: MOCK_ENTREPRISES.length },
-    { id: 'associations', label: 'ARND & Associations', icon: Users, count: MOCK_ASSOCIATIONS.length },
+    { id: 'associations', label: 'Comités & Associations', icon: Users, count: MOCK_ASSOCIATIONS.length },
     { id: 'documents', label: 'Documents Officiels', icon: FileText, count: MOCK_DOCUMENTS.length },
   ];
 
@@ -45,9 +45,9 @@ export const ServicesPage: React.FC = () => {
     <div className="space-y-12 pb-20">
       <PageHeader
         title="Infrastructures, Santé & Services"
-        subtitle="Consultez l annuaire des établissements scolaires, du CMA de Ndoh-Djuttitsa et des acteurs économiques de la sous-chefferie."
+        subtitle="Consultez l annuaire des établissements scolaires, du CMA de Ndoh-Djuttitsa et des acteurs économiques de la chefferie."
         badge="Annuaire Communautaire"
-        bgImage="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://upload.wikimedia.org/wikipedia/commons/c/c2/Dschang_Le_Centre_climatique.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">

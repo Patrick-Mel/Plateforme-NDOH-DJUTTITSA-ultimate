@@ -83,7 +83,7 @@ export interface DocumentOfficiel {
 
 // Données 100% réelles du village NDOH-DJUTTITSA (Groupement Bafou, Nkong-Ni, Menoua)
 export const MOCK_QUARTIERS: Quartier[] = [
-  { id: 'q1', nom: 'Ndoh Centre', description: 'Cœur historique de la sous-chefferie, lieu des institutions et du marché.' },
+  { id: 'q1', nom: 'Ndoh Centre', description: 'Cœur historique de la chefferie, lieu des institutions et du marché.' },
   { id: 'q2', nom: 'Secteur CTE / Domaine du Thé', description: 'Hauts-plateaux hébergeant le complexe théier et les vastes plantations industrielles.' },
   { id: 'q3', nom: 'Loung & Aghong', description: 'Zones agricoles fertiles orientées maraîchage d altitude (pomme de terre, haricot).' },
   { id: 'q4', nom: 'Tallé & Ngui', description: 'Quartiers verdoyants bordés de ruisseaux et de sanctuaires traditionnels.' },
@@ -97,7 +97,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     id: 'act-1',
     titre: 'Travaux de rénovation et d extension du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa',
     chapeau: 'Modernisation des équipements de santé et renforcement des capacités d accueil pour les populations du secteur Nkong-Ni.',
-    contenu: `Le Centre Médical d'Arrondissement (CMA) de Ndoh-Djuttitsa bénéficie d'un programme de rénovation majeure soutenu par la communauté et les partenaires locaux. L'objectif est de doter l'établissement de blocs de soins modernisés, d'une maternité équipée et d'une meilleure prise en charge des urgences.\n\nLe Chef de la sous-chefferie et les représentants de l'association des ressortissants ont salué cette avancée cruciale pour l'amélioration de la qualité de vie des habitants du village et des zones avoisinantes de Bafou.`,
+    contenu: `Le Centre Médical d'Arrondissement (CMA) de Ndoh-Djuttitsa bénéficie d'un programme de rénovation majeure soutenu par la communauté et les partenaires locaux. L'objectif est de doter l'établissement de blocs de soins modernisés, d'une maternité équipée et d'une meilleure prise en charge des urgences.\n\nLe Chef de la chefferie et les représentants locaux ont salué cette avancée cruciale pour l'amélioration de la qualité de vie des habitants du village et des zones avoisinantes de Bafou.`,
     image_url: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Dschang_Le_Centre_climatique.jpg',
     categorie: 'Santé & Infrastructures',
     date_publication: '2026-09-02T09:00:00Z',
@@ -117,14 +117,14 @@ export const MOCK_ACTUALITES: Actualite[] = [
   },
   {
     id: 'act-3',
-    titre: 'Mobilisation de l Association des Ressortissants (ARND) pour l éducation',
-    chapeau: 'Remise de kits scolaires et appui aux infrastructures de l École Publique de Djuttitsa et du Lycée Bilingue de Ndziih.',
-    contenu: `L'association des ressortissants de Ndziih-Djuttitsa (ARND), réunissant les élites et membres de la diaspora de Yaoundé, Douala et de l'étranger, a renouvelé son soutien annuel aux écoles de la localité.\n\nDes travaux de réfection de toitures et d'approvisionnement en manuels scolaires ont été réceptionnés en présence des autorités traditionnelles et du corps enseignant.`,
+    titre: 'Aménagement des infrastructures scolaires à l École Publique de Djuttitsa',
+    chapeau: 'Remise de matériel pédagogique et entretien des salles de classe pour la rentrée scolaire.',
+    contenu: `Le Comité de Développement du village, en concertation avec le corps enseignant et les autorités traditionnelles, a concrétisé la réfection de deux bâtiments scolaires à Djuttitsa.\n\nDes travaux d étanchéité et d approvisionnement en bancs de classe ont été réceptionnés à l approche de la rentrée scolaire.`,
     image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Chefferie_Bafou_Entr%C3%A9e_principal.jpg',
-    categorie: 'Éducation & Diaspora',
+    categorie: 'Éducation & Infrastructures',
     date_publication: '2026-08-15T15:00:00Z',
     publie: true,
-    auteur: 'Bureau ARND'
+    auteur: 'Comité de Développement'
   }
 ];
 
@@ -141,8 +141,8 @@ export const MOCK_EVENEMENTS: Evenement[] = [
   },
   {
     id: 'evt-2',
-    titre: 'Assemblée Générale Annuelle de l Association des Ressortissants',
-    description: 'Bilan des projets de développement, concertation sur les infrastructures et célébration de la fraternité communautaire.',
+    titre: 'Concertation Communautaire Annuelle de Développement',
+    description: 'Bilan des projets d adduction d eau et de voirie, concertation sur les infrastructures et célébration coutumière.',
     lieu: 'Foyer Communautaire de Ndoh-Djuttitsa',
     date_debut: '2026-11-14T10:00:00Z',
     date_fin: '2026-11-14T17:00:00Z',
@@ -198,7 +198,7 @@ export const MOCK_MEDIAS: Media[] = [
 
 export const MOCK_ECOLES: Ecole[] = [
   { id: 'e1', nom: 'École Publique de Djuttitsa', type: 'Primaire Publique', contact: '+237 677 22 33 44', quartier_id: 'q1' },
-  { id: 'e2', nom: 'Lycée Bilingue de Ndziih-Djuttitsa', type: 'Secondaire Général Public', contact: '+237 699 44 55 66', quartier_id: 'q1' },
+  { id: 'e2', nom: 'Lycée Bilingue de Djuttitsa', type: 'Secondaire Général Public', contact: '+237 699 44 55 66', quartier_id: 'q1' },
   { id: 'e3', nom: 'CETA de Djuttitsa (Collège d Enseignement Technique Agricole)', type: 'Secondaire Technique & Agricole', contact: '+237 675 11 22 33', quartier_id: 'q2' }
 ];
 
@@ -214,13 +214,11 @@ export const MOCK_ENTREPRISES: Entreprise[] = [
 ];
 
 export const MOCK_ASSOCIATIONS: Association[] = [
-  { id: 'ass1', nom: 'ARND - Association des Ressortissants de Ndziih-Djuttitsa', objet: 'Fédération des ressortissants (Yaoundé, Douala, Diaspora) pour le développement socio-économique et la solidarité.', contact: '+237 677 55 44 33', president: 'M. le Président du Bureau ARND' },
-  { id: 'ass2', nom: 'Comité de Développement du Village Ndoh-Djuttitsa (CODEV)', objet: 'Orientation des projets d adduction d eau, d entretien routier et d équipements publics.', contact: '+237 699 22 33 44', president: 'Ing. Conseil du Village' },
-  { id: 'ass3', nom: 'Groupement des Femmes Agriculteurs de Ndoh', objet: 'Entraide agricole, micro-épargne et valorisation des récoltes maraîchères.', contact: '+237 670 99 88 77', president: 'Mme la Présidente du Groupement' }
+  { id: 'ass1', nom: 'Comité de Développement du Village Ndoh-Djuttitsa (CODEV)', objet: 'Orientation des projets d adduction d eau, d entretien routier et d équipements publics.', contact: '+237 699 22 33 44', president: 'Ing. Conseil du Village' },
+  { id: 'ass2', nom: 'Groupement des Femmes Agriculteurs de Ndoh', objet: 'Entraide agricole, micro-épargne et valorisation des récoltes maraîchères.', contact: '+237 670 99 88 77', president: 'Mme la Présidente du Groupement' }
 ];
 
 export const MOCK_DOCUMENTS: DocumentOfficiel[] = [
-  { id: 'doc1', titre: 'Présentation Historique & Administrative de la Sous-Chefferie de Ndoh-Djuttitsa', fichier_url: '#', categorie: 'Document Officiel', taille_mo: 3.4, date_ajout: '2026-01-20' },
-  { id: 'doc2', titre: 'Guide d Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '#', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' },
-  { id: 'doc3', titre: 'Statuts et Règlement Intérieur de l ARND', fichier_url: '#', categorie: 'Vie Associative', taille_mo: 1.8, date_ajout: '2026-05-18' }
+  { id: 'doc1', titre: 'Présentation Historique & Administrative de la Chefferie de Ndoh-Djuttitsa', fichier_url: '#', categorie: 'Document Officiel', taille_mo: 3.4, date_ajout: '2026-01-20' },
+  { id: 'doc2', titre: 'Guide d Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '#', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' }
 ];

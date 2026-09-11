@@ -13,8 +13,8 @@ export const HistoirePage: React.FC = () => {
     },
     {
       period: '1950 — Reconnaissance Administrative',
-      title: 'Érection en Sous-Chefferie de 3ème Degré',
-      desc: 'Reconnaissance officielle de Ndoh-Djuttitsa comme sous-chefferie rattachée au Groupement Bafou (Chefferie supérieure de 1er degré dans la Menoua).',
+      title: 'Érection en Chefferie de 3ème Degré',
+      desc: 'Reconnaissance officielle de Ndoh-Djuttitsa comme chefferie rattachée au Groupement Bafou (Chefferie supérieure de 1er degré dans la Menoua).',
     },
     {
       period: 'Milieu du XXe siècle',
@@ -24,7 +24,7 @@ export const HistoirePage: React.FC = () => {
     {
       period: 'Dynastie Actuelle',
       title: 'Règne de S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III',
-      desc: 'Poursuite de la modernisation, structuration des réseaux d eau et d électricité, et rassemblement de la diaspora via l Association des Ressortissants (ARND).',
+      desc: 'Poursuite de la modernisation, structuration des réseaux d eau et d électricité et préservation des coutumes ancestrales Bamiléké.',
     },
   ];
 
@@ -32,7 +32,7 @@ export const HistoirePage: React.FC = () => {
     <div className="space-y-16 pb-20">
       <PageHeader
         title="Histoire & Dynastie de Ndoh-Djuttitsa"
-        subtitle="De la fondation en 1908 à la sous-chefferie moderne du groupement Bafou (Menoua)."
+        subtitle="De la fondation en 1908 à la chefferie moderne du groupement Bafou (Menoua)."
         badge="Mémoire & Dynastie"
         bgImage="https://upload.wikimedia.org/wikipedia/commons/e/ea/Chefferie_Bafou_.jpg"
       />
@@ -42,13 +42,13 @@ export const HistoirePage: React.FC = () => {
           <div className="space-y-6">
             <Badge variant="emerald">Dynastie & Coutumes</Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
-              Une sous-chefferie ancrée dans le Groupement Bafou
+              Une chefferie ancrée dans le Groupement Bafou
             </h2>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
               Rattaché au groupement Bafou dans l arrondissement de Nkong-Ni (Département de la Menoua), **Ndoh-Djuttitsa** est dirigé par son chef traditionnel **S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III**.
             </p>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
-              Créé en 1908 et officiellement érigé en sous-chefferie en 1950, le village préserve l organisation coutumière Bamiléké avec le Conseil des Notables, la préservation des lieux sacrés et le respect de la hiérarchie traditionnelle.
+              Créé en 1908 et officiellement érigé en chefferie en 1950, le village préserve l organisation coutumière Bamiléké avec le Conseil des Notables, la préservation des lieux sacrés et le respect de la hiérarchie traditionnelle.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2">

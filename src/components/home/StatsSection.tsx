@@ -3,11 +3,11 @@ import { Users, Mountain, Map, Leaf, ShieldCheck } from 'lucide-react';
 
 export const StatsSection: React.FC = () => {
   const stats = [
-    { label: 'Ressortissants & Diaspora', value: '15 000+', icon: Users, desc: 'Au Cameroun et dans le monde' },
+    { label: 'Habitants du Village', value: '12 000+', icon: Users, desc: 'Population locale de Ndoh-Djuttitsa' },
     { label: 'Altitude Moyenne', value: '1 850 m', icon: Mountain, desc: 'Hauts-Plateaux de la Menoua' },
-    { label: 'Complexe Théier CTE', value: '500+ Ha', icon: Leaf, desc: 'Culture & Transformation' },
-    { label: 'Secteurs & Quartiers', value: '12 Zones', icon: Map, desc: 'Ndoh, Loung, Mezet, Sa a...' },
-    { label: 'Statut Sub-Chefferie', value: 'Depuis 1950', icon: ShieldCheck, desc: 'Fondée en 1908' },
+    { label: 'Complexe Théier CTE', value: '1 660 Ha', icon: Leaf, desc: 'Culture & Transformation du Thé' },
+    { label: 'Secteurs & Quartiers', value: '7 Quartiers', icon: Map, desc: 'Ndoh, Loung, Mezet, Sa a...' },
+    { label: 'Chefferie 3è Degré', value: 'Depuis 1950', icon: ShieldCheck, desc: 'Fondée en 1908' },
   ];
 
   return (

@@ -19,7 +19,7 @@ export const UpcomingEvents: React.FC<UpcomingEventsProps> = ({ events }) => {
             Événements à venir au village
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            Célébrations traditionnelles, assemblées de développement et rendez-vous sportifs de la sous-chefferie.
+            Célébrations traditionnelles, assemblées de développement et rendez-vous sportifs de la chefferie.
           </p>
         </div>
 

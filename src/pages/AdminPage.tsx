@@ -181,7 +181,7 @@ export const AdminPage: React.FC = () => {
             </div>
             <h2 className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">Espace Administration</h2>
             <p className="text-xs text-slate-600 dark:text-slate-400">
-              Plateforme officielle de gestion pour la sous-chefferie de NDOH-DJUTTITSA.
+              Plateforme officielle de gestion pour la chefferie de NDOH-DJUTTITSA.
             </p>
           </div>
 

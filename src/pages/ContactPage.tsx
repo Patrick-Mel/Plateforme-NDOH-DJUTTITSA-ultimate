@@ -46,8 +46,8 @@ export const ContactPage: React.FC = () => {
       a: 'Suivre l axe vers Nkong-Ni / Bafou puis prendre la direction du Complexe Théier de Djuttitsa. Les axes principaux sont praticables en véhicule de tourisme ou 4x4.',
     },
     {
-      q: 'Comment s impliquer dans l Association des Ressortissants (ARND) ?',
-      a: 'Vous pouvez envoyer un message via ce formulaire avec l objet "Adhésion ARND / Diaspora" pour être mis en relation avec les bureaux régionaux (Yaoundé, Douala, Europe, Amérique).',
+      q: 'Comment effectuer des démarches administratives ou obtenir des informations ?',
+      a: 'Vous pouvez adresser votre demande au secrétariat de la Chefferie via ce formulaire de contact ou vous rendre directement au foyer communautaire à Ndoh Centre.',
     },
     {
       q: 'Quelles sont les structures de santé en cas d urgence ?',
@@ -59,9 +59,9 @@ export const ContactPage: React.FC = () => {
     <div className="space-y-16 pb-20">
       <PageHeader
         title="Contact & Localisation"
-        subtitle="Entrez en contact avec la Sous-Chefferie, le secrétariat ou les représentants de la diaspora (ARND)."
+        subtitle="Entrez en contact avec la Chefferie traditionnelle et le secrétariat communautaire de Ndoh-Djuttitsa."
         badge="Nous Écrire"
-        bgImage="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://upload.wikimedia.org/wikipedia/commons/c/c2/Dschang_Le_Centre_climatique.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
@@ -125,7 +125,7 @@ export const ContactPage: React.FC = () => {
                     type="text"
                     value={formData.sujet}
                     onChange={(e) => setFormData({ ...formData, sujet: e.target.value })}
-                    placeholder="ex. Adhésion ARND / Projets du village"
+                    placeholder="ex. Proposition / Question sur le village"
                     className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   />
                 </div>
@@ -159,14 +159,14 @@ export const ContactPage: React.FC = () => {
           <div className="space-y-6">
             <Card className="p-6 space-y-4">
               <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white">
-                Coordonnées de la Sous-Chefferie
+                Coordonnées de la Chefferie
               </h3>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 dark:text-white block">Localisation :</span>
-                    Sous-Chefferie de Ndoh-Djuttitsa, Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l Ouest-Cameroun.
+                    Chefferie de Ndoh-Djuttitsa, Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l Ouest-Cameroun.
                   </div>
                 </li>
                 <li className="flex items-center gap-3">

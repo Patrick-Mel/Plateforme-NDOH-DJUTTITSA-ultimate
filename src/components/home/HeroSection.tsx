@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-300/80 dark:border-slate-700/80 text-emerald-800 dark:text-emerald-400 text-xs sm:text-sm font-semibold backdrop-blur-md shadow-sm transition-colors duration-300"
         >
           <Mountain className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-          <span>Sous-Chefferie du Groupement Bafou · Arrondissement de Nkong-Ni</span>
+          <span>Chefferie du Groupement Bafou · Arrondissement de Nkong-Ni</span>
         </motion.div>
 
         {/* Titre Ultra Élégant */}
@@ -46,7 +46,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-base sm:text-xl text-slate-700 dark:text-slate-300 font-normal max-w-3xl mx-auto leading-relaxed"
         >
-          Localité d altitude des Hauts-Plateaux de la Menoua (1 700 m - 2 050 m). Terre de tradition Bamiléké, du célèbre Complexe Théier (CTE) et d une communauté dynamique au Cameroun et dans la diaspora.
+          Localité d altitude des Hauts-Plateaux de la Menoua (1 700 m - 2 050 m). Terre de tradition Bamiléké, du célèbre Complexe Théier (CTE) et d une communauté dynamique au Cameroun.
         </motion.p>
 
         {/* Boutons d Action Modernes */}
