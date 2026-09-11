@@ -42,8 +42,8 @@ export const AdminPage: React.FC = () => {
   const [loginError, setLoginError] = useState('');
   const [loggingIn, setLoggingIn] = useState(false);
 
-  // Rôle de l'utilisateur connecté (par défaut super_admin en démo)
-  const [currentRole, setCurrentRole] = useState<UserRole>('super_admin');
+  // Rôle de l'utilisateur connecté
+  const [currentRole] = useState<UserRole>('super_admin');
 
   // Onglet sélectionné
   const [adminTab, setAdminTab] = useState<'roles' | 'actualites' | 'evenements' | 'medias' | 'contacts' | 'sql'>('actualites');
@@ -226,18 +226,6 @@ export const AdminPage: React.FC = () => {
               {loggingIn ? 'Connexion en cours...' : 'Se connecter via Supabase Auth'}
             </Button>
           </form>
-
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 text-center space-y-3">
-            <p className="text-xs text-slate-500">Accès immédiat de démonstration :</p>
-            <Button
-              onClick={loginAsDemoAdmin}
-              variant="outline"
-              size="sm"
-              className="w-full border-amber-500/40 text-amber-800 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/50"
-            >
-              Accéder en Mode Démo (1-clic)
-            </Button>
-          </div>
         </Card>
       </div>
     );
@@ -265,20 +253,6 @@ export const AdminPage: React.FC = () => {
           </div>
 
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
-            <div className="flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-              <span>Tester un rôle administratif autorisé :</span>
-              <select
-                value={currentRole}
-                onChange={(e) => setCurrentRole(e.target.value as UserRole)}
-                className="px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold"
-              >
-                <option value="super_admin">Super Admin</option>
-                <option value="administrateur">Administrateur</option>
-                <option value="redacteur">Rédacteur</option>
-                <option value="moderateur">Modérateur</option>
-                <option value="habitant">Habitant (Bloqué)</option>
-              </select>
-            </div>
             <Link to="/">
               <Button size="md" className="w-full bg-emerald-700 hover:bg-emerald-800 text-white">
                 Retourner à l Accueil du Site
@@ -311,22 +285,6 @@ export const AdminPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Selecteur de rôle pour démonstration facile */}
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs">
-              <span className="text-slate-500 dark:text-slate-400 font-medium">Tester rôle :</span>
-              <select
-                value={currentRole}
-                onChange={(e) => setCurrentRole(e.target.value as UserRole)}
-                className="bg-transparent font-bold text-slate-900 dark:text-white focus:outline-none"
-              >
-                <option value="super_admin">Super Admin</option>
-                <option value="administrateur">Administrateur</option>
-                <option value="redacteur">Rédacteur</option>
-                <option value="moderateur">Modérateur</option>
-                <option value="habitant">Habitant</option>
-              </select>
-            </div>
-
             <Button
               onClick={signOut}
               variant="outline"
