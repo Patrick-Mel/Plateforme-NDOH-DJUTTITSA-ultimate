@@ -38,7 +38,7 @@ export const CulturePage: React.FC = () => {
         title="Culture & Traditions de NDOH-DJUTTITSA"
         subtitle="Richesse des coutumes Bamiléké, danses patrimoniales, gastronomie du terroir et savoir-faire ancestral."
         badge="Identité Culturelle"
-        bgImage="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://upload.wikimedia.org/wikipedia/commons/a/a2/Chefferie_Bafou_arbre_sacr%C3%A9.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">

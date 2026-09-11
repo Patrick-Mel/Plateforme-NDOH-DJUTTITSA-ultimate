@@ -34,7 +34,7 @@ export const TourismePage: React.FC = () => {
         title="Tourisme & Paysages Théiers"
         subtitle="Découvrez la sérénité des hauts-plateaux : plantations du CTE, collines brumeuses et air pur de la Menoua."
         badge="Écotourisme d Altitude"
-        bgImage="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://upload.wikimedia.org/wikipedia/commons/4/4b/Plantation_de_th%C3%A9_-_Ouest_du_Cameroun.JPG"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">

@@ -34,7 +34,7 @@ export const HistoirePage: React.FC = () => {
         title="Histoire & Dynastie de Ndoh-Djuttitsa"
         subtitle="De la fondation en 1908 à la sous-chefferie moderne du groupement Bafou (Menoua)."
         badge="Mémoire & Dynastie"
-        bgImage="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1920&q=80"
+        bgImage="https://upload.wikimedia.org/wikipedia/commons/e/ea/Chefferie_Bafou_.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
@@ -67,8 +67,8 @@ export const HistoirePage: React.FC = () => {
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 h-[400px]">
             <img
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
-              alt="Cérémonie traditionnelle Bafou"
+              src="https://upload.wikimedia.org/wikipedia/commons/7/77/Chefferie_Bafou_Entr%C3%A9e_principal.jpg"
+              alt="Entrée Principale Chefferie Bafou"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />

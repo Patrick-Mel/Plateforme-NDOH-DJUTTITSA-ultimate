@@ -18,10 +18,6 @@ import {
   Database,
   Users,
   UserCheck,
-  FileText,
-  Building2,
-  CheckCircle2,
-  AlertCircle,
   AlertTriangle,
 } from 'lucide-react';
 import type { Actualite } from '../data/mockData';

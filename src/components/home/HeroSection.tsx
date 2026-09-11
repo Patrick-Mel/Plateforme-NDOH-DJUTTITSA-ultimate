@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
       {/* Photo Haute Définition Réaliste du Domaine du Thé & Collines Brumeuses */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35 dark:opacity-40 scale-105"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80')" }}
+        style={{ backgroundImage: "url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Plantation_de_th%C3%A9_-_Ouest_du_Cameroun.JPG')" }}
       />
       
       {/* Superposition Dégradée Adaptative Thème Clair / Sombre */}

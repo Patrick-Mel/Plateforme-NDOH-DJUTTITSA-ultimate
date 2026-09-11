@@ -98,7 +98,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     titre: 'Travaux de rénovation et d extension du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa',
     chapeau: 'Modernisation des équipements de santé et renforcement des capacités d accueil pour les populations du secteur Nkong-Ni.',
     contenu: `Le Centre Médical d'Arrondissement (CMA) de Ndoh-Djuttitsa bénéficie d'un programme de rénovation majeure soutenu par la communauté et les partenaires locaux. L'objectif est de doter l'établissement de blocs de soins modernisés, d'une maternité équipée et d'une meilleure prise en charge des urgences.\n\nLe Chef de la sous-chefferie et les représentants de l'association des ressortissants ont salué cette avancée cruciale pour l'amélioration de la qualité de vie des habitants du village et des zones avoisinantes de Bafou.`,
-    image_url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Dschang_Le_Centre_climatique.jpg',
     categorie: 'Santé & Infrastructures',
     date_publication: '2026-09-02T09:00:00Z',
     publie: true,
@@ -109,7 +109,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     titre: 'Campagne de récolte de thé au Complexe Théier de Djuttitsa (CTE)',
     chapeau: 'Des rendements exceptionnels grâce aux conditions micro-climatiques idéales des hauts-plateaux de la Menoua.',
     contenu: `Les récoltes sur le domaine théier de Djuttitsa affichent une excellente qualité cette saison. À plus de 1 800 mètres d'altitude, la combinaison d'un sol volcanique riche et de la brume quotidienne confère aux feuilles de thé un arôme particulièrement recherché.\n\nL'activité théière demeure l'un des piliers économiques majeurs de la localité, fournissant des emplois directs et indirects à des centaines de familles de Ndoh-Djuttitsa et du groupement Bafou.`,
-    image_url: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1200&q=80',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Plantation_de_th%C3%A9_-_Ouest_du_Cameroun.JPG',
     categorie: 'Économie & Agriculture',
     date_publication: '2026-08-28T11:00:00Z',
     publie: true,
@@ -120,7 +120,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     titre: 'Mobilisation de l Association des Ressortissants (ARND) pour l éducation',
     chapeau: 'Remise de kits scolaires et appui aux infrastructures de l École Publique de Djuttitsa et du Lycée Bilingue de Ndziih.',
     contenu: `L'association des ressortissants de Ndziih-Djuttitsa (ARND), réunissant les élites et membres de la diaspora de Yaoundé, Douala et de l'étranger, a renouvelé son soutien annuel aux écoles de la localité.\n\nDes travaux de réfection de toitures et d'approvisionnement en manuels scolaires ont été réceptionnés en présence des autorités traditionnelles et du corps enseignant.`,
-    image_url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Chefferie_Bafou_Entr%C3%A9e_principal.jpg',
     categorie: 'Éducation & Diaspora',
     date_publication: '2026-08-15T15:00:00Z',
     publie: true,
@@ -136,7 +136,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     lieu: 'Stade de l École Publique de Djuttitsa',
     date_debut: '2026-12-18T09:00:00Z',
     date_fin: '2026-12-24T18:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Chefferie_Bafou_.jpg',
     statut: 'a_venir'
   },
   {
@@ -146,7 +146,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     lieu: 'Foyer Communautaire de Ndoh-Djuttitsa',
     date_debut: '2026-11-14T10:00:00Z',
     date_fin: '2026-11-14T17:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Chefferie_Bafou_arbre_sacr%C3%A9.jpg',
     statut: 'a_venir'
   },
   {
@@ -156,7 +156,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     lieu: 'Départ devant le Complexe Théier',
     date_debut: '2026-10-25T07:00:00Z',
     date_fin: '2026-10-25T13:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Champ_de_th%C3%A9.jpg',
     statut: 'a_venir'
   }
 ];
@@ -165,34 +165,33 @@ export const MOCK_MEDIAS: Media[] = [
   {
     id: 'm1',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Panorama sur les plantations de thé du Complexe Théier de Djuttitsa (CTE) sous la brume matinale.',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Plantation_de_th%C3%A9_-_Ouest_du_Cameroun.JPG',
+    legende: 'Panorama authentique sur les plantations de thé du Complexe Théier de Djuttitsa (CTE) sur les hauts-plateaux de la Menoua.',
     categorie: 'Paysages & Thé',
     date_ajout: '2026-08-10'
   },
   {
     id: 'm2',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Dignitaires traditionnels en tenues brodées Toghu lors d une cérémonie à la Sous-Chefferie.',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/e/ea/Chefferie_Bafou_.jpg',
+    legende: 'Architecture traditionnelle et boukarou d accueil de la Chefferie du Groupement Bafou.',
     categorie: 'Culture & Coutumes',
     date_ajout: '2026-07-15'
   },
   {
     id: 'm3',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Bâtiment du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa.',
-    categorie: 'Infrastructures',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Chefferie_Bafou_Entr%C3%A9e_principal.jpg',
+    legende: 'Entrée principale de la Chefferie du Groupement Bafou.',
+    categorie: 'Patrimoine',
     date_ajout: '2026-06-20'
   },
   {
     id: 'm4',
-    type: 'video',
-    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail_url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Reportage : Immersion sur les haut-plateaux de Ndoh-Djuttitsa et la récolte du thé',
-    categorie: 'Documentaire',
+    type: 'photo',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Chefferie_Bafou_arbre_sacr%C3%A9.jpg',
+    legende: 'Arbre sacré et sanctuaire traditionnel sur le territoire de la Chefferie Bafou.',
+    categorie: 'Lieux Sacrés',
     date_ajout: '2026-05-12'
   }
 ];

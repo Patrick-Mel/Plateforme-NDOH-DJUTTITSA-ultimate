@@ -185,12 +185,12 @@ export const ContactPage: React.FC = () => {
             </Card>
 
             {/* Carte simulée d altitude */}
-            <div className="relative h-64 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
-              <img
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80"
-                alt="Carte de localisation Ndoh-Djuttitsa"
-                className="w-full h-full object-cover opacity-75"
-              />
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Dschang_Le_Centre_climatique.jpg"
+                  alt="Carte de localisation Ndoh-Djuttitsa"
+                  className="w-full h-full object-cover opacity-75"
+                />
               <div className="absolute inset-0 bg-slate-950/40 flex flex-col items-center justify-center text-white text-center p-4">
                 <MapPin className="w-8 h-8 text-amber-400 animate-bounce mb-2" />
                 <h4 className="font-bold font-heading text-lg text-white">Nkong-Ni · Groupement Bafou</h4>
