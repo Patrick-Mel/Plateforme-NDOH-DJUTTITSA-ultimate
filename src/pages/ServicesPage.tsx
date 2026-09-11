@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { PageHeader } from '../components/layout/PageHeader';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
-import { Button } from '../components/ui/Button';
 import {
   MOCK_ECOLES,
   MOCK_CENTRES_SANTE,
@@ -246,15 +245,16 @@ export const ServicesPage: React.FC = () => {
                   </div>
                 </div>
 
-                <Button
-                  size="sm"
-                  variant="outline"
-                  icon={<Download className="w-4 h-4" />}
-                  onClick={() => alert(`Téléchargement de : ${doc.titre}`)}
-                  className="w-full mt-4"
+                <a
+                  href={doc.fichier_url}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full mt-4 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:border-emerald-500 transition-colors shadow-sm"
                 >
-                  Télécharger le document
-                </Button>
+                  <Download className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                  <span>Télécharger le document (PDF)</span>
+                </a>
               </Card>
             ))}
           </div>

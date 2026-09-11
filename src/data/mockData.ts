@@ -219,6 +219,6 @@ export const MOCK_ASSOCIATIONS: Association[] = [
 ];
 
 export const MOCK_DOCUMENTS: DocumentOfficiel[] = [
-  { id: 'doc1', titre: 'Présentation Historique & Administrative de la Chefferie de Ndoh-Djuttitsa', fichier_url: '#', categorie: 'Document Officiel', taille_mo: 3.4, date_ajout: '2026-01-20' },
-  { id: 'doc2', titre: 'Guide d Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '#', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' }
+  { id: 'doc1', titre: 'Présentation Historique & Administrative de la Chefferie de Ndoh-Djuttitsa', fichier_url: '/documents/presentation-historique-ndoh-djuttitsa.pdf', categorie: 'Document Officiel', taille_mo: 3.4, date_ajout: '2026-01-20' },
+  { id: 'doc2', titre: 'Guide d Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '/documents/guide-accueil-ndoh-djuttitsa.pdf', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' }
 ];
