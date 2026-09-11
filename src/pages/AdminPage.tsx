@@ -702,11 +702,11 @@ export const AdminPage: React.FC = () => {
             <div className="space-y-3 text-xs">
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-slate-900 dark:text-white text-sm">Jean-Pierre T. (Diaspora France)</span>
+                  <span className="font-bold text-slate-900 dark:text-white text-sm">Jean-Pierre T. (Habitant Ndoh Centre)</span>
                   <span className="text-slate-400">Hier à 16:45</span>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300">
-                  "Félicitations pour la mise en ligne de la plateforme officielle de notre village NDOH-DJUTTITSA. Comment la diaspora peut-elle contribuer à la réhabilitation de l école ?"
+                  "Félicitations pour la mise en ligne de la plateforme officielle de notre village NDOH-DJUTTITSA. Comment les comités locaux peuvent-ils contribuer à la réhabilitation de l école ?"
                 </p>
               </div>
 
