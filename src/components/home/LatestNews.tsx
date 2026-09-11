@@ -1,0 +1,94 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Calendar, User } from 'lucide-react';
+import type { Actualite } from '../../data/mockData';
+import { Card } from '../ui/Card';
+import { Badge } from '../ui/Badge';
+
+interface LatestNewsProps {
+  news: Actualite[];
+  onSelectArticle: (article: Actualite) => void;
+}
+
+export const LatestNews: React.FC<LatestNewsProps> = ({ news, onSelectArticle }) => {
+  return (
+    <section className="py-20 px-4 sm:px-8 bg-slate-50 dark:bg-slate-950 transition-colors">
+      <div className="max-w-7xl mx-auto space-y-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <Badge variant="emerald" className="mb-2">Actualités & Communiqués</Badge>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
+              Les dernières nouvelles du village
+            </h2>
+          </div>
+          <Link
+            to="/actualites"
+            className="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-semibold hover:gap-3 transition-all"
+          >
+            <span>Toutes les actualités</span>
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {news.slice(0, 3).map((article) => (
+            <Card
+              key={article.id}
+              className="flex flex-col h-full cursor-pointer group"
+            >
+              <div className="relative h-52 overflow-hidden" onClick={() => onSelectArticle(article)}>
+                <img
+                  src={article.image_url}
+                  alt={article.titre}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3">
+                  <Badge variant="amber">{article.categorie}</Badge>
+                </div>
+              </div>
+
+              <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                      {new Date(article.date_publication).toLocaleDateString('fr-FR', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      })}
+                    </span>
+                    {article.auteur && (
+                      <span className="flex items-center gap-1">
+                        <User className="w-3.5 h-3.5 text-amber-600" />
+                        {article.auteur}
+                      </span>
+                    )}
+                  </div>
+                  <h3
+                    onClick={() => onSelectArticle(article)}
+                    className="text-xl font-bold font-heading text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors line-clamp-2"
+                  >
+                    {article.titre}
+                  </h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
+                    {article.chapeau}
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => onSelectArticle(article)}
+                  type="button"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 transition-colors pt-2"
+                >
+                  <span>Lire l article complet</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

@@ -1,0 +1,178 @@
+-- =====================================================================
+-- SCHÉMA DE BASE DE DONNÉES SUPABASE — PLATEFORME NDOH-DJUTTITSA
+-- Exécutez ce script dans l'Éditeur SQL (SQL Editor) de votre projet Supabase
+-- =====================================================================
+
+-- 1. Table des Rôles (RBAC)
+create table if not exists public.roles (
+  id uuid primary key default gen_random_uuid(),
+  nom text unique not null,
+  description text
+);
+
+-- Insertion des rôles par défaut
+insert into public.roles (nom, description) values 
+  ('super_admin', 'Accès complet au système et à la gestion des contenus'),
+  ('administrateur', 'Gestion des contenus et modération'),
+  ('redacteur', 'Rédaction et publication d''actualités'),
+  ('habitant', 'Utilisateur membre du village')
+on conflict (nom) do nothing;
+
+-- 2. Table Profils (Extension de auth.users)
+create table if not exists public.profils (
+  id uuid primary key references auth.users(id) on delete cascade,
+  nom text not null,
+  role_id uuid references public.roles(id) not null,
+  date_creation timestamptz default now()
+);
+
+-- 3. Quartiers de NDOH-DJUTTITSA
+create table if not exists public.quartiers (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  description text
+);
+
+insert into public.quartiers (nom, description) values
+  ('Djuttitsa Centre', 'Cœur névralgique du village, marché et chefferie'),
+  ('Bafou-Nord', 'Quartier haut, vues panoramiques et plantations de thé'),
+  ('Tchue-Lieu', 'Zone agricole verdoyante et artisanat'),
+  ('Ntsingbeu', 'Quartier résidentiel calme et écoles'),
+  ('Baleng-Chefferie', 'Zone culturelle historique et sanctuaires')
+on conflict do nothing;
+
+-- 4. Actualités
+create table if not exists public.actualites (
+  id uuid primary key default gen_random_uuid(),
+  titre text not null,
+  contenu text not null,
+  chapeau text,
+  image_url text,
+  categorie text default 'Général',
+  auteur_id uuid references public.profils(id),
+  date_publication timestamptz default now(),
+  publie boolean default true
+);
+
+-- 5. Événements
+create table if not exists public.evenements (
+  id uuid primary key default gen_random_uuid(),
+  titre text not null,
+  description text,
+  lieu text,
+  date_debut timestamptz not null,
+  date_fin timestamptz,
+  image_url text,
+  statut text default 'a_venir'
+);
+
+-- 6. Médias (Galerie)
+create table if not exists public.medias (
+  id uuid primary key default gen_random_uuid(),
+  type text check (type in ('photo', 'video')),
+  url text not null,
+  thumbnail_url text,
+  legende text,
+  categorie text default 'Patrimoine',
+  date_ajout timestamptz default now()
+);
+
+-- 7. Entreprises & Commerces
+create table if not exists public.entreprises (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  categorie text,
+  description text,
+  contact text,
+  adresse text,
+  quartier_id uuid references public.quartiers(id)
+);
+
+-- 8. Écoles
+create table if not exists public.ecoles (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  type text,
+  contact text,
+  quartier_id uuid references public.quartiers(id)
+);
+
+-- 9. Centres de Santé
+create table if not exists public.centres_sante (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  type text,
+  contact text,
+  urgences_24_7 boolean default false,
+  quartier_id uuid references public.quartiers(id)
+);
+
+-- 10. Associations
+create table if not exists public.associations (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  objet text,
+  contact text,
+  president text
+);
+
+-- 11. Documents Officiels & Téléchargements
+create table if not exists public.documents (
+  id uuid primary key default gen_random_uuid(),
+  titre text not null,
+  fichier_url text not null,
+  categorie text,
+  taille_mo numeric(4,2),
+  date_ajout timestamptz default now()
+);
+
+-- 12. Messages de Contact
+create table if not exists public.contacts (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  email text not null,
+  sujet text,
+  message text not null,
+  traite boolean default false,
+  date_envoi timestamptz default now()
+);
+
+-- Active Row Level Security (RLS) sur toutes les tables
+alter table public.actualites enable row level security;
+alter table public.evenements enable row level security;
+alter table public.medias enable row level security;
+alter table public.quartiers enable row level security;
+alter table public.entreprises enable row level security;
+alter table public.ecoles enable row level security;
+alter table public.centres_sante enable row level security;
+alter table public.associations enable row level security;
+alter table public.documents enable row level security;
+alter table public.contacts enable row level security;
+
+-- Politiques RLS de lecture publique
+create policy "Lecture publique actualites" on public.actualites for select using (publie = true);
+create policy "Lecture publique evenements" on public.evenements for select using (true);
+create policy "Lecture publique medias" on public.medias for select using (true);
+create policy "Lecture publique quartiers" on public.quartiers for select using (true);
+create policy "Lecture publique entreprises" on public.entreprises for select using (true);
+create policy "Lecture publique ecoles" on public.ecoles for select using (true);
+create policy "Lecture publique centres_sante" on public.centres_sante for select using (true);
+create policy "Lecture publique associations" on public.associations for select using (true);
+create policy "Lecture publique documents" on public.documents for select using (true);
+
+-- Politiques RLS de création publique (formulaire de contact)
+create policy "Insertion publique contacts" on public.contacts for insert with check (true);
+
+-- Politiques RLS d'administration réservée aux Super Admin
+create policy "Super Admin control actualites" on public.actualites for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control evenements" on public.evenements for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control medias" on public.medias for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control entreprises" on public.entreprises for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
