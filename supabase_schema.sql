@@ -1,5 +1,6 @@
 -- =====================================================================
--- SCHÉMA DE BASE DE DONNÉES SUPABASE — PLATEFORME NDOH-DJUTTITSA
+-- SCHÉMA DE BASE DE DONNÉES SUPABASE — PLATEFORME NDOH-DJUTTITSA (V2)
+-- Script SQL 100% Idempotent et Sécurisé avec Row Level Security (RLS)
 -- Exécutez ce script dans l'Éditeur SQL (SQL Editor) de votre projet Supabase
 -- =====================================================================
 
@@ -10,7 +11,6 @@ create table if not exists public.roles (
   description text
 );
 
--- Insertion des rôles par défaut
 insert into public.roles (nom, description) values 
   ('super_admin', 'Accès complet au système et à la gestion des contenus'),
   ('administrateur', 'Gestion des contenus et modération'),
@@ -26,7 +26,7 @@ create table if not exists public.profils (
   date_creation timestamptz default now()
 );
 
--- 3. Quartiers de NDOH-DJUTTITSA
+-- 3. Quartiers Authentiques de NDOH-DJUTTITSA (Groupement Bafou, Nkong-Ni)
 create table if not exists public.quartiers (
   id uuid primary key default gen_random_uuid(),
   nom text not null,
@@ -34,11 +34,13 @@ create table if not exists public.quartiers (
 );
 
 insert into public.quartiers (nom, description) values
-  ('Djuttitsa Centre', 'Cœur névralgique du village, marché et chefferie'),
-  ('Bafou-Nord', 'Quartier haut, vues panoramiques et plantations de thé'),
-  ('Tchue-Lieu', 'Zone agricole verdoyante et artisanat'),
-  ('Ntsingbeu', 'Quartier résidentiel calme et écoles'),
-  ('Baleng-Chefferie', 'Zone culturelle historique et sanctuaires')
+  ('Ndoh Centre', 'Cœur névralgique du village, chefferie traditionnelle et institutions'),
+  ('Secteur CTE / Domaine du Thé', 'Hauts-plateaux hébergeant le complexe théier et les plantations industrielles'),
+  ('Loung & Aghong', 'Zones agricoles fertiles dédiées au maraîchage d altitude'),
+  ('Tallé & Ngui', 'Quartiers verdoyants bordés de ruisseaux et sanctuaires royaux'),
+  ('Ndouolah & Meloung', 'Zones résidentielles et vallées panoramiques'),
+  ('Mezet & Sa a', 'Secteurs d élevage et de cultures vivrières'),
+  ('Lingang & Femmock', 'Secteurs de crêtes et chemins de randonnée')
 on conflict do nothing;
 
 -- 4. Actualités
@@ -137,7 +139,11 @@ create table if not exists public.contacts (
   date_envoi timestamptz default now()
 );
 
--- Active Row Level Security (RLS) sur toutes les tables
+-- =====================================================================
+-- ACTIVATION DE ROW LEVEL SECURITY (RLS) SUR TOUTES LES TABLES
+-- =====================================================================
+alter table public.roles enable row level security;
+alter table public.profils enable row level security;
 alter table public.actualites enable row level security;
 alter table public.evenements enable row level security;
 alter table public.medias enable row level security;
@@ -149,7 +155,39 @@ alter table public.associations enable row level security;
 alter table public.documents enable row level security;
 alter table public.contacts enable row level security;
 
--- Politiques RLS de lecture publique
+-- =====================================================================
+-- SUPPRESSION PRÉALABLE DES POLITIQUES (POUR ÉVITER L'ERREUR 42710)
+-- =====================================================================
+drop policy if exists "Lecture publique roles" on public.roles;
+drop policy if exists "Lecture propre profil" on public.profils;
+drop policy if exists "Lecture publique actualites" on public.actualites;
+drop policy if exists "Lecture publique evenements" on public.evenements;
+drop policy if exists "Lecture publique medias" on public.medias;
+drop policy if exists "Lecture publique quartiers" on public.quartiers;
+drop policy if exists "Lecture publique entreprises" on public.entreprises;
+drop policy if exists "Lecture publique ecoles" on public.ecoles;
+drop policy if exists "Lecture publique centres_sante" on public.centres_sante;
+drop policy if exists "Lecture publique associations" on public.associations;
+drop policy if exists "Lecture publique documents" on public.documents;
+drop policy if exists "Insertion publique contacts" on public.contacts;
+
+drop policy if exists "Super Admin control actualites" on public.actualites;
+drop policy if exists "Super Admin control evenements" on public.evenements;
+drop policy if exists "Super Admin control medias" on public.medias;
+drop policy if exists "Super Admin control entreprises" on public.entreprises;
+drop policy if exists "Super Admin control ecoles" on public.ecoles;
+drop policy if exists "Super Admin control centres_sante" on public.centres_sante;
+drop policy if exists "Super Admin control associations" on public.associations;
+drop policy if exists "Super Admin control documents" on public.documents;
+drop policy if exists "Super Admin control contacts" on public.contacts;
+
+-- =====================================================================
+-- CRÉATION DES POLITIQUES RLS SÉCURISÉES
+-- =====================================================================
+
+-- Politiques de lecture publique
+create policy "Lecture publique roles" on public.roles for select using (true);
+create policy "Lecture propre profil" on public.profils for select using (auth.uid() = id);
 create policy "Lecture publique actualites" on public.actualites for select using (publie = true);
 create policy "Lecture publique evenements" on public.evenements for select using (true);
 create policy "Lecture publique medias" on public.medias for select using (true);
@@ -160,10 +198,10 @@ create policy "Lecture publique centres_sante" on public.centres_sante for selec
 create policy "Lecture publique associations" on public.associations for select using (true);
 create policy "Lecture publique documents" on public.documents for select using (true);
 
--- Politiques RLS de création publique (formulaire de contact)
+-- Politique d'insertion publique (formulaire de contact)
 create policy "Insertion publique contacts" on public.contacts for insert with check (true);
 
--- Politiques RLS d'administration réservée aux Super Admin
+-- Politiques de contrôle réservé au Super Admin
 create policy "Super Admin control actualites" on public.actualites for all using (
   exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
 );
@@ -174,5 +212,20 @@ create policy "Super Admin control medias" on public.medias for all using (
   exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
 );
 create policy "Super Admin control entreprises" on public.entreprises for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control ecoles" on public.ecoles for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control centres_sante" on public.centres_sante for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control associations" on public.associations for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control documents" on public.documents for all using (
+  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
+);
+create policy "Super Admin control contacts" on public.contacts for all using (
   exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
 );

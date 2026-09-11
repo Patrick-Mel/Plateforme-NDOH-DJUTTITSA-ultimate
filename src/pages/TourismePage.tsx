@@ -9,20 +9,20 @@ import { Link } from 'react-router-dom';
 export const TourismePage: React.FC = () => {
   const spots = [
     {
-      name: 'Domaine & Plantations de Thé de Djuttitsa',
-      desc: 'S étendant sur des centaines d hectares de collines verdoyantes, les plantations offrent un paysage époustouflant, particulièrement le matin lorsque la brume se lève lentement.',
+      name: 'Complexe Théier de Djuttitsa (CTE)',
+      desc: 'Plantations de thé s étendant à perte de vue sur les pentes volcaniques. Un paysage emblématique particulièrement impressionnant au lever du soleil lorsque la brume glisse sur les collines.',
       image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
-      tag: 'Incontournable',
+      tag: 'Site Majeur',
     },
     {
-      name: 'Les Monts Djuttitsa (2 050 m)',
-      desc: 'Point culminant idéal pour les amateurs de trekking et d éco-tourisme. De là-haut, profitez d une vue panoramique à 360° sur toute la Menoua et les plaines environnantes.',
+      name: 'Hauts-Plateaux de Nkong-Ni (1 850 m - 2 050 m)',
+      desc: 'Relief accidenté et crêtes majestueuses offrant un panorama à 360° sur le département de la Menoua et les plaines environnantes de la région de l Ouest.',
       image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
       tag: 'Randonnée & Nature',
     },
     {
-      name: 'Cascades & Rivières d Altitude',
-      desc: 'Rivières cristallines s écoulant des montagnes volcaniques. Lieux paisibles bordés de végétation luxuriante et de ponts artisanaux.',
+      name: 'Rivières & Sanctuaires Naturels d Altitude',
+      desc: 'Sources d eau pures alimentant les vallées maraîchères et bosquets sacrés protégés par la tradition coutumière.',
       image: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80',
       tag: 'Eaux vives',
     },
@@ -31,44 +31,47 @@ export const TourismePage: React.FC = () => {
   return (
     <div className="space-y-16 pb-20">
       <PageHeader
-        title="Tourisme & Paysages d Exception"
-        subtitle="Explorez la magie des hauts-plateaux : plantations de thé d altitude, collines brumeuses et randonnées inoubliables."
-        badge="Ecotourisme & Évasion"
+        title="Tourisme & Paysages Théiers"
+        subtitle="Découvrez la sérénité des hauts-plateaux : plantations du CTE, collines brumeuses et air pur de la Menoua."
+        badge="Écotourisme d Altitude"
         bgImage="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+        
+        {/* Banner Météo & Conseils Visiteur */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-emerald-900 text-white space-y-2 border border-emerald-800">
-            <Cloud className="w-8 h-8 text-amber-300" />
-            <h4 className="font-bold font-heading text-lg">Climat Frais d Altitude</h4>
-            <p className="text-xs text-emerald-100 leading-relaxed">
-              Températures douces comprises entre 16°C et 24°C toute l année. Prévoir un veste ou un pull chaud pour les matinées et les soirées.
+          <div className="p-6 rounded-2xl bg-slate-100 dark:bg-[#111827] text-slate-900 dark:text-white space-y-2 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+            <Cloud className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+            <h4 className="font-bold font-heading text-lg text-slate-900 dark:text-white">Climat Frais d Altitude</h4>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Températures douces comprises entre 15°C et 22°C toute l année. Prévoir un vêtement chaud pour le matin et le soir.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-900 text-white space-y-2 border border-slate-800">
-            <Compass className="w-8 h-8 text-emerald-400" />
-            <h4 className="font-bold font-heading text-lg">Circuit Dégustation de Thé</h4>
-            <p className="text-xs text-slate-300 leading-relaxed">
-              Visites guidées de la cueillette artisanale du thé et dégustation des grands crus infusés à l eau de source des hauts-plateaux.
+          <div className="p-6 rounded-2xl bg-slate-100 dark:bg-[#111827] text-slate-900 dark:text-white space-y-2 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+            <Compass className="w-8 h-8 text-amber-600 dark:text-amber-400" />
+            <h4 className="font-bold font-heading text-lg text-slate-900 dark:text-white">Parcours de la Cueillette</h4>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Visite des champs de théiers et observation du savoir-faire traditionnel de la cueillette des jeunes pousses.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-amber-900/90 text-white space-y-2 border border-amber-800">
-            <Sun className="w-8 h-8 text-amber-300" />
-            <h4 className="font-bold font-heading text-lg">Meilleure Période de Visite</h4>
-            <p className="text-xs text-amber-100 leading-relaxed">
-              De Novembre à Avril (saison sèche) pour les randonnées dégagées et la photographie de paysages sous un ciel lumineux.
+          <div className="p-6 rounded-2xl bg-slate-100 dark:bg-[#111827] text-slate-900 dark:text-white space-y-2 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
+            <Sun className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+            <h4 className="font-bold font-heading text-lg text-slate-900 dark:text-white">Période Idéale de Séjour</h4>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              De Novembre à Avril pour profiter d une excellente visibilité sur les montagnes et d un ciel lumineux.
             </p>
           </div>
         </div>
 
+        {/* Attractions Majeures */}
         <div className="space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <Badge variant="emerald">Sites Rémarquables</Badge>
+            <Badge variant="emerald">Sites Remarquables</Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
-              Les incontournables de votre séjour à Djuttitsa
+              Les incontournables de Ndoh-Djuttitsa
             </h2>
           </div>
 
@@ -99,23 +102,25 @@ export const TourismePage: React.FC = () => {
           </div>
         </div>
 
-        <Card className="p-8 md:p-12 bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-950 text-white rounded-3xl border-emerald-800 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Appel Contact Accueil */}
+        <Card className="p-8 md:p-12 bg-slate-900 dark:bg-[#111827] text-white rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8 transition-colors duration-300">
           <div className="space-y-3 max-w-2xl">
-            <Badge variant="amber">Guide Local & Accueil</Badge>
-            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading">
-              Besoin d un guide ou d un hébergement eco-lodge ?
+            <Badge variant="amber">Accueil & Orientation</Badge>
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+              Vous prévoyez un séjour ou une visite d étude ?
             </h3>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Le Comité de Développement et les acteurs du tourisme local organisent votre accueil, votre transport depuis Dschang ou Bafoussam et votre hébergement sur place.
+              Prenez contact avec le secrétariat communautaire pour obtenir des conseils d accès depuis Dschang ou Bafoussam.
             </p>
           </div>
 
           <Link to="/contact">
-            <Button size="lg" variant="secondary" icon={<Phone className="w-5 h-5" />}>
-              Contacter l Office du Tourisme
+            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white" icon={<Phone className="w-4 h-4" />}>
+              Nous Contacter
             </Button>
           </Link>
         </Card>
+
       </div>
     </div>
   );

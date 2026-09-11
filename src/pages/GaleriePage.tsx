@@ -25,14 +25,16 @@ export const GaleriePage: React.FC = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
-        <div className="flex items-center justify-center gap-3 p-2 bg-slate-100 dark:bg-slate-900 rounded-2xl max-w-md mx-auto border border-slate-200 dark:border-slate-800">
+        
+        {/* Barre de Filtre des Médias */}
+        <div className="flex items-center justify-center gap-3 p-2 bg-white dark:bg-[#111827] rounded-2xl max-w-md mx-auto border border-slate-200/80 dark:border-slate-800 shadow-sm transition-colors duration-300">
           <button
             onClick={() => setSelectedType('all')}
             type="button"
             className={`flex-1 py-2.5 rounded-xl font-bold text-xs transition-all ${
               selectedType === 'all'
-                ? 'bg-emerald-700 text-white shadow-sm dark:bg-emerald-600'
-                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
             Tous les Médias
@@ -42,8 +44,8 @@ export const GaleriePage: React.FC = () => {
             type="button"
             className={`flex items-center justify-center gap-1.5 flex-1 py-2.5 rounded-xl font-bold text-xs transition-all ${
               selectedType === 'photo'
-                ? 'bg-emerald-700 text-white shadow-sm dark:bg-emerald-600'
-                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
             <ImageIcon className="w-4 h-4" />
@@ -54,8 +56,8 @@ export const GaleriePage: React.FC = () => {
             type="button"
             className={`flex items-center justify-center gap-1.5 flex-1 py-2.5 rounded-xl font-bold text-xs transition-all ${
               selectedType === 'video'
-                ? 'bg-emerald-700 text-white shadow-sm dark:bg-emerald-600'
-                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
             <Camera className="w-4 h-4" />
@@ -63,12 +65,13 @@ export const GaleriePage: React.FC = () => {
           </button>
         </div>
 
+        {/* Grille Photothèque / Vidéothèque */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredMedias.map((media) => (
             <div
               key={media.id}
               onClick={() => setSelectedMedia(media)}
-              className="group relative h-80 rounded-3xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-800 bg-slate-900 cursor-pointer"
+              className="group relative h-80 rounded-3xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 bg-slate-900 cursor-pointer transition-all duration-300"
             >
               <img
                 src={media.thumbnail_url || media.url}
@@ -90,7 +93,7 @@ export const GaleriePage: React.FC = () => {
                 <p className="text-sm font-bold text-white leading-snug line-clamp-2">
                   {media.legende}
                 </p>
-                <div className="flex items-center gap-2 text-xs text-slate-400">
+                <div className="flex items-center gap-2 text-xs text-slate-300">
                   <Calendar className="w-3.5 h-3.5 text-emerald-400" />
                   <span>{media.date_ajout}</span>
                 </div>
@@ -99,6 +102,7 @@ export const GaleriePage: React.FC = () => {
           ))}
         </div>
 
+        {/* Modale Lightbox d affichage Grand Format */}
         <Modal
           isOpen={Boolean(selectedMedia)}
           onClose={() => setSelectedMedia(null)}
@@ -129,7 +133,7 @@ export const GaleriePage: React.FC = () => {
 
               <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
                 <span className="flex items-center gap-1.5 font-semibold">
-                  <Tag className="w-4 h-4 text-emerald-600" />
+                  <Tag className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   {selectedMedia.categorie}
                 </span>
                 <span>Date d ajout : {selectedMedia.date_ajout}</span>

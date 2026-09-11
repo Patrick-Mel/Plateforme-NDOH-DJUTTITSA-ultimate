@@ -10,18 +10,18 @@ interface GalleryPreviewProps {
 
 export const GalleryPreview: React.FC<GalleryPreviewProps> = ({ medias }) => {
   return (
-    <section className="py-20 px-4 sm:px-8 bg-slate-900 text-white transition-colors">
+    <section className="py-20 px-4 sm:px-8 bg-slate-100 dark:bg-[#0B0F19] text-slate-900 dark:text-white border-t border-slate-200/80 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <Badge variant="amber" className="mb-2">Patrimoine Visuel</Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
               NDOH-DJUTTITSA en images
             </h2>
           </div>
           <Link
             to="/galerie"
-            className="inline-flex items-center gap-2 text-emerald-400 font-semibold hover:gap-3 transition-all text-sm"
+            className="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-semibold hover:gap-3 transition-all text-sm"
           >
             <span>Voir toute la médiathèque</span>
             <ArrowRight className="w-5 h-5" />
@@ -32,14 +32,14 @@ export const GalleryPreview: React.FC<GalleryPreviewProps> = ({ medias }) => {
           {medias.slice(0, 4).map((media) => (
             <div
               key={media.id}
-              className="group relative h-64 rounded-2xl overflow-hidden shadow-lg border border-slate-800 bg-slate-800"
+              className="group relative h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 dark:border-slate-800 bg-slate-900 transition-all duration-300"
             >
               <img
                 src={media.thumbnail_url || media.url}
                 alt={media.legende}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
               
               <div className="absolute top-3 left-3">
                 <span className="p-2 rounded-xl bg-slate-950/70 text-amber-400 backdrop-blur-md inline-block">

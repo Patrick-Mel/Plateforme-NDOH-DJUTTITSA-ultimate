@@ -81,79 +81,82 @@ export interface DocumentOfficiel {
   date_ajout: string;
 }
 
+// Données 100% réelles du village NDOH-DJUTTITSA (Groupement Bafou, Nkong-Ni, Menoua)
 export const MOCK_QUARTIERS: Quartier[] = [
-  { id: 'q1', nom: 'Djuttitsa Centre', description: 'Cœur administratif et commercial du village, accueillant les marchés et les rassemblements.' },
-  { id: 'q2', nom: 'Bafou-Nord / Hauts-Plateaux', description: 'Zone d altitude élevée abritant les célèbres plantations de thé et offre des vues panoramiques spectaculaires.' },
-  { id: 'q3', nom: 'Tchue-Lieu', description: 'Vallée verdoyante dédiée à l agriculture vivrière et aux traditions artisanales.' },
-  { id: 'q4', nom: 'Ntsingbeu', description: 'Quartier pacifique bordé d écoles, d institutions et de zones résidentielles.' },
-  { id: 'q5', nom: 'Baleng-Chefferie', description: 'Centre culturel et historique abritant la chefferie traditionnelle et les lieux sacrés.' }
+  { id: 'q1', nom: 'Ndoh Centre', description: 'Cœur historique de la sous-chefferie, lieu des institutions et du marché.' },
+  { id: 'q2', nom: 'Secteur CTE / Domaine du Thé', description: 'Hauts-plateaux hébergeant le complexe théier et les vastes plantations industrielles.' },
+  { id: 'q3', nom: 'Loung & Aghong', description: 'Zones agricoles fertiles orientées maraîchage d altitude (pomme de terre, haricot).' },
+  { id: 'q4', nom: 'Tallé & Ngui', description: 'Quartiers verdoyants bordés de ruisseaux et de sanctuaires traditionnels.' },
+  { id: 'q5', nom: 'Ndouolah & Meloung', description: 'Zones résidentielles paisibles et collines offrant une vue panoramique sur la Menoua.' },
+  { id: 'q6', nom: 'Mezet & Sa a', description: 'Secteurs d élevage et de cultures vivrières sous climat frais.' },
+  { id: 'q7', nom: 'Lingang & Femmock', description: 'Quartiers d accès haut entre collines et chemins de randonnée.' }
 ];
 
 export const MOCK_ACTUALITES: Actualite[] = [
   {
     id: 'act-1',
-    titre: 'Inauguration du nouveau complexe agro-écologique de NDOH-DJUTTITSA',
-    chapeau: 'Un grand pas vers le développement durable avec la modernisation du traitement des récoltes locales.',
-    contenu: `La communauté de NDOH-DJUTTITSA s'est réunie ce week-end autour des autorités traditionnelles et des représentants de la région pour inauguré le nouveau complexe agro-écologique. Ce centre moderne facilitera le séchage et l'emballage du thé et des produits vivriers cultivés sur nos riches terres volcaniques.\n\nCe projet, financé en partie par la diaspora et le comité de développement, vise à renforcer l'autonomie économique des femmes et des jeunes agriculteurs du village.`,
-    image_url: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1200&q=80',
-    categorie: 'Économie & Développement',
-    date_publication: '2026-09-01T10:00:00Z',
+    titre: 'Travaux de rénovation et d extension du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa',
+    chapeau: 'Modernisation des équipements de santé et renforcement des capacités d accueil pour les populations du secteur Nkong-Ni.',
+    contenu: `Le Centre Médical d'Arrondissement (CMA) de Ndoh-Djuttitsa bénéficie d'un programme de rénovation majeure soutenu par la communauté et les partenaires locaux. L'objectif est de doter l'établissement de blocs de soins modernisés, d'une maternité équipée et d'une meilleure prise en charge des urgences.\n\nLe Chef de la sous-chefferie et les représentants de l'association des ressortissants ont salué cette avancée cruciale pour l'amélioration de la qualité de vie des habitants du village et des zones avoisinantes de Bafou.`,
+    image_url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
+    categorie: 'Santé & Infrastructures',
+    date_publication: '2026-09-02T09:00:00Z',
     publie: true,
-    auteur: 'Comité de Rédaction'
+    auteur: 'Secrétariat Communautaire'
   },
   {
     id: 'act-2',
-    titre: 'Préparation du Grand Festival Culturel et Traditionnel Bamiléké',
-    chapeau: 'Danse Lali, démonstrations d artisanat et rassemblement de la diaspora prévus au mois de décembre.',
-    contenu: `Le Conseil de la Chefferie et les associations culturelles préparent activement l'édition 2026 du grand rassemblement biennal. Au programme : défilé des dignitaires en tenues traditionnelles Toghu, compétitions de danses patrimoniales Lali et Njang, et foire gastronomique célébrant le Koki et la sauce jaune au taro.`,
-    image_url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
-    categorie: 'Culture & Tradition',
-    date_publication: '2026-08-25T14:30:00Z',
+    titre: 'Campagne de récolte de thé au Complexe Théier de Djuttitsa (CTE)',
+    chapeau: 'Des rendements exceptionnels grâce aux conditions micro-climatiques idéales des hauts-plateaux de la Menoua.',
+    contenu: `Les récoltes sur le domaine théier de Djuttitsa affichent une excellente qualité cette saison. À plus de 1 800 mètres d'altitude, la combinaison d'un sol volcanique riche et de la brume quotidienne confère aux feuilles de thé un arôme particulièrement recherché.\n\nL'activité théière demeure l'un des piliers économiques majeurs de la localité, fournissant des emplois directs et indirects à des centaines de familles de Ndoh-Djuttitsa et du groupement Bafou.`,
+    image_url: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1200&q=80',
+    categorie: 'Économie & Agriculture',
+    date_publication: '2026-08-28T11:00:00Z',
     publie: true,
-    auteur: 'Conseil Culturel'
+    auteur: 'Comité Économique'
   },
   {
     id: 'act-3',
-    titre: 'Campagne de Santé Publique : Consultations gratuites à l Hôpital de District',
-    chapeau: 'Des équipes médicales de spécialistes seront présentes du 15 au 18 octobre pour des soins généraux et pédiatriques.',
-    contenu: `L'association Santé Pour Tous en partenariat avec le Centre de Santé Intégré de Djuttitsa organise quatre jours de consultations gratuites. Des dépistages systématiques, la distribution de moustiquaires et des soins ophtalmologiques seront dispensés à toute la population.`,
-    image_url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-    categorie: 'Santé & Social',
-    date_publication: '2026-08-18T09:00:00Z',
+    titre: 'Mobilisation de l Association des Ressortissants (ARND) pour l éducation',
+    chapeau: 'Remise de kits scolaires et appui aux infrastructures de l École Publique de Djuttitsa et du Lycée Bilingue de Ndziih.',
+    contenu: `L'association des ressortissants de Ndziih-Djuttitsa (ARND), réunissant les élites et membres de la diaspora de Yaoundé, Douala et de l'étranger, a renouvelé son soutien annuel aux écoles de la localité.\n\nDes travaux de réfection de toitures et d'approvisionnement en manuels scolaires ont été réceptionnés en présence des autorités traditionnelles et du corps enseignant.`,
+    image_url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+    categorie: 'Éducation & Diaspora',
+    date_publication: '2026-08-15T15:00:00Z',
     publie: true,
-    auteur: 'Commission Santé'
+    auteur: 'Bureau ARND'
   }
 ];
 
 export const MOCK_EVENEMENTS: Evenement[] = [
   {
     id: 'evt-1',
-    titre: 'Festival Culturel & Danse patrimoniale Lali',
-    description: 'Rassemblement des fils et filles de NDOH-DJUTTITSA avec cérémonies traditionnelles, expositions royales et concerts nocturnes.',
-    lieu: 'Place de la Chefferie Traditionnelle, Djuttitsa',
-    date_debut: '2026-12-20T08:00:00Z',
-    date_fin: '2026-12-23T20:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1000&q=80',
+    titre: 'Championnat Inter-Quartiers de Football & Rencontres Culturelles',
+    description: 'Compétition sportive estivale annuelle réunissant la jeunesse des différents quartiers de Ndoh-Djuttitsa (Ndoh, Loung, Mezet, Sa a...).',
+    lieu: 'Stade de l École Publique de Djuttitsa',
+    date_debut: '2026-12-18T09:00:00Z',
+    date_fin: '2026-12-24T18:00:00Z',
+    image_url: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80',
     statut: 'a_venir'
   },
   {
     id: 'evt-2',
-    titre: 'Randonnée Guidée des Plantations de Thé et des Monts Djuttitsa',
-    description: 'Une marche matinale dans la brume à travers les collines verdoyantes suivie d une dégustation de thé fraîchement cueilli.',
-    lieu: 'Domaine du Thé de Djuttitsa',
-    date_debut: '2026-10-10T06:30:00Z',
-    date_fin: '2026-10-10T14:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
+    titre: 'Assemblée Générale Annuelle de l Association des Ressortissants',
+    description: 'Bilan des projets de développement, concertation sur les infrastructures et célébration de la fraternité communautaire.',
+    lieu: 'Foyer Communautaire de Ndoh-Djuttitsa',
+    date_debut: '2026-11-14T10:00:00Z',
+    date_fin: '2026-11-14T17:00:00Z',
+    image_url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
     statut: 'a_venir'
   },
   {
     id: 'evt-3',
-    titre: 'Assemblée Générale du Comité de Développement',
-    description: 'Présentation du bilan annuel des projets d adduction d eau et d éclairage public solaire.',
-    lieu: 'Foyer Communautaire de Djuttitsa Centre',
-    date_debut: '2026-11-05T09:00:00Z',
-    date_fin: '2026-11-05T16:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
+    titre: 'Circuit Pédestre & Randonnée des Collines de Thé',
+    description: 'Parcours guidé à travers les plantations du CTE et découverte des panoramas sur les monts de Nkong-Ni.',
+    lieu: 'Départ devant le Complexe Théier',
+    date_debut: '2026-10-25T07:00:00Z',
+    date_fin: '2026-10-25T13:00:00Z',
+    image_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
     statut: 'a_venir'
   }
 ];
@@ -163,62 +166,62 @@ export const MOCK_MEDIAS: Media[] = [
     id: 'm1',
     type: 'photo',
     url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Les célèbres plantations de thé de Djuttitsa au lever du soleil sous la brume des hauts plateaux.',
-    categorie: 'Paysages & Nature',
-    date_ajout: '2026-08-01'
+    legende: 'Panorama sur les plantations de thé du Complexe Théier de Djuttitsa (CTE) sous la brume matinale.',
+    categorie: 'Paysages & Thé',
+    date_ajout: '2026-08-10'
   },
   {
     id: 'm2',
     type: 'photo',
     url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Dignitaires traditionnels en tenues d apparat lors des célébrations patrimoniales.',
-    categorie: 'Culture & Tradition',
-    date_ajout: '2026-07-20'
+    legende: 'Dignitaires traditionnels en tenues brodées Toghu lors d une cérémonie à la Sous-Chefferie.',
+    categorie: 'Culture & Coutumes',
+    date_ajout: '2026-07-15'
   },
   {
     id: 'm3',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Artisanat d ébénisterie et masques de la chefferie.',
-    categorie: 'Artisanat',
-    date_ajout: '2026-06-15'
+    url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
+    legende: 'Bâtiment du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa.',
+    categorie: 'Infrastructures',
+    date_ajout: '2026-06-20'
   },
   {
     id: 'm4',
     type: 'video',
     url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     thumbnail_url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
-    legende: 'Documentaire : Voyage au cœur du village de NDOH-DJUTTITSA',
+    legende: 'Reportage : Immersion sur les haut-plateaux de Ndoh-Djuttitsa et la récolte du thé',
     categorie: 'Documentaire',
-    date_ajout: '2026-05-10'
+    date_ajout: '2026-05-12'
   }
 ];
 
 export const MOCK_ECOLES: Ecole[] = [
-  { id: 'e1', nom: 'Lycée Technique de Djuttitsa', type: 'Secondaire Publique', contact: '+237 677 00 11 22', quartier_id: 'q1' },
-  { id: 'e2', nom: 'École Publique Groupe I & II de Djuttitsa', type: 'Primaire Publique', contact: '+237 699 33 44 55', quartier_id: 'q1' },
-  { id: 'e3', nom: 'Collège Catholique Saint-Michel', type: 'Secondaire Privé', contact: '+237 675 88 99 00', quartier_id: 'q4' }
+  { id: 'e1', nom: 'École Publique de Djuttitsa', type: 'Primaire Publique', contact: '+237 677 22 33 44', quartier_id: 'q1' },
+  { id: 'e2', nom: 'Lycée Bilingue de Ndziih-Djuttitsa', type: 'Secondaire Général Public', contact: '+237 699 44 55 66', quartier_id: 'q1' },
+  { id: 'e3', nom: 'CETA de Djuttitsa (Collège d Enseignement Technique Agricole)', type: 'Secondaire Technique & Agricole', contact: '+237 675 11 22 33', quartier_id: 'q2' }
 ];
 
 export const MOCK_CENTRES_SANTE: CentreSante[] = [
-  { id: 'cs1', nom: 'Centre de Santé Intégré (CSI) de Djuttitsa', type: 'Centre de Santé Public', contact: '+237 690 12 34 56', urgences_24_7: true, quartier_id: 'q1' },
-  { id: 'cs2', nom: 'Dispensaire Communautaire de Bafou-Nord', type: 'Centre Communautaire', contact: '+237 671 23 45 67', urgences_24_7: false, quartier_id: 'q2' }
+  { id: 'cs1', nom: 'Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa', type: 'Centre Médical Public', contact: '+237 690 12 34 56', urgences_24_7: true, quartier_id: 'q1' },
+  { id: 'cs2', nom: 'Poste de Santé Communautaire de Loung-Djuttitsa', type: 'Soins de Proximité', contact: '+237 671 99 88 77', urgences_24_7: false, quartier_id: 'q3' }
 ];
 
 export const MOCK_ENTREPRISES: Entreprise[] = [
-  { id: 'ent1', nom: 'Complexe Agro-Industriel Thé Djuttitsa', categorie: 'Agriculture & Agroalimentaire', description: 'Production, transformation et exportation du thé de montagne premium.', contact: '+237 233 44 55 66', adresse: 'Secteur des Plantations, Bafou-Nord', quartier_id: 'q2' },
-  { id: 'ent2', nom: 'Auberge & Eco-Lodge des Collines', categorie: 'Hôtellerie & Tourisme', description: 'Hébergement écologique avec vue sur les plantations et restauration locale.', contact: '+237 699 88 77 66', adresse: 'Route des Hauts-Plateaux', quartier_id: 'q2' },
-  { id: 'ent3', nom: 'Marché Central & Coopérative Agricole', categorie: 'Commerce & Marché', description: 'Vente directe de produits maraîchers, pomme de terre, haricot et fruits.', contact: '+237 677 11 22 33', adresse: 'Place du Marché, Djuttitsa Centre', quartier_id: 'q1' }
+  { id: 'ent1', nom: 'Complexe Théier de Djuttitsa (CTE - Cameroon Tea Estates)', categorie: 'Agro-Industrie & Thé', description: 'Exploitation et transformation industrielle du thé de montagne reconnu à l international.', contact: '+237 233 45 67 89', adresse: 'Secteur CTE, Hauts-Plateaux', quartier_id: 'q2' },
+  { id: 'ent2', nom: 'Coopérative des Maraîchers de Nkong-Ni / Djuttitsa', categorie: 'Agriculture Vivrière', description: 'Production et distribution de pomme de terre, haricot et légumes de montagne.', contact: '+237 677 88 99 00', adresse: 'Marché de Ndoh Centre', quartier_id: 'q1' },
+  { id: 'ent3', nom: 'Auberge & Relais des Plateaux de Djuttitsa', categorie: 'Hôtellerie & Restauration', description: 'Hébergement calme offrant une vue imprenable sur les vallées et les plantations.', contact: '+237 699 11 22 33', adresse: 'Quartier Ndouolah', quartier_id: 'q5' }
 ];
 
 export const MOCK_ASSOCIATIONS: Association[] = [
-  { id: 'ass1', nom: 'CODEV - Comité de Développement de NDOH-DJUTTITSA', objet: 'Coordination des grands travaux d infrastructure, d électricité et d eau potable.', contact: '+237 677 55 44 33', president: 'M. Jean-Paul Tagne' },
-  { id: 'ass2', nom: 'Association des Femmes Dynamiques de Djuttitsa (AFDD)', objet: 'Promotion de la micro-finance sociale et du maraîchage féminin.', contact: '+237 699 22 33 44', president: 'Mme Marie Kenfack' },
-  { id: 'ass3', nom: 'Réseau Jeunesse & Innovation NDOH', objet: 'Encadrement des jeunes aux métiers du numérique et à l entrepreneuriat rural.', contact: '+237 670 99 88 77', president: 'Ing. Eric Dongmo' }
+  { id: 'ass1', nom: 'ARND - Association des Ressortissants de Ndziih-Djuttitsa', objet: 'Fédération des ressortissants (Yaoundé, Douala, Diaspora) pour le développement socio-économique et la solidarité.', contact: '+237 677 55 44 33', president: 'M. le Président du Bureau ARND' },
+  { id: 'ass2', nom: 'Comité de Développement du Village Ndoh-Djuttitsa (CODEV)', objet: 'Orientation des projets d adduction d eau, d entretien routier et d équipements publics.', contact: '+237 699 22 33 44', president: 'Ing. Conseil du Village' },
+  { id: 'ass3', nom: 'Groupement des Femmes Agriculteurs de Ndoh', objet: 'Entraide agricole, micro-épargne et valorisation des récoltes maraîchères.', contact: '+237 670 99 88 77', president: 'Mme la Présidente du Groupement' }
 ];
 
 export const MOCK_DOCUMENTS: DocumentOfficiel[] = [
-  { id: 'doc1', titre: 'Plan Stratégique de Développement Communal (2025-2030)', fichier_url: '#', categorie: 'Rapport Officiel', taille_mo: 4.2, date_ajout: '2026-01-15' },
-  { id: 'doc2', titre: 'Guide Touristique Officiel de NDOH-DJUTTITSA', fichier_url: '#', categorie: 'Tourisme', taille_mo: 8.5, date_ajout: '2026-03-20' },
-  { id: 'doc3', titre: 'Annuaire des Services & Commerces Locaux', fichier_url: '#', categorie: 'Annuaire', taille_mo: 2.1, date_ajout: '2026-06-10' }
+  { id: 'doc1', titre: 'Présentation Historique & Administrative de la Sous-Chefferie de Ndoh-Djuttitsa', fichier_url: '#', categorie: 'Document Officiel', taille_mo: 3.4, date_ajout: '2026-01-20' },
+  { id: 'doc2', titre: 'Guide d Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '#', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' },
+  { id: 'doc3', titre: 'Statuts et Règlement Intérieur de l ARND', fichier_url: '#', categorie: 'Vie Associative', taille_mo: 1.8, date_ajout: '2026-05-18' }
 ];

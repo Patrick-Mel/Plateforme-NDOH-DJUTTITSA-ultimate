@@ -30,30 +30,30 @@ export const ServicesPage: React.FC = () => {
 
   const tabs = [
     { id: 'ecoles', label: 'Écoles & Lycées', icon: GraduationCap, count: MOCK_ECOLES.length },
-    { id: 'sante', label: 'Santé & Urgences', icon: HeartPulse, count: MOCK_CENTRES_SANTE.length },
-    { id: 'entreprises', label: 'Commerces & Entreprises', icon: Building, count: MOCK_ENTREPRISES.length },
-    { id: 'associations', label: 'Associations', icon: Users, count: MOCK_ASSOCIATIONS.length },
+    { id: 'sante', label: 'CMA & Santé', icon: HeartPulse, count: MOCK_CENTRES_SANTE.length },
+    { id: 'entreprises', label: 'Thé & Entreprises', icon: Building, count: MOCK_ENTREPRISES.length },
+    { id: 'associations', label: 'ARND & Associations', icon: Users, count: MOCK_ASSOCIATIONS.length },
     { id: 'documents', label: 'Documents Officiels', icon: FileText, count: MOCK_DOCUMENTS.length },
   ];
 
   const getQuartierNom = (qId: string) => {
     const q = MOCK_QUARTIERS.find((item) => item.id === qId);
-    return q ? q.nom : 'Djuttitsa';
+    return q ? q.nom : 'Ndoh-Djuttitsa';
   };
 
   return (
     <div className="space-y-12 pb-20">
       <PageHeader
-        title="Services, Santé & Annuaire du Village"
-        subtitle="Retrouvez toutes les infrastructures éducatives, médicales, commerciales et associatives de NDOH-DJUTTITSA."
-        badge="Services Communautaires"
-        bgImage="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80"
+        title="Infrastructures, Santé & Services"
+        subtitle="Consultez l annuaire des établissements scolaires, du CMA de Ndoh-Djuttitsa et des acteurs économiques de la sous-chefferie."
+        badge="Annuaire Communautaire"
+        bgImage="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1920&q=80"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         
-        {/* Navigation par Onglets Principaux */}
-        <div className="flex flex-wrap gap-2 p-2 bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+        {/* Navigation Onglets Épurés */}
+        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-200/60 dark:bg-[#111827] rounded-2xl border border-slate-300/60 dark:border-slate-800">
           {tabs.map((tab) => {
             const IconComponent = tab.icon;
             const isSelected = activeTab === tab.id;
@@ -62,19 +62,19 @@ export const ServicesPage: React.FC = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
                 type="button"
-                className={`flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 ${
                   isSelected
-                    ? 'bg-emerald-700 text-white shadow-md dark:bg-emerald-600'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800'
+                    ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-300/50 dark:hover:bg-slate-800'
                 }`}
               >
                 <IconComponent className="w-4 h-4" />
                 <span>{tab.label}</span>
                 <span
-                  className={`text-xs px-2 py-0.5 rounded-full ${
+                  className={`text-[10px] px-2 py-0.5 rounded-full ${
                     isSelected
-                      ? 'bg-emerald-900 text-amber-300'
-                      : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                      ? 'bg-slate-800 text-amber-400 dark:bg-emerald-950 dark:text-emerald-300'
+                      : 'bg-slate-300 dark:bg-slate-800 text-slate-700 dark:text-slate-400'
                   }`}
                 >
                   {tab.count}
@@ -84,17 +84,17 @@ export const ServicesPage: React.FC = () => {
           })}
         </div>
 
-        {/* Filtre par Quartier (si applicable) */}
+        {/* Filtre par Quartier */}
         {activeTab !== 'documents' && activeTab !== 'associations' && (
-          <div className="flex items-center gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-sm">
+          <div className="flex items-center gap-3 p-3.5 rounded-xl bg-slate-100 dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 text-xs sm:text-sm">
             <Filter className="w-4 h-4 text-emerald-600" />
-            <span className="font-semibold text-slate-700 dark:text-slate-300">Filtrer par quartier :</span>
+            <span className="font-bold text-slate-700 dark:text-slate-300">Secteur / Quartier :</span>
             <select
               value={selectedQuartier}
               onChange={(e) => setSelectedQuartier(e.target.value)}
               className="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
-              <option value="all">Tous les quartiers</option>
+              <option value="all">Tous les secteurs de Ndoh-Djuttitsa</option>
               {MOCK_QUARTIERS.map((q) => (
                 <option key={q.id} value={q.id}>
                   {q.nom}
@@ -104,20 +104,15 @@ export const ServicesPage: React.FC = () => {
           </div>
         )}
 
-        {/* Contenu Onglet 1 : ÉCOLES */}
+        {/* Onglet 1 : ÉCOLES */}
         {activeTab === 'ecoles' && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {MOCK_ECOLES.filter(
               (item) => selectedQuartier === 'all' || item.quartier_id === selectedQuartier
             ).map((ecole) => (
               <Card key={ecole.id} className="p-6 space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold">
-                    <GraduationCap className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <Badge variant="blue">{ecole.type}</Badge>
-                  </div>
+                <div className="flex items-center justify-between">
+                  <Badge variant="blue">{ecole.type}</Badge>
                 </div>
 
                 <h3 className="text-lg font-bold font-heading text-slate-900 dark:text-white">
@@ -139,19 +134,19 @@ export const ServicesPage: React.FC = () => {
           </div>
         )}
 
-        {/* Contenu Onglet 2 : SANTÉ */}
+        {/* Onglet 2 : SANTÉ (CMA) */}
         {activeTab === 'sante' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {MOCK_CENTRES_SANTE.filter(
               (item) => selectedQuartier === 'all' || item.quartier_id === selectedQuartier
             ).map((cs) => (
-              <Card key={cs.id} className="p-6 space-y-4 border-l-4 border-l-red-500">
+              <Card key={cs.id} className="p-6 space-y-4 border-l-4 border-l-emerald-600">
                 <div className="flex items-center justify-between">
                   <Badge variant="emerald">{cs.type}</Badge>
                   {cs.urgences_24_7 && (
-                    <span className="flex items-center gap-1 text-xs font-bold text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950 px-2.5 py-1 rounded-full border border-red-200 dark:border-red-800">
+                    <span className="flex items-center gap-1 text-xs font-bold text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950/80 px-2.5 py-1 rounded-full border border-red-200 dark:border-red-800">
                       <CheckCircle className="w-3.5 h-3.5" />
-                      <span>Urgence 24h/24 & 7j/7</span>
+                      <span>Permanence Urgences 24h/7</span>
                     </span>
                   )}
                 </div>
@@ -160,14 +155,14 @@ export const ServicesPage: React.FC = () => {
                   {cs.nom}
                 </h3>
 
-                <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-medium pt-2">
+                <div className="space-y-2 text-xs text-slate-600 dark:text-slate-400 font-medium pt-2">
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>{getQuartierNom(cs.quartier_id)}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-amber-600 shrink-0" />
-                    <span className="font-bold text-amber-700 dark:text-amber-400">{cs.contact}</span>
+                    <span className="font-bold text-slate-900 dark:text-white">{cs.contact}</span>
                   </div>
                 </div>
               </Card>
@@ -175,7 +170,7 @@ export const ServicesPage: React.FC = () => {
           </div>
         )}
 
-        {/* Contenu Onglet 3 : ENTREPRISES */}
+        {/* Onglet 3 : ENTREPRISES */}
         {activeTab === 'entreprises' && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {MOCK_ENTREPRISES.filter(
@@ -207,7 +202,7 @@ export const ServicesPage: React.FC = () => {
           </div>
         )}
 
-        {/* Contenu Onglet 4 : ASSOCIATIONS */}
+        {/* Onglet 4 : ASSOCIATIONS */}
         {activeTab === 'associations' && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {MOCK_ASSOCIATIONS.map((ass) => (
@@ -223,7 +218,7 @@ export const ServicesPage: React.FC = () => {
                 </p>
 
                 <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium pt-3 border-t border-slate-100 dark:border-slate-800">
-                  <div><span className="font-bold text-slate-700 dark:text-slate-300">Présidence :</span> {ass.president}</div>
+                  <div><span className="font-bold text-slate-700 dark:text-slate-300">Responsable :</span> {ass.president}</div>
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>{ass.contact}</span>
@@ -234,7 +229,7 @@ export const ServicesPage: React.FC = () => {
           </div>
         )}
 
-        {/* Contenu Onglet 5 : DOCUMENTS OFFICIELS */}
+        {/* Onglet 5 : DOCUMENTS */}
         {activeTab === 'documents' && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {MOCK_DOCUMENTS.map((doc) => (

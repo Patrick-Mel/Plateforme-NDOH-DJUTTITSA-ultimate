@@ -1,91 +1,78 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mountain, MapPin, Phone, Mail, Globe, Shield, Heart } from 'lucide-react';
+import { Mountain, MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 pt-16 pb-8 mt-auto">
+    <footer className="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800/80 pt-16 pb-8 mt-auto transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200 dark:border-slate-800/80">
           
-          {/* Colonne 1 : Présentation Village */}
+          {/* Colonne 1 : Présentation Officielle */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-800 flex items-center justify-center text-white shadow-md">
-                <Mountain className="w-6 h-6 text-amber-300" />
+              <div className="w-10 h-10 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-sm">
+                <Mountain className="w-5 h-5" />
               </div>
-              <span className="font-heading font-extrabold text-xl tracking-tight text-white">
+              <span className="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
                 NDOH-DJUTTITSA
               </span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">
-              Village des Hauts-Plateaux de l Ouest-Cameroun. Terre de tradition Bamiléké, de plantations de thé et d authenticité culturelle.
+            <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400 font-normal">
+              Sous-chefferie de 3ème degré rattachée au Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l Ouest-Cameroun.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-emerald-400">
-              <Shield className="w-4 h-4" />
-              <span>Plateforme Numérique Officielle Supabase</span>
-            </div>
           </div>
 
-          {/* Colonne 2 : Liens Rapides */}
+          {/* Colonne 2 : Navigation */}
           <div className="space-y-3">
-            <h4 className="font-heading font-bold text-white text-base">Navigation Principale</h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/histoire" className="hover:text-emerald-400 transition-colors">Histoire & Origines</Link></li>
-              <li><Link to="/culture" className="hover:text-emerald-400 transition-colors">Patrimoine & Culture Bamiléké</Link></li>
-              <li><Link to="/tourisme" className="hover:text-emerald-400 transition-colors">Domaine du Thé & Tourisme</Link></li>
-              <li><Link to="/services" className="hover:text-emerald-400 transition-colors">Annuaire des Services & Santé</Link></li>
-              <li><Link to="/actualites" className="hover:text-emerald-400 transition-colors">Actualités du Village</Link></li>
-              <li><Link to="/galerie" className="hover:text-emerald-400 transition-colors">Médiathèque Photos & Vidéos</Link></li>
+            <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm">Navigation</h4>
+            <ul className="space-y-2 text-xs">
+              <li><Link to="/histoire" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Histoire & Origines (1908)</Link></li>
+              <li><Link to="/culture" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Culture & Traditions Bamiléké</Link></li>
+              <li><Link to="/tourisme" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Complexe Théier & Collines</Link></li>
+              <li><Link to="/services" className="hover:text-emerald-700 dark:hover:text-white transition-colors">CMA, Écoles & Services</Link></li>
+              <li><Link to="/actualites" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Actualités Communautaires</Link></li>
+              <li><Link to="/galerie" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Photothèque & Médias</Link></li>
             </ul>
           </div>
 
-          {/* Colonne 3 : Informations Pratiques & Numéros d Urgence */}
+          {/* Colonne 3 : Contacts & Urgences */}
           <div className="space-y-3">
-            <h4 className="font-heading font-bold text-white text-base">Urgences & Contacts</h4>
-            <ul className="space-y-2.5 text-sm">
+            <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm">Contacts & Urgences</h4>
+            <ul className="space-y-2.5 text-xs">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>Chefferie Traditionnelle, Ndoh-Djuttitsa, Région de l Ouest, Cameroun</span>
+                <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <span>Sous-Chefferie de Ndoh-Djuttitsa, Nkong-Ni, Menoua, Cameroun</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Centre de Santé (Urgence 24h/7) : +237 690 12 34 56</span>
+                <Phone className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                <span>CMA de Ndoh-Djuttitsa : +237 690 12 34 56</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Mail className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                 <span>contact@ndoh-djuttitsa.cm</span>
               </li>
               <li className="flex items-center gap-2.5">
-                <Globe className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Code Postal / Zone : Arrondissement de Dschang / Bafou</span>
+                <Globe className="w-4 h-4 text-slate-500 dark:text-slate-400 shrink-0" />
+                <span>Zone Bafou-Nord / Alt. 1 700 - 2 050 m</span>
               </li>
             </ul>
           </div>
 
-          {/* Colonne 4 : Diaspora & Météo */}
-          <div className="space-y-4">
-            <h4 className="font-heading font-bold text-white text-base">Espace Diaspora & Projets</h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Ressortissants de NDOH-DJUTTITSA à travers le monde, restez connectés avec la terre de vos ancêtres et participez aux projets de développement communal.
+          {/* Colonne 4 : ARND & Diaspora */}
+          <div className="space-y-3">
+            <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm">Ressortissants & Diaspora</h4>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Association des Ressortissants de Ndziih-Djuttitsa (ARND). Réseau des membres à Yaoundé, Douala, Europe et Amérique pour le développement communal.
             </p>
-            <div className="p-3 bg-slate-800/80 rounded-xl border border-slate-700/60 text-xs">
-              <div className="font-semibold text-emerald-400 mb-1">Météo des Hauts-Plateaux :</div>
-              <div className="text-slate-300">Température moyenne : 18°C à 22°C</div>
-              <div className="text-slate-400 text-[11px] mt-0.5">Idéal pour le thé et le maraîchage.</div>
-            </div>
           </div>
 
         </div>
 
-        {/* Bas de page Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Plateforme Numérique Officielle de NDOH-DJUTTITSA. Tous droits réservés.</p>
-          <div className="flex items-center gap-1">
-            <span>Conçu avec</span>
-            <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />
-            <span>pour la communauté de NDOH-DJUTTITSA</span>
-          </div>
+        {/* Mentions Légales & Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-500">
+          <p>© {new Date().getFullYear()} Portail Officiel de la localité de NDOH-DJUTTITSA. Tous droits réservés.</p>
+          <p className="text-slate-500 dark:text-slate-600">Sous-Chefferie du Groupement Bafou · Menoua</p>
         </div>
       </div>
     </footer>

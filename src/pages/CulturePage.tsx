@@ -13,7 +13,7 @@ export const CulturePage: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Gastronomie Tradionnelle Bamiléké',
+      title: 'Gastronomie Traditionnelle Bamiléké',
       icon: UtensilsCrossed,
       desc: 'Célébrée pour le taro à la sauce jaune préparée aux condiments secrets, le Koki de haricot cuit à la vapeur de feuilles de bananier, et le vin de palme de montagne.',
       image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
@@ -21,7 +21,7 @@ export const CulturePage: React.FC = () => {
     {
       title: 'Vêtement d Apparat : Le Toghu',
       icon: Shirt,
-      desc: 'Etoffe royale brodée à la main de motifs géométriques dorés, rouges et blancs, portée par les dignitaires, princes et membres des sociétés secrètes.',
+      desc: 'Étoffe royale brodée à la main de motifs géométriques dorés, rouges et blancs, portée par les dignitaires, princes et membres des sociétés secrètes.',
       image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',
     },
     {
@@ -86,29 +86,29 @@ export const CulturePage: React.FC = () => {
         </div>
 
         {/* Section Événements Culturels Majeurs */}
-        <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-12 space-y-6 border border-slate-800">
+        <div className="bg-slate-900 dark:bg-[#111827] text-white rounded-3xl p-8 md:p-12 space-y-6 border border-slate-800 transition-colors duration-300">
           <div className="space-y-2">
             <Badge variant="emerald">Agenda des Rites</Badge>
-            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading">
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
               Les grands rendez-vous culturels annuels
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/60 space-y-2">
-              <span className="text-xs font-bold text-amber-400">DECEMBRE - JANVIER</span>
-              <h4 className="font-bold text-lg">Le Festival Biennal Lali</h4>
-              <p className="text-xs text-slate-400">Grand rassemblement communautaire avec concours de danses royales et intronisations.</p>
+            <div className="p-5 rounded-2xl bg-slate-800/80 dark:bg-slate-900/80 border border-slate-700/60 dark:border-slate-800 space-y-2">
+              <span className="text-xs font-bold text-amber-400">DÉCEMBRE - JANVIER</span>
+              <h4 className="font-bold text-lg text-white">Le Festival Biennal Lali</h4>
+              <p className="text-xs text-slate-300">Grand rassemblement communautaire avec concours de danses royales et intronisations.</p>
             </div>
-            <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/60 space-y-2">
-              <span className="text-xs font-bold text-emerald-400">AOUT - SEPTEMBRE</span>
-              <h4 className="font-bold text-lg">Célébration des Récoltes</h4>
-              <p className="text-xs text-slate-400">Action de grâce pour les premières récoltes de pomme de terre, maïs et thé de montagne.</p>
+            <div className="p-5 rounded-2xl bg-slate-800/80 dark:bg-slate-900/80 border border-slate-700/60 dark:border-slate-800 space-y-2">
+              <span className="text-xs font-bold text-emerald-400">AOÛT - SEPTEMBRE</span>
+              <h4 className="font-bold text-lg text-white">Célébration des Récoltes</h4>
+              <p className="text-xs text-slate-300">Action de grâce pour les premières récoltes de pomme de terre, maïs et thé de montagne.</p>
             </div>
-            <div className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/60 space-y-2">
-              <span className="text-xs font-bold text-amber-400">TOUT AU LONG DE L ANNEE</span>
-              <h4 className="font-bold text-lg">Funérailles Traditionnelles</h4>
-              <p className="text-xs text-slate-400">Cérémonies solennelles et festives rendant hommage à la mémoire des anciens disparus.</p>
+            <div className="p-5 rounded-2xl bg-slate-800/80 dark:bg-slate-900/80 border border-slate-700/60 dark:border-slate-800 space-y-2">
+              <span className="text-xs font-bold text-amber-400">TOUT AU LONG DE L ANNEÉ</span>
+              <h4 className="font-bold text-lg text-white">Funérailles Traditionnelles</h4>
+              <p className="text-xs text-slate-300">Cérémonies solennelles et festives rendant hommage à la mémoire des anciens disparus.</p>
             </div>
           </div>
         </div>
