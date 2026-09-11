@@ -64,7 +64,7 @@ export const ServicesPage: React.FC = () => {
                 type="button"
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 ${
                   isSelected
-                    ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                    ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm'
                     : 'text-slate-700 dark:text-slate-300 hover:bg-slate-300/50 dark:hover:bg-slate-800'
                 }`}
               >

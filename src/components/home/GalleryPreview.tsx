@@ -32,7 +32,7 @@ export const GalleryPreview: React.FC<GalleryPreviewProps> = ({ medias }) => {
           {medias.slice(0, 4).map((media) => (
             <div
               key={media.id}
-              className="group relative h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 dark:border-slate-800 bg-slate-900 transition-all duration-300"
+              className="group relative h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 transition-all duration-300"
             >
               <img
                 src={media.thumbnail_url || media.url}

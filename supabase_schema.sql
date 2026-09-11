@@ -12,11 +12,12 @@ create table if not exists public.roles (
 );
 
 insert into public.roles (nom, description) values 
-  ('super_admin', 'Accès complet au système et à la gestion des contenus'),
-  ('administrateur', 'Gestion des contenus et modération'),
-  ('redacteur', 'Rédaction et publication d''actualités'),
-  ('habitant', 'Utilisateur membre du village')
-on conflict (nom) do nothing;
+  ('super_admin', 'Accès total au système, gestion de tous les contenus et des rôles utilisateurs'),
+  ('administrateur', 'Gestion globale des contenus, annuaires, documents et modération'),
+  ('redacteur', 'Rédaction, édition et publication d actualités et d événements'),
+  ('moderateur', 'Modération des messages de contact et des médias communautaires'),
+  ('habitant', 'Membre du village avec accès aux documents officiels et annonces résidents')
+on conflict (nom) do update set description = excluded.description;
 
 -- 2. Table Profils (Extension de auth.users)
 create table if not exists public.profils (

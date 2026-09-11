@@ -103,13 +103,13 @@ export const TourismePage: React.FC = () => {
         </div>
 
         {/* Appel Contact Accueil */}
-        <Card className="p-8 md:p-12 bg-slate-900 dark:bg-[#111827] text-white rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8 transition-colors duration-300">
+        <Card className="p-8 md:p-12 bg-white dark:bg-[#111827] text-slate-900 dark:text-white rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8 transition-colors duration-300 shadow-sm">
           <div className="space-y-3 max-w-2xl">
             <Badge variant="amber">Accueil & Orientation</Badge>
-            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
               Vous prévoyez un séjour ou une visite d étude ?
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
               Prenez contact avec le secrétariat communautaire pour obtenir des conseils d accès depuis Dschang ou Bafoussam.
             </p>
           </div>

@@ -36,8 +36,8 @@ export const Navbar: React.FC = () => {
         
         {/* Logo de NDOH-DJUTTITSA */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-2xl bg-slate-900 dark:bg-emerald-950/80 border border-slate-800 dark:border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-sm group-hover:scale-105 transition-transform duration-300">
-            <Mountain className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
+          <div className="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-500/40 flex items-center justify-center text-emerald-800 dark:text-emerald-400 shadow-sm group-hover:scale-105 transition-transform duration-300">
+            <Mountain className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />
           </div>
           <div>
             <span className="font-heading font-bold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white block leading-none">
@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
               to={link.path}
               className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
                 isActive(link.path)
-                  ? 'bg-slate-900 text-white dark:bg-emerald-600 dark:text-white shadow-sm'
+                  ? 'bg-emerald-700 text-white dark:bg-emerald-600 dark:text-white shadow-sm'
                   : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
               }`}
             >
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(false)}
               className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                 isActive(link.path)
-                  ? 'bg-slate-900 text-white dark:bg-emerald-600'
+                  ? 'bg-emerald-700 text-white dark:bg-emerald-600'
                   : 'text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
               }`}
             >

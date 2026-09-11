@@ -86,29 +86,29 @@ export const CulturePage: React.FC = () => {
         </div>
 
         {/* Section Événements Culturels Majeurs */}
-        <div className="bg-slate-900 dark:bg-[#111827] text-white rounded-3xl p-8 md:p-12 space-y-6 border border-slate-800 transition-colors duration-300">
+        <div className="bg-white dark:bg-[#111827] text-slate-900 dark:text-white rounded-3xl p-8 md:p-12 space-y-6 border border-slate-200 dark:border-slate-800 transition-colors duration-300 shadow-sm">
           <div className="space-y-2">
             <Badge variant="emerald">Agenda des Rites</Badge>
-            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
               Les grands rendez-vous culturels annuels
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            <div className="p-5 rounded-2xl bg-slate-800/80 dark:bg-slate-900/80 border border-slate-700/60 dark:border-slate-800 space-y-2">
-              <span className="text-xs font-bold text-amber-400">DÉCEMBRE - JANVIER</span>
-              <h4 className="font-bold text-lg text-white">Le Festival Biennal Lali</h4>
-              <p className="text-xs text-slate-300">Grand rassemblement communautaire avec concours de danses royales et intronisations.</p>
+            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 space-y-2">
+              <span className="text-xs font-bold text-amber-600 dark:text-amber-400">DÉCEMBRE - JANVIER</span>
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white">Le Festival Biennal Lali</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300">Grand rassemblement communautaire avec concours de danses royales et intronisations.</p>
             </div>
-            <div className="p-5 rounded-2xl bg-slate-800/80 dark:bg-slate-900/80 border border-slate-700/60 dark:border-slate-800 space-y-2">
-              <span className="text-xs font-bold text-emerald-400">AOÛT - SEPTEMBRE</span>
-              <h4 className="font-bold text-lg text-white">Célébration des Récoltes</h4>
-              <p className="text-xs text-slate-300">Action de grâce pour les premières récoltes de pomme de terre, maïs et thé de montagne.</p>
+            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 space-y-2">
+              <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">AOÛT - SEPTEMBRE</span>
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white">Célébration des Récoltes</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300">Action de grâce pour les premières récoltes de pomme de terre, maïs et thé de montagne.</p>
             </div>
-            <div className="p-5 rounded-2xl bg-slate-800/80 dark:bg-slate-900/80 border border-slate-700/60 dark:border-slate-800 space-y-2">
-              <span className="text-xs font-bold text-amber-400">TOUT AU LONG DE L ANNEÉ</span>
-              <h4 className="font-bold text-lg text-white">Funérailles Traditionnelles</h4>
-              <p className="text-xs text-slate-300">Cérémonies solennelles et festives rendant hommage à la mémoire des anciens disparus.</p>
+            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 space-y-2">
+              <span className="text-xs font-bold text-amber-600 dark:text-amber-400">TOUT AU LONG DE L ANNEÉ</span>
+              <h4 className="font-bold text-lg text-slate-900 dark:text-white">Funérailles Traditionnelles</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300">Cérémonies solennelles et festives rendant hommage à la mémoire des anciens disparus.</p>
             </div>
           </div>
         </div>

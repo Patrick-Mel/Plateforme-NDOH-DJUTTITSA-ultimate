@@ -33,7 +33,7 @@ export const GaleriePage: React.FC = () => {
             type="button"
             className={`flex-1 py-2.5 rounded-xl font-bold text-xs transition-all ${
               selectedType === 'all'
-                ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm'
                 : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
@@ -44,7 +44,7 @@ export const GaleriePage: React.FC = () => {
             type="button"
             className={`flex items-center justify-center gap-1.5 flex-1 py-2.5 rounded-xl font-bold text-xs transition-all ${
               selectedType === 'photo'
-                ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm'
                 : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
@@ -56,7 +56,7 @@ export const GaleriePage: React.FC = () => {
             type="button"
             className={`flex items-center justify-center gap-1.5 flex-1 py-2.5 rounded-xl font-bold text-xs transition-all ${
               selectedType === 'video'
-                ? 'bg-slate-900 text-white dark:bg-emerald-600 shadow-sm'
+                ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm'
                 : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
             }`}
           >
@@ -71,7 +71,7 @@ export const GaleriePage: React.FC = () => {
             <div
               key={media.id}
               onClick={() => setSelectedMedia(media)}
-              className="group relative h-80 rounded-3xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 bg-slate-900 cursor-pointer transition-all duration-300"
+              className="group relative h-80 rounded-3xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 cursor-pointer transition-all duration-300"
             >
               <img
                 src={media.thumbnail_url || media.url}
