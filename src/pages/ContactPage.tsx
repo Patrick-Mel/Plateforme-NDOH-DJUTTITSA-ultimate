@@ -61,7 +61,7 @@ export const ContactPage: React.FC = () => {
         title="Contact & Localisation"
         subtitle="Entrez en contact avec la Chefferie traditionnelle et le secrétariat communautaire de Ndoh-Djuttitsa."
         badge="Nous Écrire"
-        bgImage="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80"
+        bgImage="/images/monts-bamboutos.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
@@ -187,7 +187,7 @@ export const ContactPage: React.FC = () => {
             {/* Carte simulée d altitude */}
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
                 <img
-                  src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/monts-bamboutos.jpg"
                   alt="Localisation Ndoh-Djuttitsa"
                   className="w-full h-full object-cover opacity-75"
                 />

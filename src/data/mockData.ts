@@ -98,7 +98,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     titre: 'Travaux de rénovation et d extension du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa',
     chapeau: 'Modernisation des équipements de santé et renforcement des capacités d accueil pour les populations du secteur Nkong-Ni.',
     contenu: `Le Centre Médical d'Arrondissement (CMA) de Ndoh-Djuttitsa bénéficie d'un programme de rénovation majeure soutenu par la communauté et les partenaires locaux. L'objectif est de doter l'établissement de blocs de soins modernisés, d'une maternité équipée et d'une meilleure prise en charge des urgences.\n\nLe Chef de la chefferie de Ndoh-Djuttitsa et les notables ont salué cette avancée cruciale pour l'amélioration de la qualité de vie des habitants du village et des zones environnantes.`,
-    image_url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
+    image_url: '/images/cma-ndoh-djuttitsa.jpg',
     categorie: 'Santé & Infrastructures',
     date_publication: '2026-09-02T09:00:00Z',
     publie: true,
@@ -109,7 +109,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     titre: 'Campagne de récolte de thé au Complexe Théier de Djuttitsa (CTE)',
     chapeau: 'Des rendements exceptionnels grâce aux conditions micro-climatiques idéales des hauts-plateaux de la Menoua.',
     contenu: `Les récoltes sur le domaine théier de Djuttitsa affichent une excellente qualité cette saison. À plus de 1 800 mètres d'altitude, la combinaison d'un sol volcanique riche et de la brume quotidienne confère aux feuilles de thé un arôme particulièrement recherché.\n\nL'activité théière demeure l'un des piliers économiques majeurs de la localité, fournissant des emplois directs et indirects à des centaines de familles de Ndoh-Djuttitsa.`,
-    image_url: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1200&q=80',
+    image_url: '/images/cte-djuttitsa-tea.jpg',
     categorie: 'Économie & Agriculture',
     date_publication: '2026-08-28T11:00:00Z',
     publie: true,
@@ -120,7 +120,7 @@ export const MOCK_ACTUALITES: Actualite[] = [
     titre: 'Aménagement des infrastructures scolaires à l École Publique de Djuttitsa',
     chapeau: 'Remise de matériel pédagogique et entretien des salles de classe pour la rentrée scolaire.',
     contenu: `Le Comité de Développement du village, en concertation avec le corps enseignant et la Chefferie de Ndoh-Djuttitsa, a concrétisé la réfection de deux bâtiments scolaires à Djuttitsa.\n\nDes travaux d étanchéité et d approvisionnement en bancs de classe ont été réceptionnés à l approche de la rentrée scolaire.`,
-    image_url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+    image_url: '/images/ecole-djuttitsa.jpg',
     categorie: 'Éducation & Infrastructures',
     date_publication: '2026-08-15T15:00:00Z',
     publie: true,
@@ -136,7 +136,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     lieu: 'Stade de l École Publique de Djuttitsa',
     date_debut: '2026-12-18T09:00:00Z',
     date_fin: '2026-12-24T18:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80',
+    image_url: '/images/evenement-ndoh.jpg',
     statut: 'a_venir'
   },
   {
@@ -146,7 +146,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     lieu: 'Foyer Communautaire de Ndoh-Djuttitsa',
     date_debut: '2026-11-14T10:00:00Z',
     date_fin: '2026-11-14T17:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80',
+    image_url: '/images/chefferie-ndoh-djuttitsa.jpg',
     statut: 'a_venir'
   },
   {
@@ -156,7 +156,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     lieu: 'Départ devant le Complexe Théier',
     date_debut: '2026-10-25T07:00:00Z',
     date_fin: '2026-10-25T13:00:00Z',
-    image_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
+    image_url: '/images/cte-djuttitsa-tea.jpg',
     statut: 'a_venir'
   }
 ];
@@ -165,7 +165,7 @@ export const MOCK_MEDIAS: Media[] = [
   {
     id: 'm1',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+    url: '/images/cte-djuttitsa-tea.jpg',
     legende: 'Panorama sur les plantations de thé du Complexe Théier de Djuttitsa (CTE) sous la brume matinale.',
     categorie: 'Paysages & Thé',
     date_ajout: '2026-08-10'
@@ -173,7 +173,7 @@ export const MOCK_MEDIAS: Media[] = [
   {
     id: 'm2',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
+    url: '/images/chefferie-ndoh-djuttitsa.jpg',
     legende: 'Conseil traditionnel et dignitaires lors d une cérémonie à la Chefferie de Ndoh-Djuttitsa.',
     categorie: 'Culture & Coutumes',
     date_ajout: '2026-07-15'
@@ -181,7 +181,7 @@ export const MOCK_MEDIAS: Media[] = [
   {
     id: 'm3',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80',
+    url: '/images/cma-ndoh-djuttitsa.jpg',
     legende: 'Bâtiment du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa.',
     categorie: 'Infrastructures',
     date_ajout: '2026-06-20'
@@ -189,7 +189,7 @@ export const MOCK_MEDIAS: Media[] = [
   {
     id: 'm4',
     type: 'photo',
-    url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
+    url: '/images/monts-bamboutos.jpg',
     legende: 'Relief des haut-plateaux de Ndoh-Djuttitsa et des Monts Bamboutos.',
     categorie: 'Paysages d Altitude',
     date_ajout: '2026-05-12'

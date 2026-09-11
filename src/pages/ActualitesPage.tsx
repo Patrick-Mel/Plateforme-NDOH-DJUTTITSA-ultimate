@@ -28,7 +28,7 @@ export const ActualitesPage: React.FC = () => {
         title="Journal & Actualités de NDOH-DJUTTITSA"
         subtitle="Suivez au quotidien la vie du village, les projets d investissement et les événements communautaires."
         badge="Presse & Information"
-        bgImage="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1920&q=80"
+        bgImage="/images/cte-djuttitsa-tea.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">

@@ -10,25 +10,25 @@ export const CulturePage: React.FC = () => {
       title: 'Danse Patrimoniale Lali & Njang',
       icon: Music,
       desc: 'Danses sacrées exécutées lors des grandes cérémonies royales et festivités traditionnelles. Les rythmes envoûtants du tam-tam et des balafons célèbrent la bravoure et les récoltes.',
-      image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80',
+      image: '/images/evenement-ndoh.jpg',
     },
     {
       title: 'Gastronomie Traditionnelle Bamiléké',
       icon: UtensilsCrossed,
       desc: 'Célébrée pour le taro à la sauce jaune préparée aux condiments secrets, le Koki de haricot cuit à la vapeur de feuilles de bananier, et le vin de palme de montagne.',
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80',
+      image: '/images/evenement-ndoh.jpg',
     },
     {
       title: 'Vêtement d Apparat : Le Toghu',
       icon: Shirt,
       desc: 'Étoffe royale brodée à la main de motifs géométriques dorés, rouges et blancs, portée par les dignitaires, princes et membres des sociétés secrètes.',
-      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',
+      image: '/images/chefferie-ndoh-djuttitsa.jpg',
     },
     {
       title: 'Artisanat & Ébénisterie Royale',
       icon: Sparkles,
       desc: 'Maîtrise de la sculpture sur bois (trônes à statuettes, masques rituels), de la vannerie et de la poterie en terre cuite cuite au feu de bois.',
-      image: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80',
+      image: '/images/chefferie-ndoh-djuttitsa.jpg',
     },
   ];
 
@@ -38,7 +38,7 @@ export const CulturePage: React.FC = () => {
         title="Culture & Traditions de NDOH-DJUTTITSA"
         subtitle="Richesse des coutumes Bamiléké, danses patrimoniales, gastronomie du terroir et savoir-faire ancestral."
         badge="Identité Culturelle"
-        bgImage="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80"
+        bgImage="/images/evenement-ndoh.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">

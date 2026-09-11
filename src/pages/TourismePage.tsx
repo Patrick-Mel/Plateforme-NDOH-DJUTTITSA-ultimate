@@ -11,19 +11,19 @@ export const TourismePage: React.FC = () => {
     {
       name: 'Complexe Théier de Djuttitsa (CTE)',
       desc: 'Plantations de thé s étendant à perte de vue sur les pentes volcaniques. Un paysage emblématique particulièrement impressionnant au lever du soleil lorsque la brume glisse sur les collines.',
-      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80',
+      image: '/images/cte-djuttitsa-tea.jpg',
       tag: 'Site Majeur',
     },
     {
       name: 'Hauts-Plateaux de Nkong-Ni (1 850 m - 2 050 m)',
       desc: 'Relief accidenté et crêtes majestueuses offrant un panorama à 360° sur le département de la Menoua et les plaines environnantes de la région de l Ouest.',
-      image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
+      image: '/images/monts-bamboutos.jpg',
       tag: 'Randonnée & Nature',
     },
     {
       name: 'Rivières & Sanctuaires Naturels d Altitude',
       desc: 'Sources d eau pures alimentant les vallées maraîchères et bosquets sacrés protégés par la tradition coutumière.',
-      image: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80',
+      image: '/images/monts-bamboutos.jpg',
       tag: 'Eaux vives',
     },
   ];
@@ -34,7 +34,7 @@ export const TourismePage: React.FC = () => {
         title="Tourisme & Paysages Théiers"
         subtitle="Découvrez la sérénité des hauts-plateaux : plantations du CTE, collines brumeuses et air pur de la Menoua."
         badge="Écotourisme d Altitude"
-        bgImage="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80"
+        bgImage="/images/cte-djuttitsa-tea.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">

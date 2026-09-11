@@ -21,7 +21,7 @@ export const GaleriePage: React.FC = () => {
         title="Médiathèque Visuelle & Photothèque"
         subtitle="Galerie officielle des paysages, événements traditionnels et visages de NDOH-DJUTTITSA."
         badge="Photothèque & Vidéos"
-        bgImage="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80"
+        bgImage="/images/chefferie-ndoh-djuttitsa.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">

@@ -12,7 +12,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   title,
   subtitle,
   badge,
-  bgImage = 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1920&q=80',
+  bgImage = '/images/cte-djuttitsa-tea.jpg',
 }) => {
   return (
     <div className="relative py-16 md:py-24 px-4 sm:px-8 overflow-hidden bg-slate-100 dark:bg-[#0B0F19] text-slate-900 dark:text-white transition-colors duration-300 border-b border-slate-200/60 dark:border-slate-800">

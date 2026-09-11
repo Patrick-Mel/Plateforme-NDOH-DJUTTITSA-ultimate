@@ -47,7 +47,7 @@ export const ServicesPage: React.FC = () => {
         title="Infrastructures, Santé & Services"
         subtitle="Consultez l annuaire des établissements scolaires, du CMA de Ndoh-Djuttitsa et des acteurs économiques de la chefferie."
         badge="Annuaire Communautaire"
-        bgImage="https://upload.wikimedia.org/wikipedia/commons/c/c2/Dschang_Le_Centre_climatique.jpg"
+        bgImage="/images/cma-ndoh-djuttitsa.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">

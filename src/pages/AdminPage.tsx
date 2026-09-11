@@ -132,7 +132,7 @@ export const AdminPage: React.FC = () => {
       titre: newTitle,
       chapeau: newChapeau || newTitle,
       contenu: newContent,
-      image_url: newImageUrl || 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=1200&q=80',
+      image_url: newImageUrl || '/images/cte-djuttitsa-tea.jpg',
       categorie: newCategory,
       date_publication: new Date().toISOString(),
       publie: true,

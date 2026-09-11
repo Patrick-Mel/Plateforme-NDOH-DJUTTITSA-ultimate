@@ -34,7 +34,7 @@ export const HistoirePage: React.FC = () => {
         title="Histoire & Dynastie de Ndoh-Djuttitsa"
         subtitle="De la fondation en 1908 à la chefferie moderne de Ndoh-Djuttitsa (Menoua)."
         badge="Mémoire & Dynastie"
-        bgImage="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1920&q=80"
+        bgImage="/images/chefferie-ndoh-djuttitsa.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
@@ -67,7 +67,7 @@ export const HistoirePage: React.FC = () => {
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 h-[400px]">
             <img
-              src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80"
+              src="/images/chefferie-ndoh-djuttitsa.jpg"
               alt="Chefferie traditionnelle de Ndoh-Djuttitsa"
               className="w-full h-full object-cover"
             />
