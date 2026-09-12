@@ -169,9 +169,15 @@ export const ServicesPage: React.FC = () => {
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {ent.description}
                 </p>
-                <div className="space-y-1 text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800 font-medium">
-                  <p>📍 {getQuartierNom(ent.quartier_id)} · {ent.adresse}</p>
-                  <p>📞 {ent.contact}</p>
+                <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800 font-medium">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span>{getQuartierNom(ent.quartier_id)} · {ent.adresse}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                    <span>{ent.contact}</span>
+                  </div>
                 </div>
               </Card>
             ))}
@@ -192,9 +198,12 @@ export const ServicesPage: React.FC = () => {
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {assoc.objet}
                 </p>
-                <div className="text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
-                  <p>👑 Président : {assoc.president}</p>
-                  <p>📞 {assoc.contact}</p>
+                <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800 font-medium">
+                  <p><span className="font-bold text-slate-700 dark:text-slate-300">Président :</span> {assoc.president}</p>
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                    <span>{assoc.contact}</span>
+                  </div>
                 </div>
               </Card>
             ))}

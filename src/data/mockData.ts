@@ -216,7 +216,7 @@ export const MOCK_USER_ROLES: RoleDefinition[] = [
     password: 'ModoNdoh2026!',
     badgeVariant: 'purple',
     description: 'Gestion des réclamations, messages citoyens et assistance visiteurs.',
-    privileges: ['Boîte de réception des messages citoyens', 'Modération des commentaires et requêtes', 'Envoi de réponses simulées aux habitants', 'FAQ et accompagnement']
+    privileges: ['Boîte de réception des messages citoyens', 'Modération des commentaires et requêtes', 'Envoi de réponses officielles aux habitants', 'FAQ et accompagnement']
   },
   {
     role: 'archiviste',

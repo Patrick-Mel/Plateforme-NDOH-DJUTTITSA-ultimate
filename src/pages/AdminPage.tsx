@@ -214,7 +214,7 @@ export const AdminPage: React.FC = () => {
     setUploadTags('');
     setUploadedFileUrl('');
     setUploadedFileName('');
-    showToast('🎉 Fichier téléversé et disponible sur tout le site !');
+    showToast('Fichier téléversé et disponible sur le site.');
   };
 
   const handleDeleteMedia = (id: string) => {
@@ -226,7 +226,7 @@ export const AdminPage: React.FC = () => {
 
   const copyToClipboard = (text: string, label = 'Lien de partage') => {
     navigator.clipboard.writeText(text);
-    showToast(`✅ ${label} copié dans le presse-papier !`);
+    showToast(`${label} copié dans le presse-papier.`);
   };
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -463,7 +463,7 @@ export const AdminPage: React.FC = () => {
 
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
               <p className="text-[11px] text-slate-400">
-                🔒 Accès sécurisé par contrôle d'accès RBAC · Groupement Bafou, Menoua
+                Accès sécurisé par contrôle d'accès RBAC · Groupement Bafou, Menoua
               </p>
             </div>
           </Card>
@@ -800,7 +800,7 @@ export const AdminPage: React.FC = () => {
                         {uploadType === 'photo' && <img src={uploadedFileUrl} alt="Aperçu" className="w-full h-32 object-cover rounded-lg" />}
                         {uploadType === 'video' && <video src={uploadedFileUrl} controls className="w-full h-32 rounded-lg bg-black" />}
                         {uploadType === 'audio' && <audio src={uploadedFileUrl} controls className="w-full mt-2" />}
-                        {uploadType === 'document' && <div className="p-3 rounded bg-white dark:bg-slate-800 font-mono text-[11px] text-slate-700 dark:text-slate-300">📄 Document PDF / Fichier prêt pour le téléversement</div>}
+                        {uploadType === 'document' && <div className="p-3 rounded bg-white dark:bg-slate-800 font-mono text-[11px] text-slate-700 dark:text-slate-300">Document PDF / Fichier prêt pour le téléversement</div>}
                       </div>
                     )}
                   </div>
@@ -814,10 +814,10 @@ export const AdminPage: React.FC = () => {
                         onChange={(e) => setUploadType(e.target.value as any)}
                         className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500"
                       >
-                        <option value="photo">🖼️ Photo / Image (JPG, PNG)</option>
-                        <option value="video">🎬 Vidéo (MP4, WEBM)</option>
-                        <option value="audio">🎵 Fichier Audio / Chant (MP3, WAV)</option>
-                        <option value="document">📄 Document PDF / Officiel</option>
+                        <option value="photo">Photo / Image (JPG, PNG)</option>
+                        <option value="video">Vidéo (MP4, WEBM)</option>
+                        <option value="audio">Fichier Audio / Chant (MP3, WAV)</option>
+                        <option value="document">Document PDF / Officiel</option>
                       </select>
                     </div>
 
@@ -1184,57 +1184,57 @@ export const AdminPage: React.FC = () => {
                     <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
                       <tr>
                         <td className="py-2.5 px-3 font-sans font-bold">Configuration système & Alerte d'urgence</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
                       </tr>
                       <tr>
                         <td className="py-2.5 px-3 font-sans font-bold">Attribution et modification des rôles</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
                       </tr>
                       <tr>
                         <td className="py-2.5 px-3 font-sans font-bold">Téléversement & Partage multimédia</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
                       </tr>
                       <tr>
                         <td className="py-2.5 px-3 font-sans font-bold">Rédaction & Publication d'actualités</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
                       </tr>
                       <tr>
                         <td className="py-2.5 px-3 font-sans font-bold">Boîte de réception des messages citoyens</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
                       </tr>
                       <tr>
                         <td className="py-2.5 px-3 font-sans font-bold">Gestion du Conservatoire Sonore & Patrimoine</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
-                        <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
-                        <td className="py-2.5 px-3 text-red-500">❌ NON</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
+                        <td className="py-2.5 px-3 text-emerald-600 font-bold">Autorisé</td>
+                        <td className="py-2.5 px-3 text-slate-400">Restreint</td>
                       </tr>
                     </tbody>
                   </table>
@@ -1691,7 +1691,7 @@ export const AdminPage: React.FC = () => {
                         maintenanceMode ? 'bg-red-600 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
                       }`}
                     >
-                      {maintenanceMode ? '🚨 Site en Maintenance (Public Bloqué)' : '🟢 Site En Ligne (Accès Public)'}
+                      {maintenanceMode ? 'Site en Maintenance (Accès restreint)' : 'Site En Ligne (Accès Public)'}
                     </button>
                   </div>
                 </div>
