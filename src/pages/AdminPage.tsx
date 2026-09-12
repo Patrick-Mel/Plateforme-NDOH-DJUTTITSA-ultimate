@@ -140,7 +140,7 @@ export const AdminPage: React.FC = () => {
       email: 'dr.marie@sante.cm',
       date: 'Il y a 3 jours',
       sujet: 'Campagne de consultation au CMA',
-      message: 'Nous proposons d organiser une journée de consultations médicales et ophtalmologiques gratuites au CMA de Ndoh-Djuttitsa le mois prochain.',
+      message: 'Nous proposons d\'organiser une journée de consultations médicales et ophtalmologiques gratuites au CMA de Ndoh-Djuttitsa le mois prochain.',
       statut: 'En cours'
     },
     {
@@ -149,7 +149,7 @@ export const AdminPage: React.FC = () => {
       email: 'paul.k@yahoo.fr',
       date: 'Il y a 5 jours',
       sujet: 'Entretien des pistes maraîchères',
-      message: 'Demande d intervention du matériel communal pour l aménagement du pont en bois de Loung après les fortes pluies.',
+      message: 'Demande d\'intervention du matériel communal pour l\'aménagement du pont en bois de Loung après les fortes pluies.',
       statut: 'Traité'
     }
   ]);
@@ -240,7 +240,7 @@ export const AdminPage: React.FC = () => {
     try {
       let authenticated = false;
 
-      // 1. Tenter d abord la connexion via Supabase Auth réelles si configuré
+      // 1. Tenter d'abord la connexion via Supabase Auth réelles si configuré
       if (isSupabaseConfigured && supabase) {
         const { data, error } = await supabase.auth.signInWithPassword({
           email: cleanEmail,
@@ -279,7 +279,7 @@ export const AdminPage: React.FC = () => {
         setLoginError('Adresse email ou mot de passe incorrect. Veuillez vérifier vos identifiants.');
       }
     } catch (err: any) {
-      // En cas d erreur Supabase (ex. user not found), tenter le registre de rôles
+      // En cas d'erreur Supabase (ex. user not found), tenter le registre de rôles
       const matchedRole = MOCK_USER_ROLES.find(
         (r) => r.email.toLowerCase() === cleanEmail && r.password.trim() === cleanPassword
       );
@@ -391,7 +391,7 @@ export const AdminPage: React.FC = () => {
             </div>
             <div>
               <h1 className="text-2xl font-extrabold font-heading tracking-tight text-slate-900 dark:text-white">
-                Console d Administration
+                Console d'Administration
               </h1>
               <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
                 Portail officiel de la Chefferie Supérieure & Communauté de <span className="text-emerald-700 dark:text-emerald-400 font-bold">NDOH-DJUTTITSA</span>.
@@ -463,7 +463,7 @@ export const AdminPage: React.FC = () => {
 
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
               <p className="text-[11px] text-slate-400">
-                🔒 Accès sécurisé par contrôle d accès RBAC · Groupement Bafou, Menoua
+                🔒 Accès sécurisé par contrôle d'accès RBAC · Groupement Bafou, Menoua
               </p>
             </div>
           </Card>
@@ -498,7 +498,7 @@ export const AdminPage: React.FC = () => {
             <button
               onClick={() => setEmergencyAlertActive(false)}
               className="text-amber-200 hover:text-white"
-              title="Désactiver l alerte"
+              title="Désactiver l'alerte"
             >
               <X className="w-4 h-4" />
             </button>
@@ -543,7 +543,7 @@ export const AdminPage: React.FC = () => {
         </div>
       </div>
 
-      {/* SI LE RÔLE EST HABITANT : ÉCRAN CITOYEN RESTREINT AVEC DEMANDE D ÉLÉVATION */}
+      {/* SI LE RÔLE EST HABITANT : ÉCRAN CITOYEN RESTREINT AVEC DEMANDE D'ÉLÉVATION */}
       {currentRole === 'habitant' ? (
         <div className="max-w-4xl mx-auto px-4 py-12">
           <Card className="p-8 space-y-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] shadow-xl text-center">
@@ -551,7 +551,7 @@ export const AdminPage: React.FC = () => {
               <AlertTriangle className="w-8 h-8 text-amber-600 dark:text-amber-400" />
             </div>
             <div className="space-y-2">
-              <Badge variant="amber">Accès Réservé à l Équipe Administrative</Badge>
+              <Badge variant="amber">Accès Réservé à l'Équipe Administrative</Badge>
               <h2 className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
                 Portail Citoyen - Privilèges Limitées
               </h2>
@@ -560,14 +560,14 @@ export const AdminPage: React.FC = () => {
               </p>
             </div>
 
-            {/* Formulaire de demande d élévation de rôle */}
+            {/* Formulaire de demande d'élévation de rôle */}
             <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left space-y-4 max-w-lg mx-auto">
               <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
                 <Send className="w-4 h-4 text-emerald-600" />
-                <span>Demander des droits d administration ou de rédaction</span>
+                <span>Demander des droits d'administration ou de rédaction</span>
               </h3>
               <p className="text-xs text-slate-500">
-                Vous êtes membre d un comité de quartier ou journaliste ? Envoyez votre demande au secrétariat de la Chefferie Supérieure.
+                Vous êtes membre d'un comité de quartier ou journaliste ? Envoyez votre demande au secrétariat de la Chefferie Supérieure.
               </p>
               <form onSubmit={(e) => { e.preventDefault(); showToast('Votre demande a été envoyée au secrétariat !'); }} className="space-y-3 text-xs">
                 <input
@@ -845,7 +845,7 @@ export const AdminPage: React.FC = () => {
                         rows={2}
                         value={uploadLegende}
                         onChange={(e) => setUploadLegende(e.target.value)}
-                        placeholder="Ex. Enregistrement de la cérémonie d inauguration du CMA de Ndoh-Djuttitsa..."
+                        placeholder="Ex. Enregistrement de la cérémonie d'inauguration du CMA de Ndoh-Djuttitsa..."
                         className="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
                       />
                     </div>
@@ -985,11 +985,11 @@ export const AdminPage: React.FC = () => {
                             className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white gap-2 font-bold text-xs transition-opacity"
                           >
                             <Eye className="w-5 h-5" />
-                            <span>Ouvrir l aperçu</span>
+                            <span>Ouvrir l'aperçu</span>
                           </button>
                         </div>
 
-                        {/* Corps d informations et boutons de partage */}
+                        {/* Corps d'informations et boutons de partage */}
                         <div className="p-5 space-y-4">
                           <div>
                             <div className="flex items-center justify-between text-[11px] text-slate-500 mb-1">
@@ -1011,7 +1011,7 @@ export const AdminPage: React.FC = () => {
                             </div>
                           )}
 
-                          {/* Barre d actions de Partage Direct */}
+                          {/* Barre d'actions de Partage Direct */}
                           <div className="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-2">
                             <div className="flex items-center gap-2">
                               <button
@@ -1027,7 +1027,7 @@ export const AdminPage: React.FC = () => {
                                 onClick={() => setEmbedMedia(item)}
                                 type="button"
                                 className="py-2 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
-                                title="Code d intégration HTML"
+                                title="Code d'intégration HTML"
                               >
                                 <Code className="w-3.5 h-3.5 text-blue-600" />
                                 <span className="hidden sm:inline">Embed</span>
@@ -1070,7 +1070,7 @@ export const AdminPage: React.FC = () => {
           {adminTab === 'roles' && (
             <div className="space-y-8">
               
-              {/* Formulaire d ajout d utilisateur */}
+              {/* Formulaire d'ajout d'utilisateur */}
               <Card className="p-6 bg-white dark:bg-[#111827] border-slate-200 dark:border-slate-800 space-y-4 shadow-sm">
                 <h3 className="text-lg font-bold font-heading text-slate-900 dark:text-white flex items-center gap-2">
                   <UserCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
@@ -1125,12 +1125,12 @@ export const AdminPage: React.FC = () => {
                 </form>
               </Card>
 
-              {/* Tableau d affectation des rôles */}
+              {/* Tableau d'affectation des rôles */}
               <Card className="p-6 sm:p-8 bg-white dark:bg-[#111827] border-slate-200 dark:border-slate-800 space-y-6 shadow-sm">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
                   <div>
                     <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white">Liste des Membres et Privilèges RBAC</h3>
-                    <p className="text-xs text-slate-500">Modifiez le rôle d un utilisateur en temps réel dans le système.</p>
+                    <p className="text-xs text-slate-500">Modifiez le rôle d'un utilisateur en temps réel dans le système.</p>
                   </div>
                   <Badge variant="emerald">{usersList.length} Utilisateurs Inscrits</Badge>
                 </div>
@@ -1200,7 +1200,7 @@ export const AdminPage: React.FC = () => {
                     </thead>
                     <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60">
                       <tr>
-                        <td className="py-2.5 px-3 font-sans font-bold">Configuration système & Alerte d urgence</td>
+                        <td className="py-2.5 px-3 font-sans font-bold">Configuration système & Alerte d'urgence</td>
                         <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
                         <td className="py-2.5 px-3 text-red-500">❌ NON</td>
                         <td className="py-2.5 px-3 text-red-500">❌ NON</td>
@@ -1227,7 +1227,7 @@ export const AdminPage: React.FC = () => {
                         <td className="py-2.5 px-3 text-red-500">❌ NON</td>
                       </tr>
                       <tr>
-                        <td className="py-2.5 px-3 font-sans font-bold">Rédaction & Publication d actualités</td>
+                        <td className="py-2.5 px-3 font-sans font-bold">Rédaction & Publication d'actualités</td>
                         <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
                         <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
                         <td className="py-2.5 px-3 text-emerald-600 font-bold">✅ OUI</td>
@@ -1274,7 +1274,7 @@ export const AdminPage: React.FC = () => {
 
                 <form onSubmit={handleAddNews} className="space-y-3 text-xs">
                   <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300">Titre de l article *</label>
+                    <label className="font-bold text-slate-700 dark:text-slate-300">Titre de l'article *</label>
                     <input
                       type="text"
                       required
@@ -1300,7 +1300,7 @@ export const AdminPage: React.FC = () => {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="font-bold text-slate-700 dark:text-slate-300">URL d image ou média téléversé</label>
+                    <label className="font-bold text-slate-700 dark:text-slate-300">URL d'image ou média téléversé</label>
                     <input
                       type="text"
                       value={newImageUrl}
@@ -1334,7 +1334,7 @@ export const AdminPage: React.FC = () => {
                   </div>
 
                   <Button type="submit" size="sm" className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold">
-                    Publier l Article
+                    Publier l'Article
                   </Button>
                 </form>
               </Card>
@@ -1378,7 +1378,7 @@ export const AdminPage: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white flex items-center gap-2">
                     <Calendar className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-                    <span>Gestion de l Agenda & Événements Communautaires</span>
+                    <span>Gestion de l'Agenda & Événements Communautaires</span>
                   </h3>
                   <p className="text-xs text-slate-500">Programmation des réunions de développement et tournois de football.</p>
                 </div>
@@ -1523,7 +1523,7 @@ export const AdminPage: React.FC = () => {
                           className="px-3 py-1.5 rounded-xl bg-purple-700 text-white font-bold flex items-center gap-1.5 hover:bg-purple-800 transition-colors"
                         >
                           <Send className="w-3.5 h-3.5" />
-                          <span>Répondre à l habitant</span>
+                          <span>Répondre à l'habitant</span>
                         </button>
                       </div>
 
@@ -1608,7 +1608,7 @@ export const AdminPage: React.FC = () => {
                     <span className="px-2 py-0.5 rounded bg-indigo-200 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 font-bold text-[10px]">MP3 Audio</span>
                   </div>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Enregistrements audios d époque des cérémonies royales, chants des moissons et louanges des dignitaires.
+                    Enregistrements audios d'époque des cérémonies royales, chants des moissons et louanges des dignitaires.
                   </p>
                   <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" className="w-full mt-2" />
                 </div>
@@ -1643,7 +1643,7 @@ export const AdminPage: React.FC = () => {
                 <div>
                   <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white flex items-center gap-2">
                     <Sliders className="w-5 h-5 text-amber-500" />
-                    <span>Contrôle Système & Bannières d Urgence du Village</span>
+                    <span>Contrôle Système & Bannières d'Urgence du Village</span>
                   </h3>
                   <p className="text-xs text-slate-500">Panneau exclusif du Super Administrateur (Chefferie Supérieure).</p>
                 </div>
@@ -1652,17 +1652,17 @@ export const AdminPage: React.FC = () => {
 
               <div className="space-y-6 text-xs">
                 
-                {/* Switcher Bannière d urgence */}
+                {/* Switcher Bannière d'urgence */}
                 <div className="p-5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-bold text-sm text-slate-900 dark:text-white">Bannière d Alerte d Urgence du Village</h4>
+                      <h4 className="font-bold text-sm text-slate-900 dark:text-white">Bannière d'Alerte d'Urgence du Village</h4>
                       <p className="text-slate-500">Diffuser un message prioritaire en haut de toutes les pages du site.</p>
                     </div>
                     <button
                       onClick={() => {
                         setEmergencyAlertActive(!emergencyAlertActive);
-                        showToast(emergencyAlertActive ? 'Alerte d urgence désactivée' : 'Alerte d urgence activée sur le site');
+                        showToast(emergencyAlertActive ? 'Alerte d\'urgence désactivée' : 'Alerte d\'urgence activée sur le site');
                       }}
                       className={`px-4 py-2 rounded-xl font-bold transition-colors ${
                         emergencyAlertActive ? 'bg-amber-600 text-white' : 'bg-slate-300 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
@@ -1674,7 +1674,7 @@ export const AdminPage: React.FC = () => {
 
                   {emergencyAlertActive && (
                     <div className="space-y-2">
-                      <label className="font-bold text-slate-700 dark:text-slate-300">Texte de l alerte d urgence</label>
+                      <label className="font-bold text-slate-700 dark:text-slate-300">Texte de l'alerte d'urgence</label>
                       <input
                         type="text"
                         value={emergencyAlertText}
@@ -1833,7 +1833,7 @@ export const AdminPage: React.FC = () => {
 
             <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Code className="w-5 h-5 text-blue-600" />
-              <span>Code d Intégration HTML (Embed Snippet)</span>
+              <span>Code d'Intégration HTML (Embed Snippet)</span>
             </h3>
 
             <p className="text-slate-500">
@@ -1854,7 +1854,7 @@ export const AdminPage: React.FC = () => {
                                   embedMedia.type === 'video' ? `<video src="${embedMedia.url}" controls></video>` :
                                   embedMedia.type === 'audio' ? `<audio src="${embedMedia.url}" controls></audio>` :
                                   `<iframe src="${embedMedia.url}"></iframe>`;
-                  copyToClipboard(snippet, 'Code HTML d intégration');
+                  copyToClipboard(snippet, 'Code HTML d\'intégration');
                   setEmbedMedia(null);
                 }}
                 size="sm"

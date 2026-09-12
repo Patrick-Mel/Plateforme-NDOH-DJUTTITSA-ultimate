@@ -44,7 +44,7 @@ export const ServicesPage: React.FC = () => {
     <div className="space-y-12 pb-20">
       <PageHeader
         title="Infrastructures, Santé & Services"
-        subtitle="Consultez l annuaire des établissements scolaires, du CMA de Ndoh-Djuttitsa et des acteurs économiques de la chefferie."
+        subtitle="Consultez l'annuaire des établissements scolaires, du CMA de Ndoh-Djuttitsa et des acteurs économiques de la chefferie."
         badge="Annuaire Communautaire"
         bgImage="/images/cma-ndoh-djuttitsa.jpg"
       />

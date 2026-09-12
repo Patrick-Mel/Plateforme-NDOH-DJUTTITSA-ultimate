@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400 font-normal">
-              Chefferie traditionnelle de 3ème degré rattachée au Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l Ouest-Cameroun.
+              Chefferie traditionnelle de 3ème degré rattachée au Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l'Ouest-Cameroun.
             </p>
           </div>
 

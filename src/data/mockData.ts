@@ -90,19 +90,19 @@ export interface DocumentOfficiel {
 export const MOCK_QUARTIERS: Quartier[] = [
   { id: 'q1', nom: 'Ndoh Centre', description: 'Cœur historique de la chefferie de Ndoh-Djuttitsa, lieu des institutions et du marché.' },
   { id: 'q2', nom: 'Secteur CTE / Domaine du Thé', description: 'Hauts-plateaux hébergeant le complexe théier et les vastes plantations industrielles de Djuttitsa.' },
-  { id: 'q3', nom: 'Loung & Aghong', description: 'Zones agricoles fertiles orientées maraîchage d altitude (pomme de terre, haricot).' },
+  { id: 'q3', nom: 'Loung & Aghong', description: 'Zones agricoles fertiles orientées maraîchage d\'altitude (pomme de terre, haricot).' },
   { id: 'q4', nom: 'Tallé & Ngui', description: 'Quartiers verdoyants bordés de ruisseaux et de sanctuaires traditionnels.' },
   { id: 'q5', nom: 'Ndouolah & Meloung', description: 'Zones résidentielles paisibles et collines offrant une vue panoramique sur la Menoua.' },
-  { id: 'q6', nom: 'Mezet & Sa a', description: 'Secteurs d élevage et de cultures vivrières sous climat frais.' },
-  { id: 'q7', nom: 'Lingang & Femmock', description: 'Quartiers d accès haut entre collines et chemins de randonnée.' }
+  { id: 'q6', nom: 'Mezet & Sa a', description: 'Secteurs d\'élevage et de cultures vivrières sous climat frais.' },
+  { id: 'q7', nom: 'Lingang & Femmock', description: 'Quartiers d\'accès haut entre collines et chemins de randonnée.' }
 ];
 
 export const MOCK_ACTUALITES: Actualite[] = [
   {
     id: 'act-1',
-    titre: 'Travaux de rénovation et d extension du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa',
-    chapeau: 'Modernisation des équipements de santé et renforcement des capacités d accueil pour les populations du secteur Nkong-Ni.',
-    contenu: `Le Centre Médical d'Arrondissement (CMA) de Ndoh-Djuttitsa bénéficie d'un programme de rénovation majeure soutenu par la communauté et les partenaires locaux. L'objectif est de doter l'établissement de blocs de soins modernisés, d'une maternité équipée et d'une meilleure prise en charge des urgences.\n\nLe Chef de la chefferie de Ndoh-Djuttitsa et les notables ont salué cette avancée cruciale pour l'amélioration de la qualité de vie des habitants du village et des zones environnantes.`,
+    titre: 'Travaux de rénovation et d\'extension du Centre Médical d\'Arrondissement (CMA) de Ndoh-Djuttitsa',
+    chapeau: 'Modernisation des équipements de santé et renforcement des capacités d\'accueil pour les populations du secteur Nkong-Ni.',
+    contenu: `Grâce au partenariat entre le Ministère de la Santé Publique et le Comité de Développement de Ndoh-Djuttitsa (CODEV), le CMA de Ndoh-Djuttitsa bénéficie d'une extension moderne comprenant un nouveau pavillon de maternité et des salles de garde équipées.\n\nCe projet d'infrastructure garantit désormais des soins de proximité 24h/24 pour l'ensemble des habitants des 7 quartiers du village ainsi que pour le personnel des plantations théières avoisinantes.`,
     image_url: '/images/cma-ndoh-djuttitsa.jpg',
     categorie: 'Santé & Infrastructures',
     date_publication: '2026-09-02T09:00:00Z',
@@ -122,9 +122,9 @@ export const MOCK_ACTUALITES: Actualite[] = [
   },
   {
     id: 'act-3',
-    titre: 'Aménagement des infrastructures scolaires à l École Publique de Djuttitsa',
+    titre: 'Aménagement des infrastructures scolaires à l\'École Publique de Djuttitsa',
     chapeau: 'Remise de matériel pédagogique et entretien des salles de classe pour la rentrée scolaire.',
-    contenu: `Le Comité de Développement du village, en concertation avec le corps enseignant et la Chefferie de Ndoh-Djuttitsa, a concrétisé la réfection de deux bâtiments scolaires à Djuttitsa.\n\nDes travaux d étanchéité et d approvisionnement en bancs de classe ont été réceptionnés à l approche de la rentrée scolaire.`,
+    contenu: `Le Comité de Développement du village, en concertation avec le corps enseignant et la Chefferie de Ndoh-Djuttitsa, a concrétisé la réfection de deux bâtiments scolaires à Djuttitsa.\n\nDes travaux d'étanchéité et d'approvisionnement en bancs de classe ont été réceptionnés à l'approche de la rentrée scolaire.`,
     image_url: '/images/ecole-djuttitsa.jpg',
     categorie: 'Éducation & Infrastructures',
     date_publication: '2026-08-15T15:00:00Z',
@@ -138,7 +138,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
     id: 'evt-1',
     titre: 'Championnat Inter-Quartiers de Football & Rencontres Culturelles',
     description: 'Compétition sportive estivale annuelle réunissant la jeunesse des différents quartiers de Ndoh-Djuttitsa (Ndoh, Loung, Mezet, Sa a...).',
-    lieu: 'Stade de l École Publique de Djuttitsa',
+    lieu: 'Stade de l\'École Publique de Djuttitsa',
     date_debut: '2026-12-18T09:00:00Z',
     date_fin: '2026-12-24T18:00:00Z',
     image_url: '/images/evenement-ndoh.jpg',
@@ -147,7 +147,7 @@ export const MOCK_EVENEMENTS: Evenement[] = [
   {
     id: 'evt-2',
     titre: 'Concertation Communautaire Annuelle de Développement',
-    description: 'Bilan des projets d adduction d eau et de voirie, concertation sur les infrastructures et célébration coutumière à la Chefferie de Ndoh-Djuttitsa.',
+    description: 'Bilan des projets d\'adduction d\'eau et de voirie, concertation sur les infrastructures et célébration coutumière à la Chefferie de Ndoh-Djuttitsa.',
     lieu: 'Foyer Communautaire de Ndoh-Djuttitsa',
     date_debut: '2026-11-14T10:00:00Z',
     date_fin: '2026-11-14T17:00:00Z',
@@ -186,7 +186,7 @@ export const MOCK_USER_ROLES: RoleDefinition[] = [
     password: 'SuperAdmin2026!',
     badgeVariant: 'amber',
     description: 'Chefferie Supérieure & Haut Commandement - Contrôle total de la plateforme.',
-    privileges: ['Configuration système & mode urgence', 'Gestion des comptes et rôles RBAC', 'Logs d audit et maintenance', 'Gestion globale des contenus']
+    privileges: ['Configuration système & mode urgence', 'Gestion des comptes et rôles RBAC', 'Logs d\'audit et maintenance', 'Gestion globale des contenus']
   },
   {
     role: 'administrateur',
@@ -206,7 +206,7 @@ export const MOCK_USER_ROLES: RoleDefinition[] = [
     password: 'RedacNdoh2026!',
     badgeVariant: 'blue',
     description: 'Rédaction et journalisme communautaire pour le village Ndoh-Djuttitsa.',
-    privileges: ['Rédaction & édition des actualités', 'Gestion de l agenda des événements', 'Téléversement de photos/vidéos associées', 'Workflow de publication']
+    privileges: ['Rédaction & édition des actualités', 'Gestion de l\'agenda des événements', 'Téléversement de photos/vidéos associées', 'Workflow de publication']
   },
   {
     role: 'moderateur',
@@ -226,7 +226,7 @@ export const MOCK_USER_ROLES: RoleDefinition[] = [
     password: 'ArchiveNdoh2026!',
     badgeVariant: 'indigo',
     description: 'Numérisation, préservation et catalogage des trésors culturels du village.',
-    privileges: ['Gestion du conservatoire sonore et visuel', 'Téléversement de chants traditionnels & audios', 'Archivage des manuscrits et dynasties', 'Partage sécurisé d archives']
+    privileges: ['Gestion du conservatoire sonore et visuel', 'Téléversement de chants traditionnels & audios', 'Archivage des manuscrits et dynasties', 'Partage sécurisé d\'archives']
   },
   {
     role: 'habitant',
@@ -258,7 +258,7 @@ export const MOCK_MEDIAS: Media[] = [
     id: 'm2',
     type: 'photo',
     url: '/images/chefferie-ndoh-djuttitsa.jpg',
-    legende: 'Conseil traditionnel et dignitaires lors d une cérémonie à la Chefferie de Ndoh-Djuttitsa.',
+    legende: 'Conseil traditionnel et dignitaires lors d\'une cérémonie à la Chefferie de Ndoh-Djuttitsa.',
     categorie: 'Culture & Coutumes',
     date_ajout: '2026-07-15',
     taille_mo: 4.1,
@@ -271,7 +271,7 @@ export const MOCK_MEDIAS: Media[] = [
     id: 'm3',
     type: 'photo',
     url: '/images/cma-ndoh-djuttitsa.jpg',
-    legende: 'Bâtiment du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa.',
+    legende: 'Bâtiment du Centre Médical d\'Arrondissement (CMA) de Ndoh-Djuttitsa.',
     categorie: 'Infrastructures',
     date_ajout: '2026-06-20',
     taille_mo: 2.8,
@@ -284,8 +284,8 @@ export const MOCK_MEDIAS: Media[] = [
     id: 'm4',
     type: 'photo',
     url: '/images/monts-bamboutos.jpg',
-    legende: 'Relief des haut-plateaux de Ndoh-Djuttitsa et des Monts Bamboutos.',
-    categorie: 'Paysages d Altitude',
+    legende: 'Relief des hauts-plateaux de Ndoh-Djuttitsa et des Monts Bamboutos.',
+    categorie: 'Paysages d\'Altitude',
     date_ajout: '2026-05-12',
     taille_mo: 5.0,
     auteur_role: 'Rédacteur',
@@ -337,26 +337,26 @@ export const MOCK_MEDIAS: Media[] = [
 export const MOCK_ECOLES: Ecole[] = [
   { id: 'e1', nom: 'École Publique de Djuttitsa', type: 'Primaire Publique', contact: '+237 677 22 33 44', quartier_id: 'q1' },
   { id: 'e2', nom: 'Lycée Bilingue de Djuttitsa', type: 'Secondaire Général Public', contact: '+237 699 44 55 66', quartier_id: 'q1' },
-  { id: 'e3', nom: 'CETA de Djuttitsa (Collège d Enseignement Technique Agricole)', type: 'Secondaire Technique & Agricole', contact: '+237 675 11 22 33', quartier_id: 'q2' }
+  { id: 'e3', nom: 'CETA de Djuttitsa (Collège d\'Enseignement Technique Agricole)', type: 'Secondaire Technique & Agricole', contact: '+237 675 11 22 33', quartier_id: 'q2' }
 ];
 
 export const MOCK_CENTRES_SANTE: CentreSante[] = [
-  { id: 'cs1', nom: 'Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa', type: 'Centre Médical Public', contact: '+237 690 12 34 56', urgences_24_7: true, quartier_id: 'q1' },
+  { id: 'cs1', nom: 'Centre Médical d\'Arrondissement (CMA) de Ndoh-Djuttitsa', type: 'Centre Médical Public', contact: '+237 690 12 34 56', urgences_24_7: true, quartier_id: 'q1' },
   { id: 'cs2', nom: 'Poste de Santé Communautaire de Loung-Djuttitsa', type: 'Soins de Proximité', contact: '+237 671 99 88 77', urgences_24_7: false, quartier_id: 'q3' }
 ];
 
 export const MOCK_ENTREPRISES: Entreprise[] = [
-  { id: 'ent1', nom: 'Complexe Théier de Djuttitsa (CTE - Cameroon Tea Estates)', categorie: 'Agro-Industrie & Thé', description: 'Exploitation et transformation industrielle du thé de montagne reconnu à l international.', contact: '+237 233 45 67 89', adresse: 'Secteur CTE, Hauts-Plateaux', quartier_id: 'q2' },
+  { id: 'ent1', nom: 'Complexe Théier de Djuttitsa (CTE - Cameroon Tea Estates)', categorie: 'Agro-Industrie & Thé', description: 'Exploitation et transformation industrielle du thé de montagne reconnu à l\'international.', contact: '+237 233 45 67 89', adresse: 'Secteur CTE, Hauts-Plateaux', quartier_id: 'q2' },
   { id: 'ent2', nom: 'Coopérative des Maraîchers de Nkong-Ni / Djuttitsa', categorie: 'Agriculture Vivrière', description: 'Production et distribution de pomme de terre, haricot et légumes de montagne.', contact: '+237 677 88 99 00', adresse: 'Marché de Ndoh Centre', quartier_id: 'q1' },
   { id: 'ent3', nom: 'Auberge & Relais des Plateaux de Djuttitsa', categorie: 'Hôtellerie & Restauration', description: 'Hébergement calme offrant une vue imprenable sur les vallées et les plantations.', contact: '+237 699 11 22 33', adresse: 'Quartier Ndouolah', quartier_id: 'q5' }
 ];
 
 export const MOCK_ASSOCIATIONS: Association[] = [
-  { id: 'ass1', nom: 'Comité de Développement du Village Ndoh-Djuttitsa (CODEV)', objet: 'Orientation des projets d adduction d eau, d entretien routier et d équipements publics.', contact: '+237 699 22 33 44', president: 'Ing. Conseil du Village' },
+  { id: 'ass1', nom: 'Comité de Développement du Village Ndoh-Djuttitsa (CODEV)', objet: 'Orientation des projets d\'adduction d\'eau, d\'entretien routier et d\'équipements publics.', contact: '+237 699 22 33 44', president: 'Ing. Conseil du Village' },
   { id: 'ass2', nom: 'Groupement des Femmes Agriculteurs de Ndoh', objet: 'Entraide agricole, micro-épargne et valorisation des récoltes maraîchères.', contact: '+237 670 99 88 77', president: 'Mme la Présidente du Groupement' }
 ];
 
 export const MOCK_DOCUMENTS: DocumentOfficiel[] = [
   { id: 'doc1', titre: 'Présentation Historique & Administrative de la Chefferie de Ndoh-Djuttitsa', fichier_url: '/documents/presentation-historique-ndoh-djuttitsa.pdf', categorie: 'Document Officiel', taille_mo: 3.4, date_ajout: '2026-01-20' },
-  { id: 'doc2', titre: 'Guide d Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '/documents/guide-accueil-ndoh-djuttitsa.pdf', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' }
+  { id: 'doc2', titre: 'Guide d\'Accueil & Informations Pratiques pour les Visiteurs', fichier_url: '/documents/guide-accueil-ndoh-djuttitsa.pdf', categorie: 'Guide & Tourisme', taille_mo: 5.2, date_ajout: '2026-04-12' }
 ];

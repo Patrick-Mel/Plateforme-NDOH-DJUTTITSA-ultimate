@@ -81,7 +81,7 @@ export const LatestNews: React.FC<LatestNewsProps> = ({ news, onSelectArticle })
                   type="button"
                   className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 transition-colors pt-2"
                 >
-                  <span>Lire l article complet</span>
+                  <span>Lire l'article complet</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>

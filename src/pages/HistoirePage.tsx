@@ -19,12 +19,12 @@ export const HistoirePage: React.FC = () => {
     {
       period: 'Milieu du XXe siècle',
       title: 'Implémentation de la Culture Théière (CTE)',
-      desc: 'Création des grandes plantations industrielles du Complexe Théier de Djuttitsa (CTE), faisant du village l un des bassins de production théière majeurs de l Afrique Centrale.',
+      desc: 'Création des grandes plantations industrielles du Complexe Théier de Djuttitsa (CTE), faisant du village l\'un des bassins de production théière majeurs de l\'Afrique Centrale.',
     },
     {
       period: 'Dynastie Actuelle',
       title: 'Règne de S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III',
-      desc: 'Poursuite de la modernisation, structuration des réseaux d eau et d électricité et préservation des coutumes ancestrales Bamiléké.',
+      desc: 'Poursuite de la modernisation, structuration des réseaux d\'eau et d\'électricité et préservation des coutumes ancestrales Bamiléké.',
     },
   ];
 
@@ -45,10 +45,10 @@ export const HistoirePage: React.FC = () => {
               La Chefferie traditionnelle de Ndoh-Djuttitsa
             </h2>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
-              Située dans l arrondissement de Nkong-Ni (Département de la Menoua), la **Chefferie de Ndoh-Djuttitsa** est dirigée par son chef traditionnel **S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III**.
+              Située dans l'arrondissement de Nkong-Ni (Département de la Menoua), la **Chefferie de Ndoh-Djuttitsa** est dirigée par son chef traditionnel **S.M. Jean-Paul Melaga Djuttitsa Fodoh Touni III**.
             </p>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
-              Créé en 1908 et officiellement érigé en chefferie de 3ème degré en 1950, le village préserve l organisation coutumière Bamiléké avec le Conseil des Notables, la préservation des lieux sacrés et le respect des traditions.
+              Créé en 1908 et officiellement érigé en chefferie de 3ème degré en 1950, le village préserve l'organisation coutumière Bamiléké avec le Conseil des Notables, la préservation des lieux sacrés et le respect des traditions.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2">

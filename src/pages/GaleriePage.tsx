@@ -103,7 +103,7 @@ export const GaleriePage: React.FC = () => {
           ))}
         </div>
 
-        {/* Modale Lightbox d affichage Grand Format */}
+        {/* Modale Lightbox d'affichage Grand Format */}
         <Modal
           isOpen={Boolean(selectedMedia)}
           onClose={() => setSelectedMedia(null)}
@@ -137,7 +137,7 @@ export const GaleriePage: React.FC = () => {
                   <Tag className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   {selectedMedia.categorie}
                 </span>
-                <span>Date d ajout : {selectedMedia.date_ajout}</span>
+                <span>Date d'ajout : {selectedMedia.date_ajout}</span>
               </div>
             </div>
           )}

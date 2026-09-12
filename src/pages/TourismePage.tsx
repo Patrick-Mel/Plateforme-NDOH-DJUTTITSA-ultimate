@@ -10,19 +10,19 @@ export const TourismePage: React.FC = () => {
   const spots = [
     {
       name: 'Complexe Théier de Djuttitsa (CTE)',
-      desc: 'Plantations de thé s étendant à perte de vue sur les pentes volcaniques. Un paysage emblématique particulièrement impressionnant au lever du soleil lorsque la brume glisse sur les collines.',
+      desc: 'Plantations de thé s\'étendant à perte de vue sur les pentes volcaniques. Un paysage emblématique particulièrement impressionnant au lever du soleil lorsque la brume glisse sur les collines.',
       image: '/images/cte-djuttitsa-tea.jpg',
       tag: 'Site Majeur',
     },
     {
       name: 'Hauts-Plateaux de Nkong-Ni (1 850 m - 2 050 m)',
-      desc: 'Relief accidenté et crêtes majestueuses offrant un panorama à 360° sur le département de la Menoua et les plaines environnantes de la région de l Ouest.',
+      desc: 'Relief accidenté et crêtes majestueuses offrant un panorama à 360° sur le département de la Menoua et les plaines environnantes de la région de l\'Ouest.',
       image: '/images/monts-bamboutos.jpg',
       tag: 'Randonnée & Nature',
     },
     {
-      name: 'Rivières & Sanctuaires Naturels d Altitude',
-      desc: 'Sources d eau pures alimentant les vallées maraîchères et bosquets sacrés protégés par la tradition coutumière.',
+      name: 'Rivières & Sanctuaires Naturels d\'Altitude',
+      desc: 'Sources d\'eau pures alimentant les vallées maraîchères et bosquets sacrés protégés par la tradition coutumière.',
       image: '/images/monts-bamboutos.jpg',
       tag: 'Eaux vives',
     },
@@ -33,7 +33,7 @@ export const TourismePage: React.FC = () => {
       <PageHeader
         title="Tourisme & Paysages Théiers"
         subtitle="Découvrez la sérénité des hauts-plateaux : plantations du CTE, collines brumeuses et air pur de la Menoua."
-        badge="Écotourisme d Altitude"
+        badge="Écotourisme d'Altitude"
         bgImage="/images/cte-djuttitsa-tea.jpg"
       />
 
@@ -43,9 +43,9 @@ export const TourismePage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 rounded-2xl bg-slate-100 dark:bg-[#111827] text-slate-900 dark:text-white space-y-2 border border-slate-200 dark:border-slate-800 transition-colors duration-300">
             <Cloud className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
-            <h4 className="font-bold font-heading text-lg text-slate-900 dark:text-white">Climat Frais d Altitude</h4>
+            <h4 className="font-bold font-heading text-lg text-slate-900 dark:text-white">Climat Frais d'Altitude</h4>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Températures douces comprises entre 15°C et 22°C toute l année. Prévoir un vêtement chaud pour le matin et le soir.
+              Températures douces comprises entre 15°C et 22°C toute l'année. Prévoir un vêtement chaud pour le matin et le soir.
             </p>
           </div>
 
@@ -61,7 +61,7 @@ export const TourismePage: React.FC = () => {
             <Sun className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
             <h4 className="font-bold font-heading text-lg text-slate-900 dark:text-white">Période Idéale de Séjour</h4>
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              De Novembre à Avril pour profiter d une excellente visibilité sur les montagnes et d un ciel lumineux.
+              De Novembre à Avril pour profiter d'une excellente visibilité sur les montagnes et d'un ciel lumineux.
             </p>
           </div>
         </div>
@@ -107,10 +107,10 @@ export const TourismePage: React.FC = () => {
           <div className="space-y-3 max-w-2xl">
             <Badge variant="amber">Accueil & Orientation</Badge>
             <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
-              Vous prévoyez un séjour ou une visite d étude ?
+              Vous prévoyez un séjour ou une visite d'étude ?
             </h3>
             <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-              Prenez contact avec le secrétariat communautaire pour obtenir des conseils d accès depuis Dschang ou Bafoussam.
+              Prenez contact avec le secrétariat communautaire pour obtenir des conseils d'accès depuis Dschang ou Bafoussam.
             </p>
           </div>
 

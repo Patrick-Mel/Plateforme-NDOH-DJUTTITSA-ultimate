@@ -46,10 +46,10 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-base sm:text-xl text-slate-700 dark:text-slate-300 font-normal max-w-3xl mx-auto leading-relaxed"
         >
-          Localité d altitude des Hauts-Plateaux de la Menoua (1 700 m - 2 050 m). Terre de tradition Bamiléké, du célèbre Complexe Théier (CTE) et d une communauté dynamique au Cameroun.
+          Localité d'altitude des Hauts-Plateaux de la Menoua (1 700 m - 2 050 m). Terre de tradition Bamiléké, du célèbre Complexe Théier (CTE) et d'une communauté dynamique au Cameroun.
         </motion.p>
 
-        {/* Boutons d Action Modernes */}
+        {/* Boutons d'Action Modernes */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export const HeroSection: React.FC = () => {
         >
           <Link to="/culture">
             <Button size="lg" className="w-full sm:w-auto text-sm shadow-md bg-emerald-700 hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white" icon={<Compass className="w-4 h-4" />}>
-              Découvrir la Culture & l Histoire
+              Découvrir la Culture & l'Histoire
             </Button>
           </Link>
 
@@ -78,7 +78,7 @@ export const HeroSection: React.FC = () => {
         >
           <span className="flex items-center gap-1.5">
             <MapPin className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>Département de la Menoua · Région de l Ouest</span>
+            <span>Département de la Menoua · Région de l'Ouest</span>
           </span>
           <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
           <span className="flex items-center gap-1.5">

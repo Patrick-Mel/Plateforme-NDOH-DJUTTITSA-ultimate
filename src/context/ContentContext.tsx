@@ -55,7 +55,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
     return {
       active: true,
-      text: 'Travaux de réhabilitation de la voirie principale et adduction d eau au quartier Loung-Djuttitsa.',
+      text: 'Travaux de réhabilitation de la voirie principale et adduction d\'eau au quartier Loung-Djuttitsa.',
     };
   });
 
@@ -127,7 +127,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
 export const useContent = () => {
   const context = useContext(ContentContext);
   if (!context) {
-    throw new Error('useContent doit être utilisé au sein d un ContentProvider');
+    throw new Error('useContent doit être utilisé au sein d\'un ContentProvider');
   }
   return context;
 };

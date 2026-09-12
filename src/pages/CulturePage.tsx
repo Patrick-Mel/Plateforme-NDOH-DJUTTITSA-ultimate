@@ -19,7 +19,7 @@ export const CulturePage: React.FC = () => {
       image: '/images/evenement-ndoh.jpg',
     },
     {
-      title: 'Vêtement d Apparat : Le Toghu',
+      title: 'Vêtement d\'Apparat : Le Toghu',
       icon: Shirt,
       desc: 'Étoffe royale brodée à la main de motifs géométriques dorés, rouges et blancs, portée par les dignitaires, princes et membres des sociétés secrètes.',
       image: '/images/chefferie-ndoh-djuttitsa.jpg',
@@ -46,10 +46,10 @@ export const CulturePage: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <Badge variant="amber">Coutumes & Célébrations</Badge>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white">
-            Un patrimoine vivant d un raffinement exceptionnel
+            Un patrimoine vivant d'un raffinement exceptionnel
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
-            À NDOH-DJUTTITSA, la culture n est pas un simple souvenir du passé : c est un art de vivre quotidien qui rythme les saisons, réunit les familles et honore les ancêtres.
+            À NDOH-DJUTTITSA, la culture n'est pas un simple souvenir du passé : c'est un art de vivre quotidien qui rythme les saisons, réunit les familles et honore les ancêtres.
           </p>
         </div>
 

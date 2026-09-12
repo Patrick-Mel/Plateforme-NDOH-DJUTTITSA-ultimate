@@ -21,7 +21,7 @@ export function getWeatherCondition(code: number): string {
   if (code === 45 || code === 48) return 'Brume matinale';
   if (code >= 51 && code <= 55) return 'Bruine légère';
   if (code >= 61 && code <= 65) return 'Pluie de montagne';
-  if (code >= 80 && code <= 82) return 'Averses d altitude';
+  if (code >= 80 && code <= 82) return 'Averses d\'altitude';
   if (code >= 95) return 'Orage';
   return 'Ciel couvert';
 }

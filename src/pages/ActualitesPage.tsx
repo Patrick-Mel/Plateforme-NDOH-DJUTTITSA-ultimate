@@ -27,7 +27,7 @@ export const ActualitesPage: React.FC = () => {
     <div className="space-y-12 pb-20">
       <PageHeader
         title="Journal & Actualités de NDOH-DJUTTITSA"
-        subtitle="Suivez au quotidien la vie du village, les projets d investissement et les événements communautaires."
+        subtitle="Suivez au quotidien la vie du village, les projets d'investissement et les événements communautaires."
         badge="Presse & Information"
         bgImage="/images/cte-djuttitsa-tea.jpg"
       />
@@ -117,7 +117,7 @@ export const ActualitesPage: React.FC = () => {
                     type="button"
                     className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 dark:text-emerald-400 hover:text-emerald-800 transition-colors pt-2"
                   >
-                    <span>Lire l article complet</span>
+                    <span>Lire l'article complet</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -126,7 +126,7 @@ export const ActualitesPage: React.FC = () => {
           </div>
         )}
 
-        {/* Modale de Lecture de l Article */}
+        {/* Modale de Lecture de l'Article */}
         <Modal
           isOpen={Boolean(selectedArticle)}
           onClose={() => setSelectedArticle(null)}

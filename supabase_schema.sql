@@ -14,7 +14,7 @@ create table if not exists public.roles (
 insert into public.roles (nom, description) values 
   ('super_admin', 'Accès total au système, gestion de tous les contenus et des rôles utilisateurs'),
   ('administrateur', 'Gestion globale des contenus, annuaires, documents et modération'),
-  ('redacteur', 'Rédaction, édition et publication d actualités et d événements'),
+  ('redacteur', 'Rédaction, édition et publication d''actualités et d''événements'),
   ('moderateur', 'Modération des messages de contact et des médias communautaires'),
   ('habitant', 'Membre du village avec accès aux documents officiels et annonces résidents')
 on conflict (nom) do update set description = excluded.description;
@@ -37,10 +37,10 @@ create table if not exists public.quartiers (
 insert into public.quartiers (nom, description) values
   ('Ndoh Centre', 'Cœur névralgique du village, chefferie traditionnelle et institutions'),
   ('Secteur CTE / Domaine du Thé', 'Hauts-plateaux hébergeant le complexe théier et les plantations industrielles'),
-  ('Loung & Aghong', 'Zones agricoles fertiles dédiées au maraîchage d altitude'),
+  ('Loung & Aghong', 'Zones agricoles fertiles dédiées au maraîchage d''altitude'),
   ('Tallé & Ngui', 'Quartiers verdoyants bordés de ruisseaux et sanctuaires royaux'),
   ('Ndouolah & Meloung', 'Zones résidentielles et vallées panoramiques'),
-  ('Mezet & Sa a', 'Secteurs d élevage et de cultures vivrières'),
+  ('Mezet & Sa a', 'Secteurs d''élevage et de cultures vivrières'),
   ('Lingang & Femmock', 'Secteurs de crêtes et chemins de randonnée')
 on conflict do nothing;
 

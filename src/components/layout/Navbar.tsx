@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // Sélection de l icône météo dynamique
+  // Sélection de l'icône météo dynamique
   const getWeatherIcon = () => {
     if (weather.weatherCode === 0) return <Sun className="w-3.5 h-3.5 text-amber-500" />;
     if (weather.weatherCode >= 45 && weather.weatherCode <= 48) return <CloudFog className="w-3.5 h-3.5 text-slate-400" />;

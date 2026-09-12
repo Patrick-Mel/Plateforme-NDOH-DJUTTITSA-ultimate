@@ -18,7 +18,7 @@ export const App: React.FC = () => {
   const { pathname } = useLocation();
   const { emergencyAlert } = useContent();
 
-  // Remonter en haut de page à chaque changement d URL
+  // Remonter en haut de page à chaque changement d'URL
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

@@ -34,7 +34,7 @@ export const ContactPage: React.FC = () => {
       setFormData({ nom: '', email: '', sujet: '', message: '' });
     } catch (err) {
       console.error(err);
-      alert('Erreur lors de l envoi du message. Veuillez réessayer.');
+      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
     } finally {
       setSubmitting(false);
     }
@@ -43,15 +43,15 @@ export const ContactPage: React.FC = () => {
   const faqs = [
     {
       q: 'Comment se rendre à Ndoh-Djuttitsa depuis Dschang ou Bafoussam ?',
-      a: 'Suivre l axe vers Nkong-Ni / Bafou puis prendre la direction du Complexe Théier de Djuttitsa. Les axes principaux sont praticables en véhicule de tourisme ou 4x4.',
+      a: 'Suivre l\'axe vers Nkong-Ni / Bafou puis prendre la direction du Complexe Théier de Djuttitsa. Les axes principaux sont praticables en véhicule de tourisme ou 4x4.',
     },
     {
       q: 'Comment effectuer des démarches administratives ou obtenir des informations ?',
       a: 'Vous pouvez adresser votre demande au secrétariat de la Chefferie via ce formulaire de contact ou vous rendre directement au foyer communautaire à Ndoh Centre.',
     },
     {
-      q: 'Quelles sont les structures de santé en cas d urgence ?',
-      a: 'Le Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa dispose d une permanence de garde pour accueillir les urgences 24h/24.',
+      q: 'Quelles sont les structures de santé en cas d\'urgence ?',
+      a: 'Le Centre Médical d\'Arrondissement (CMA) de Ndoh-Djuttitsa dispose d\'une permanence de garde pour accueillir les urgences 24h/24.',
     },
   ];
 
@@ -155,7 +155,7 @@ export const ContactPage: React.FC = () => {
             )}
           </Card>
 
-          {/* Coordonnées & Carte d Accès */}
+          {/* Coordonnées & Carte d'Accès */}
           <div className="space-y-6">
             <Card className="p-6 space-y-4">
               <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white">
@@ -166,7 +166,7 @@ export const ContactPage: React.FC = () => {
                   <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold text-slate-900 dark:text-white block">Localisation :</span>
-                    Chefferie de Ndoh-Djuttitsa, Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l Ouest-Cameroun.
+                    Chefferie de Ndoh-Djuttitsa, Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l'Ouest-Cameroun.
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
@@ -184,7 +184,7 @@ export const ContactPage: React.FC = () => {
               </ul>
             </Card>
 
-            {/* Carte simulée d altitude */}
+            {/* Carte simulée d'altitude */}
               <div className="relative h-64 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
                 <img
                   src="/images/monts-bamboutos.jpg"
