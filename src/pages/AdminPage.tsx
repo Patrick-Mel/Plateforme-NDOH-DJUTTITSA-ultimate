@@ -238,34 +238,63 @@ export const AdminPage: React.FC = () => {
     const cleanPassword = password.trim();
 
     try {
+      let authenticated = false;
+
+      // 1. Tenter d abord la connexion via Supabase Auth réelles si configuré
       if (isSupabaseConfigured && supabase) {
-        const { error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signInWithPassword({
           email: cleanEmail,
           password: cleanPassword,
         });
-        if (error) throw error;
-      } else {
-        // Mode authentification locale / RBAC
+
+        if (!error && data.session) {
+          authenticated = true;
+          const matched = MOCK_USER_ROLES.find(r => r.email.toLowerCase() === cleanEmail);
+          const roleToSet = matched ? matched.role : 'administrateur';
+          loginAsRole(roleToSet, cleanEmail, data.user?.user_metadata?.nom || cleanEmail);
+          showToast(`Connecté via Supabase Auth (${roleToSet.toUpperCase()})`);
+        }
+      }
+
+      // 2. Si non authentifié par Supabase (utilisateur non encore créé sur le Cloud Supabase), valider via le registre de rôles
+      if (!authenticated) {
         const matchedRole = MOCK_USER_ROLES.find(
           (r) => r.email.toLowerCase() === cleanEmail && r.password.trim() === cleanPassword
         );
 
         if (matchedRole) {
+          authenticated = true;
           loginAsRole(matchedRole.role, matchedRole.email, matchedRole.nom);
           
-          // Définir l'onglet par défaut selon les pouvoirs du rôle
           if (matchedRole.role === 'super_admin') setAdminTab('systeme');
           else if (matchedRole.role === 'administrateur') setAdminTab('quartiers');
           else if (matchedRole.role === 'redacteur') setAdminTab('actualites');
           else if (matchedRole.role === 'moderateur') setAdminTab('contacts');
           else if (matchedRole.role === 'archiviste') setAdminTab('patrimoine');
           else setAdminTab('medias');
-        } else {
-          setLoginError('Adresse email ou mot de passe incorrect. Veuillez vérifier vos identifiants.');
         }
       }
+
+      if (!authenticated) {
+        setLoginError('Adresse email ou mot de passe incorrect. Veuillez vérifier vos identifiants.');
+      }
     } catch (err: any) {
-      setLoginError(err.message || 'Erreur lors de la connexion à la console d administration.');
+      // En cas d erreur Supabase (ex. user not found), tenter le registre de rôles
+      const matchedRole = MOCK_USER_ROLES.find(
+        (r) => r.email.toLowerCase() === cleanEmail && r.password.trim() === cleanPassword
+      );
+
+      if (matchedRole) {
+        loginAsRole(matchedRole.role, matchedRole.email, matchedRole.nom);
+        if (matchedRole.role === 'super_admin') setAdminTab('systeme');
+        else if (matchedRole.role === 'administrateur') setAdminTab('quartiers');
+        else if (matchedRole.role === 'redacteur') setAdminTab('actualites');
+        else if (matchedRole.role === 'moderateur') setAdminTab('contacts');
+        else if (matchedRole.role === 'archiviste') setAdminTab('patrimoine');
+        else setAdminTab('medias');
+      } else {
+        setLoginError('Adresse email ou mot de passe incorrect. Veuillez vérifier vos identifiants.');
+      }
     } finally {
       setLoggingIn(false);
     }

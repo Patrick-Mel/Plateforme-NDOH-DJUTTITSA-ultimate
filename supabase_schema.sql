@@ -230,3 +230,17 @@ create policy "Super Admin control documents" on public.documents for all using 
 create policy "Super Admin control contacts" on public.contacts for all using (
   exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
 );
+
+-- =====================================================================
+-- 13. SCRIPT OPTIONNEL DE CRÉATION DES USERS DANS AUTH.USERS DE SUPABASE
+-- (À exécuter si vous souhaitez créer ces comptes directement sur Supabase Cloud)
+-- =====================================================================
+
+-- Note: Sur Supabase Dashboard, vous pouvez créer les comptes dans Authentication > Users :
+-- 1. admin@ndoh-djuttitsa.cm (Mot de passe: SuperAdmin2026!) -> Rôle: super_admin
+-- 2. secretariat@ndoh-djuttitsa.cm (Mot de passe: AdminNdoh2026!) -> Rôle: administrateur
+-- 3. journaliste@ndoh-djuttitsa.cm (Mot de passe: RedacNdoh2026!) -> Rôle: redacteur
+-- 4. moderateur@ndoh-djuttitsa.cm (Mot de passe: ModoNdoh2026!) -> Rôle: moderateur
+-- 5. patrimoine@ndoh-djuttitsa.cm (Mot de passe: ArchiveNdoh2026!) -> Rôle: archiviste
+-- 6. habitant@ndoh-djuttitsa.cm (Mot de passe: Habitant2026!) -> Rôle: habitant
+
