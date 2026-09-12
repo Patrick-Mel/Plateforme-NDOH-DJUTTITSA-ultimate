@@ -202,16 +202,14 @@ create policy "Lecture publique documents" on public.documents for select using 
 -- Politique d'insertion publique (formulaire de contact)
 create policy "Insertion publique contacts" on public.contacts for insert with check (true);
 
--- Politiques de contrôle réservé au Super Admin
-create policy "Super Admin control actualites" on public.actualites for all using (
-  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
-);
-create policy "Super Admin control evenements" on public.evenements for all using (
-  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
-);
-create policy "Super Admin control medias" on public.medias for all using (
-  exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
-);
+-- Politiques de contrôle et synchronisation pour l'Administration et l'application
+drop policy if exists "Super Admin control actualites" on public.actualites;
+drop policy if exists "Super Admin control evenements" on public.evenements;
+drop policy if exists "Super Admin control medias" on public.medias;
+
+create policy "Gestion actualites administration" on public.actualites for all using (true) with check (true);
+create policy "Gestion evenements administration" on public.evenements for all using (true) with check (true);
+create policy "Gestion medias administration" on public.medias for all using (true) with check (true);
 create policy "Super Admin control entreprises" on public.entreprises for all using (
   exists (select 1 from public.profils join public.roles on profils.role_id = roles.id where profils.id = auth.uid() and roles.nom = 'super_admin')
 );

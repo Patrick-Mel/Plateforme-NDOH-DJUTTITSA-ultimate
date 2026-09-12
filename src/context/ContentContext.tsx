@@ -60,7 +60,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     };
   });
 
-  // Synchronisation au démarrage avec Supabase si configuré
+  // Synchronisation au démarrage & écoute en Temps Réel (Realtime) avec Supabase
   useEffect(() => {
     if (!isSupabaseConfigured || !supabase) return;
     const client = supabase;
@@ -104,6 +104,47 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     };
 
     syncWithSupabase();
+
+    // Abonnement Supabase Realtime pour recevoir les nouveautés sans rafraîchir
+    const channel = client
+      .channel('public-ndoh-content-changes')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'medias' }, (payload) => {
+        if (payload.new) {
+          const m = payload.new;
+          const newM: Media = {
+            id: m.id,
+            type: (m.type || 'photo') as 'photo' | 'video' | 'audio' | 'document',
+            url: m.url,
+            thumbnail_url: m.thumbnail_url || m.url,
+            legende: m.legende || '',
+            categorie: m.categorie || 'Patrimoine',
+            date_ajout: m.date_ajout || new Date().toISOString()
+          };
+          setMedias(prev => [newM, ...prev.filter(item => item.id !== newM.id)]);
+        }
+      })
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'actualites' }, (payload) => {
+        if (payload.new) {
+          const a = payload.new;
+          const newA: Actualite = {
+            id: a.id,
+            titre: a.titre,
+            chapeau: a.chapeau || '',
+            contenu: a.contenu,
+            image_url: a.image_url || '',
+            date_publication: a.date_publication ? a.date_publication.split('T')[0] : new Date().toISOString().split('T')[0],
+            publie: a.publie ?? true,
+            categorie: a.categorie || 'Général',
+            auteur: 'Rédaction NDOH'
+          };
+          setActualites(prev => [newA, ...prev.filter(item => item.id !== newA.id)]);
+        }
+      })
+      .subscribe();
+
+    return () => {
+      client.removeChannel(channel);
+    };
   }, []);
 
   useEffect(() => {
