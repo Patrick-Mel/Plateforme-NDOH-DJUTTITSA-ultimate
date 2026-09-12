@@ -29,12 +29,17 @@ export interface Evenement {
 
 export interface Media {
   id: string;
-  type: 'photo' | 'video';
+  type: 'photo' | 'video' | 'audio' | 'document';
   url: string;
   thumbnail_url?: string;
   legende: string;
   categorie: string;
   date_ajout: string;
+  taille_mo?: number;
+  auteur_role?: string;
+  share_url?: string;
+  tags?: string[];
+  format?: string;
 }
 
 export interface Entreprise {
@@ -161,6 +166,80 @@ export const MOCK_EVENEMENTS: Evenement[] = [
   }
 ];
 
+export interface RoleDefinition {
+  role: 'super_admin' | 'administrateur' | 'redacteur' | 'moderateur' | 'archiviste' | 'habitant';
+  title: string;
+  nom: string;
+  email: string;
+  password: string;
+  badgeVariant: 'amber' | 'emerald' | 'blue' | 'purple' | 'indigo' | 'slate';
+  description: string;
+  privileges: string[];
+}
+
+export const MOCK_USER_ROLES: RoleDefinition[] = [
+  {
+    role: 'super_admin',
+    title: 'Super Administrateur',
+    nom: 'S.M. Jean-Paul Melaga III',
+    email: 'admin@ndoh-djuttitsa.cm',
+    password: 'SuperAdmin2026!',
+    badgeVariant: 'amber',
+    description: 'Chefferie Supérieure & Haut Commandement - Contrôle total de la plateforme.',
+    privileges: ['Configuration système & mode urgence', 'Gestion des comptes et rôles RBAC', 'Logs d audit et maintenance', 'Gestion globale des contenus']
+  },
+  {
+    role: 'administrateur',
+    title: 'Administrateur Général',
+    nom: 'Secrétariat Général Chefferie & CODEV',
+    email: 'secretariat@ndoh-djuttitsa.cm',
+    password: 'AdminNdoh2026!',
+    badgeVariant: 'emerald',
+    description: 'Secrétariat Général et Comité de Développement du Village (CODEV).',
+    privileges: ['Gestion des 7 quartiers et infrastructures', 'Publications des décrets et arrêtés PDF', 'Suivi du domaine théier (CTE) et CMA Santé', 'Gestion des médias et événements']
+  },
+  {
+    role: 'redacteur',
+    title: 'Rédacteur Communautaire',
+    nom: 'Chargé de Communication Local',
+    email: 'journaliste@ndoh-djuttitsa.cm',
+    password: 'RedacNdoh2026!',
+    badgeVariant: 'blue',
+    description: 'Rédaction et journalisme communautaire pour le village Ndoh-Djuttitsa.',
+    privileges: ['Rédaction & édition des actualités', 'Gestion de l agenda des événements', 'Téléversement de photos/vidéos associées', 'Workflow de publication']
+  },
+  {
+    role: 'moderateur',
+    title: 'Modérateur Citoyen',
+    nom: 'Médiateur du Forum & Relations Citoyennes',
+    email: 'moderateur@ndoh-djuttitsa.cm',
+    password: 'ModoNdoh2026!',
+    badgeVariant: 'purple',
+    description: 'Gestion des réclamations, messages citoyens et assistance visiteurs.',
+    privileges: ['Boîte de réception des messages citoyens', 'Modération des commentaires et requêtes', 'Envoi de réponses simulées aux habitants', 'FAQ et accompagnement']
+  },
+  {
+    role: 'archiviste',
+    title: 'Archiviste & Patrimoine',
+    nom: 'Conservateur du Patrimoine Culturel',
+    email: 'patrimoine@ndoh-djuttitsa.cm',
+    password: 'ArchiveNdoh2026!',
+    badgeVariant: 'indigo',
+    description: 'Numérisation, préservation et catalogage des trésors culturels du village.',
+    privileges: ['Gestion du conservatoire sonore et visuel', 'Téléversement de chants traditionnels & audios', 'Archivage des manuscrits et dynasties', 'Partage sécurisé d archives']
+  },
+  {
+    role: 'habitant',
+    title: 'Habitant / Visiteur',
+    nom: 'Membre Résident Ndoh',
+    email: 'habitant@ndoh-djuttitsa.cm',
+    password: 'Habitant2026!',
+    badgeVariant: 'slate',
+    description: 'Membre de la communauté ou visiteur accédant au portail public.',
+    privileges: ['Consultation publique du site', 'Formulaire de demande de rôle administratif', 'Envoi de messages à la Chefferie', 'Téléchargement de guides visiteurs']
+  }
+];
+
 export const MOCK_MEDIAS: Media[] = [
   {
     id: 'm1',
@@ -168,7 +247,12 @@ export const MOCK_MEDIAS: Media[] = [
     url: '/images/cte-djuttitsa-tea.jpg',
     legende: 'Panorama sur les plantations de thé du Complexe Théier de Djuttitsa (CTE) sous la brume matinale.',
     categorie: 'Paysages & Thé',
-    date_ajout: '2026-08-10'
+    date_ajout: '2026-08-10',
+    taille_mo: 3.2,
+    auteur_role: 'Administrateur',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m1',
+    tags: ['CTE', 'Thé', 'Hauts-Plateaux', 'Paysage'],
+    format: 'image/jpeg'
   },
   {
     id: 'm2',
@@ -176,7 +260,12 @@ export const MOCK_MEDIAS: Media[] = [
     url: '/images/chefferie-ndoh-djuttitsa.jpg',
     legende: 'Conseil traditionnel et dignitaires lors d une cérémonie à la Chefferie de Ndoh-Djuttitsa.',
     categorie: 'Culture & Coutumes',
-    date_ajout: '2026-07-15'
+    date_ajout: '2026-07-15',
+    taille_mo: 4.1,
+    auteur_role: 'Archiviste',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m2',
+    tags: ['Chefferie', 'Notables', 'Tradition', 'Culture'],
+    format: 'image/jpeg'
   },
   {
     id: 'm3',
@@ -184,7 +273,12 @@ export const MOCK_MEDIAS: Media[] = [
     url: '/images/cma-ndoh-djuttitsa.jpg',
     legende: 'Bâtiment du Centre Médical d Arrondissement (CMA) de Ndoh-Djuttitsa.',
     categorie: 'Infrastructures',
-    date_ajout: '2026-06-20'
+    date_ajout: '2026-06-20',
+    taille_mo: 2.8,
+    auteur_role: 'Administrateur',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m3',
+    tags: ['Santé', 'CMA', 'Infrastructures'],
+    format: 'image/jpeg'
   },
   {
     id: 'm4',
@@ -192,7 +286,51 @@ export const MOCK_MEDIAS: Media[] = [
     url: '/images/monts-bamboutos.jpg',
     legende: 'Relief des haut-plateaux de Ndoh-Djuttitsa et des Monts Bamboutos.',
     categorie: 'Paysages d Altitude',
-    date_ajout: '2026-05-12'
+    date_ajout: '2026-05-12',
+    taille_mo: 5.0,
+    auteur_role: 'Rédacteur',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m4',
+    tags: ['Montagnes', 'Randonnée', 'Nature'],
+    format: 'image/jpeg'
+  },
+  {
+    id: 'm5',
+    type: 'audio',
+    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    legende: 'Chant traditionnel de célébration des moissons - Enregistrement patrimonial de la Chefferie.',
+    categorie: 'Patrimoine Sonore',
+    date_ajout: '2026-04-18',
+    taille_mo: 6.4,
+    auteur_role: 'Archiviste',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m5',
+    tags: ['Musique', 'Chant', 'Patrimoine', 'Folklore'],
+    format: 'audio/mp3'
+  },
+  {
+    id: 'm6',
+    type: 'video',
+    url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    legende: 'Film documentaire sur la récolte artisanale des feuilles de thé à Djuttitsa.',
+    categorie: 'Documentaires & Vidéos',
+    date_ajout: '2026-03-30',
+    taille_mo: 18.5,
+    auteur_role: 'Rédacteur',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m6',
+    tags: ['Vidéo', 'Documentaire', 'Thé', 'Savoir-Faire'],
+    format: 'video/mp4'
+  },
+  {
+    id: 'm7',
+    type: 'document',
+    url: '/documents/presentation-historique-ndoh-djuttitsa.pdf',
+    legende: 'Document de synthèse historique & statut administratif du groupement Ndoh-Djuttitsa (PDF).',
+    categorie: 'Documents Officiels',
+    date_ajout: '2026-02-14',
+    taille_mo: 3.4,
+    auteur_role: 'Administrateur',
+    share_url: 'https://ndoh-djuttitsa.cm/share/m7',
+    tags: ['PDF', 'Histoire', 'Administration', 'Officiel'],
+    format: 'application/pdf'
   }
 ];
 

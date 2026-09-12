@@ -3,14 +3,15 @@ import { PageHeader } from '../components/layout/PageHeader';
 import { Badge } from '../components/ui/Badge';
 import { Modal } from '../components/ui/Modal';
 import type { Media } from '../data/mockData';
-import { MOCK_MEDIAS } from '../data/mockData';
+import { useContent } from '../context/ContentContext';
 import { Camera, Image as ImageIcon, Play, Tag, Calendar } from 'lucide-react';
 
 export const GaleriePage: React.FC = () => {
+  const { medias } = useContent();
   const [selectedType, setSelectedType] = useState<'all' | 'photo' | 'video'>('all');
   const [selectedMedia, setSelectedMedia] = useState<Media | null>(null);
 
-  const filteredMedias = MOCK_MEDIAS.filter((m) => {
+  const filteredMedias = medias.filter((m) => {
     if (selectedType === 'all') return true;
     return m.type === selectedType;
   });

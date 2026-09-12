@@ -5,12 +5,13 @@ import { LatestNews } from '../components/home/LatestNews';
 import { UpcomingEvents } from '../components/home/UpcomingEvents';
 import { GalleryPreview } from '../components/home/GalleryPreview';
 import type { Actualite } from '../data/mockData';
-import { MOCK_ACTUALITES, MOCK_EVENEMENTS, MOCK_MEDIAS } from '../data/mockData';
+import { useContent } from '../context/ContentContext';
 import { Modal } from '../components/ui/Modal';
 import { Calendar, User, Tag } from 'lucide-react';
 import { Badge } from '../components/ui/Badge';
 
 export const HomePage: React.FC = () => {
+  const { actualites, evenements, medias } = useContent();
   const [selectedArticle, setSelectedArticle] = useState<Actualite | null>(null);
 
   return (
@@ -18,11 +19,11 @@ export const HomePage: React.FC = () => {
       <HeroSection />
       <StatsSection />
       <LatestNews
-        news={MOCK_ACTUALITES}
+        news={actualites}
         onSelectArticle={(article) => setSelectedArticle(article)}
       />
-      <UpcomingEvents events={MOCK_EVENEMENTS} />
-      <GalleryPreview medias={MOCK_MEDIAS} />
+      <UpcomingEvents events={evenements} />
+      <GalleryPreview medias={medias} />
 
       <Modal
         isOpen={Boolean(selectedArticle)}

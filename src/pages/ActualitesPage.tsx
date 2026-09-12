@@ -4,17 +4,18 @@ import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { Modal } from '../components/ui/Modal';
 import type { Actualite } from '../data/mockData';
-import { MOCK_ACTUALITES } from '../data/mockData';
+import { useContent } from '../context/ContentContext';
 import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
 
 export const ActualitesPage: React.FC = () => {
+  const { actualites } = useContent();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Toutes');
   const [selectedArticle, setSelectedArticle] = useState<Actualite | null>(null);
 
   const categories = ['Toutes', 'Économie & Développement', 'Culture & Tradition', 'Santé & Social'];
 
-  const filteredNews = MOCK_ACTUALITES.filter((item) => {
+  const filteredNews = actualites.filter((item) => {
     const matchesCategory = selectedCategory === 'Toutes' || item.categorie === selectedCategory;
     const matchesSearch =
       item.titre.toLowerCase().includes(searchTerm.toLowerCase()) ||
