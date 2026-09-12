@@ -33,7 +33,6 @@ export const Footer: React.FC = () => {
               <li><Link to="/services" className="hover:text-emerald-700 dark:hover:text-white transition-colors">CMA, Écoles & Services</Link></li>
               <li><Link to="/actualites" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Actualités Communautaires</Link></li>
               <li><Link to="/galerie" className="hover:text-emerald-700 dark:hover:text-white transition-colors">Photothèque & Médias</Link></li>
-              <li><Link to="/admin" className="hover:text-amber-600 dark:hover:text-amber-400 font-bold text-emerald-700 dark:text-emerald-400 transition-colors">🔐 Espace Administration</Link></li>
             </ul>
           </div>
 
