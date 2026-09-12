@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, User } from 'lucide-react';
+import { ArrowRight, Calendar, User, AlertTriangle } from 'lucide-react';
 import type { Actualite } from '../../data/mockData';
 import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
+import { useContent } from '../../context/ContentContext';
 
 interface LatestNewsProps {
   news: Actualite[];
@@ -11,6 +12,8 @@ interface LatestNewsProps {
 }
 
 export const LatestNews: React.FC<LatestNewsProps> = ({ news, onSelectArticle }) => {
+  const { emergencyAlert } = useContent();
+
   return (
     <section className="py-20 px-4 sm:px-8 bg-slate-50 dark:bg-slate-950 transition-colors">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -29,6 +32,24 @@ export const LatestNews: React.FC<LatestNewsProps> = ({ news, onSelectArticle })
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
+
+        {/* ALERTE COMMUNAUTAIRE PRIORITAIRE DANS LES ACTUALITÉS */}
+        {emergencyAlert.active && (
+          <div className="p-6 sm:p-8 rounded-3xl bg-amber-500/10 dark:bg-amber-500/20 border-2 border-amber-500/40 text-amber-950 dark:text-amber-100 flex flex-col sm:flex-row items-start sm:items-center gap-5 shadow-lg backdrop-blur-sm transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-md">
+              <AlertTriangle className="w-6 h-6 animate-pulse" />
+            </div>
+            <div className="space-y-1.5 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="amber">ALERTE COMMUNAUTAIRE PRIORITAIRE</Badge>
+                <span className="text-xs font-bold text-amber-800 dark:text-amber-300">Chefferie Supérieure</span>
+              </div>
+              <p className="text-base sm:text-lg font-bold text-amber-950 dark:text-amber-50 leading-snug">
+                {emergencyAlert.text}
+              </p>
+            </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news.slice(0, 3).map((article) => (

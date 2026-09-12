@@ -382,15 +382,15 @@ export const AdminPage: React.FC = () => {
           </div>
         )}
 
-        <div className="w-full max-w-md space-y-6">
+        <div className="w-full max-w-md space-y-6 px-3 sm:px-0">
           
           {/* Header institutionnel */}
           <div className="text-center space-y-3">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mx-auto border border-emerald-200 dark:border-emerald-500/30 shadow-lg">
-              <Shield className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mx-auto border border-emerald-200 dark:border-emerald-500/30 shadow-lg">
+              <Shield className="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600 dark:text-emerald-400" />
             </div>
             <div>
-              <h1 className="text-2xl font-extrabold font-heading tracking-tight text-slate-900 dark:text-white">
+              <h1 className="text-xl sm:text-2xl font-extrabold font-heading tracking-tight text-slate-900 dark:text-white">
                 Console d'Administration
               </h1>
               <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
@@ -400,7 +400,7 @@ export const AdminPage: React.FC = () => {
           </div>
 
           {/* Formulaire de Connexion Strict */}
-          <Card className="p-8 space-y-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] shadow-xl">
+          <Card className="p-5 sm:p-8 space-y-5 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] shadow-xl">
             <div className="space-y-1">
               <h2 className="text-lg font-bold font-heading text-slate-900 dark:text-white flex items-center gap-2">
                 <Lock className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
@@ -481,59 +481,40 @@ export const AdminPage: React.FC = () => {
       
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed top-6 right-6 z-50 px-4 py-3 rounded-2xl bg-emerald-600 text-white font-bold text-xs shadow-2xl flex items-center gap-2 animate-bounce">
-          <CheckCircle2 className="w-5 h-5" />
-          <span>{toastMessage}</span>
+        <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 px-4 py-3 rounded-2xl bg-emerald-600 text-white font-bold text-xs shadow-2xl flex items-center gap-2 animate-bounce max-w-[90vw]">
+          <CheckCircle2 className="w-5 h-5 shrink-0" />
+          <span className="truncate">{toastMessage}</span>
         </div>
       )}
 
-      {/* BANNIÈRE D URGENCE SI ACTIVÉE PAR SUPER ADMIN */}
-      {emergencyAlertActive && (
-        <div className="bg-amber-600 text-white px-4 py-2.5 text-xs font-bold flex items-center justify-between shadow-md">
-          <div className="max-w-7xl mx-auto flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4 shrink-0 animate-pulse" />
-            <span>ALERTE CHEFFERIE : {emergencyAlertText}</span>
-          </div>
-          {currentRole === 'super_admin' && (
-            <button
-              onClick={() => setEmergencyAlertActive(false)}
-              className="text-amber-200 hover:text-white"
-              title="Désactiver l'alerte"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
-        </div>
-      )}
-
-      {/* BARRE HAUTE NAVIGATION ET BANDEAU D IDENTITÉ */}
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] px-4 sm:px-8 py-5 shadow-sm">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      {/* BARRE HAUTE NAVIGATION ET BANDEAU D'IDENTITÉ RESPONSIVE */}
+      <div className="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] px-4 sm:px-8 py-4 sm:py-5 shadow-sm">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-500/30 shrink-0">
-              <Shield className="w-6 h-6" />
+          <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-500/30 shrink-0">
+              <Shield className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-bold font-heading text-slate-900 dark:text-white">Console Administration</h1>
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="text-base sm:text-xl font-bold font-heading text-slate-900 dark:text-white truncate">Console Administration</h1>
                 {getRoleBadge(currentRole)}
               </div>
-              <p className="text-xs text-slate-600 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
+              <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center gap-1.5 mt-0.5">
                 <span>Connecté en tant que <strong className="text-slate-900 dark:text-slate-200">{activeUser?.nom}</strong></span>
-                <span>•</span>
-                <span className="font-mono text-emerald-700 dark:text-emerald-400">{activeUser?.email}</span>
+                <span className="hidden sm:inline">•</span>
+                <span className="font-mono text-emerald-700 dark:text-emerald-400 truncate max-w-[200px] sm:max-w-none">{activeUser?.email}</span>
               </p>
             </div>
           </div>
 
           {/* BOUTON DÉCONNEXION */}
-          <div className="flex items-center gap-3 w-full md:w-auto justify-end">
+          <div className="flex items-center gap-3 w-full sm:w-auto justify-end pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800">
             <Button
               onClick={signOut}
               variant="outline"
               size="sm"
-              className="border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="w-full sm:w-auto justify-center border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs py-2"
               icon={<LogOut className="w-4 h-4" />}
             >
               Déconnexion
@@ -545,23 +526,23 @@ export const AdminPage: React.FC = () => {
 
       {/* SI LE RÔLE EST HABITANT : ÉCRAN CITOYEN RESTREINT AVEC DEMANDE D'ÉLÉVATION */}
       {currentRole === 'habitant' ? (
-        <div className="max-w-4xl mx-auto px-4 py-12">
-          <Card className="p-8 space-y-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] shadow-xl text-center">
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-400 flex items-center justify-center mx-auto border border-amber-200 dark:border-amber-500/30">
-              <AlertTriangle className="w-8 h-8 text-amber-600 dark:text-amber-400" />
+        <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+          <Card className="p-5 sm:p-8 space-y-6 border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111827] shadow-xl text-center">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-400 flex items-center justify-center mx-auto border border-amber-200 dark:border-amber-500/30">
+              <AlertTriangle className="w-7 h-7 sm:w-8 sm:h-8 text-amber-600 dark:text-amber-400" />
             </div>
             <div className="space-y-2">
               <Badge variant="amber">Accès Réservé à l'Équipe Administrative</Badge>
-              <h2 className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
+              <h2 className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
                 Portail Citoyen - Privilèges Limitées
               </h2>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto">
-                Vous êtes actuellement connecté avec le rôle <strong className="text-slate-900 dark:text-white">Habitant / Visiteur</strong>. L accès à la gestion des actualités, des médias, des décrets et de la base de données est réservé aux administrateurs de la chefferie.
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto">
+                Vous êtes actuellement connecté avec le rôle <strong className="text-slate-900 dark:text-white">Habitant / Visiteur</strong>. L'accès à la gestion des actualités, des médias, des décrets et de la base de données est réservé aux administrateurs de la chefferie.
               </p>
             </div>
 
             {/* Formulaire de demande d'élévation de rôle */}
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left space-y-4 max-w-lg mx-auto">
+            <div className="p-4 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left space-y-4 max-w-lg mx-auto">
               <h3 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
                 <Send className="w-4 h-4 text-emerald-600" />
                 <span>Demander des droits d'administration ou de rédaction</span>
@@ -576,7 +557,7 @@ export const AdminPage: React.FC = () => {
                   placeholder="Votre nom complet..."
                   className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white"
                 />
-                <select className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white">
+                <select className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white font-medium">
                   <option value="redacteur">Rôle souhaité: Rédacteur Communautaire</option>
                   <option value="moderateur">Rôle souhaité: Modérateur Citoyen</option>
                   <option value="archiviste">Rôle souhaité: Archiviste du Patrimoine</option>
@@ -587,7 +568,7 @@ export const AdminPage: React.FC = () => {
                   placeholder="Motif de votre demande..."
                   className="w-full px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white"
                 />
-                <Button type="submit" size="sm" className="w-full bg-emerald-700 hover:bg-emerald-800 text-white">
+                <Button type="submit" size="sm" className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold">
                   Envoyer la demande
                 </Button>
               </form>
@@ -597,159 +578,161 @@ export const AdminPage: React.FC = () => {
       ) : (
 
         /* CONTENU DE LA CONSOLE POUR LES RÔLES ADMINISTRATIFS */
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-8 space-y-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-6 sm:pt-8 space-y-6 sm:space-y-8">
 
           {/* BARRE DE CARTES DE STATISTIQUES GLOBALES */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
-              <ImageIcon className="w-5 h-5 text-blue-600 dark:text-blue-400 mb-2" />
-              <div className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{mediasQueue.length}</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Fichiers multimédias</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <div className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
+              <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400 mb-1 sm:mb-2" />
+              <div className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{mediasQueue.length}</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Fichiers multimédias</div>
             </div>
-            <div className="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
-              <Users className="w-5 h-5 text-indigo-600 dark:text-indigo-400 mb-2" />
-              <div className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{usersList.length}</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Comptes utilisateurs (RBAC)</div>
+            <div className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600 dark:text-indigo-400 mb-1 sm:mb-2" />
+              <div className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{usersList.length}</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Comptes utilisateurs (RBAC)</div>
             </div>
-            <div className="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
-              <Newspaper className="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-2" />
-              <div className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{actualitesList.length}</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Actualités publiées</div>
+            <div className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
+              <Newspaper className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 dark:text-emerald-400 mb-1 sm:mb-2" />
+              <div className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{actualitesList.length}</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Actualités publiées</div>
             </div>
-            <div className="p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
-              <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400 mb-2" />
-              <div className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{messagesList.length}</div>
-              <div className="text-xs text-slate-500 dark:text-slate-400">Messages citoyens reçus</div>
+            <div className="p-3.5 sm:p-5 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 space-y-1 shadow-sm">
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 dark:text-purple-400 mb-1 sm:mb-2" />
+              <div className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">{messagesList.length}</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Messages citoyens reçus</div>
             </div>
           </div>
 
-          {/* BARRE D ONGLETS ADAPTÉE AUX PRIVILÈGES DU RÔLE */}
-          <div className="flex flex-wrap gap-2 p-1.5 bg-slate-200/60 dark:bg-[#111827] rounded-2xl border border-slate-300/60 dark:border-slate-800">
+          {/* BARRE D'ONGLETS RESPONSIVE (SCROLL HORIZONTAL + BOUTONS ERGONOMIQUES) */}
+          <div className="p-1.5 bg-slate-200/60 dark:bg-[#111827] rounded-2xl border border-slate-300/60 dark:border-slate-800 overflow-x-auto touch-pan-x scrollbar-none">
+            <div className="flex items-center gap-1.5 min-w-max">
             
-            {/* Médias & Partage (Accessible à tous les rôles admin) */}
-            <button
-              onClick={() => setAdminTab('medias')}
-              type="button"
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                adminTab === 'medias' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              <Upload className="w-4 h-4" />
-              <span>1. Téléversement & Médias ({mediasQueue.length})</span>
-            </button>
-
-            {/* Gestion des Rôles (Super Admin & Administrateur) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur') && (
+              {/* Médias & Partage (Accessible à tous les rôles admin) */}
               <button
-                onClick={() => setAdminTab('roles')}
+                onClick={() => setAdminTab('medias')}
                 type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'roles' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                  adminTab === 'medias' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
-                <UserCheck className="w-4 h-4" />
-                <span>2. Rôles & Utilisateurs RBAC</span>
+                <Upload className="w-4 h-4 shrink-0" />
+                <span>1. Téléversement & Médias ({mediasQueue.length})</span>
               </button>
-            )}
 
-            {/* Actualités (Super Admin, Administrateur, Rédacteur) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'redacteur') && (
-              <button
-                onClick={() => setAdminTab('actualites')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'actualites' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Newspaper className="w-4 h-4" />
-                <span>3. Actualités & Articles</span>
-              </button>
-            )}
+              {/* Gestion des Rôles (Super Admin & Administrateur) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur') && (
+                <button
+                  onClick={() => setAdminTab('roles')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'roles' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <UserCheck className="w-4 h-4 shrink-0" />
+                  <span>2. Rôles & RBAC</span>
+                </button>
+              )}
 
-            {/* Événements (Super Admin, Administrateur, Rédacteur) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'redacteur') && (
-              <button
-                onClick={() => setAdminTab('evenements')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'evenements' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Calendar className="w-4 h-4" />
-                <span>4. Agenda Événements</span>
-              </button>
-            )}
+              {/* Actualités (Super Admin, Administrateur, Rédacteur) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'redacteur') && (
+                <button
+                  onClick={() => setAdminTab('actualites')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'actualites' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Newspaper className="w-4 h-4 shrink-0" />
+                  <span>3. Actualités & Articles</span>
+                </button>
+              )}
 
-            {/* Quartiers & Infrastructures (Super Admin & Administrateur) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur') && (
-              <button
-                onClick={() => setAdminTab('quartiers')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'quartiers' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Landmark className="w-4 h-4" />
-                <span>5. Quartiers & Infrastructures</span>
-              </button>
-            )}
+              {/* Événements (Super Admin, Administrateur, Rédacteur) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'redacteur') && (
+                <button
+                  onClick={() => setAdminTab('evenements')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'evenements' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Calendar className="w-4 h-4 shrink-0" />
+                  <span>4. Agenda</span>
+                </button>
+              )}
 
-            {/* Messages Citoyens & Modération (Super Admin, Administrateur, Modérateur) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'moderateur') && (
-              <button
-                onClick={() => setAdminTab('contacts')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'contacts' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Mail className="w-4 h-4" />
-                <span>6. Messages Citoyens</span>
-              </button>
-            )}
+              {/* Quartiers & Infrastructures (Super Admin & Administrateur) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur') && (
+                <button
+                  onClick={() => setAdminTab('quartiers')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'quartiers' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Landmark className="w-4 h-4 shrink-0" />
+                  <span>5. Quartiers & Infrastructures</span>
+                </button>
+              )}
 
-            {/* Archives & Patrimoine (Super Admin, Administrateur, Archiviste) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'archiviste') && (
-              <button
-                onClick={() => setAdminTab('patrimoine')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'patrimoine' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Archive className="w-4 h-4" />
-                <span>7. Patrimoine Sonore & Archives</span>
-              </button>
-            )}
+              {/* Messages Citoyens & Modération (Super Admin, Administrateur, Modérateur) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'moderateur') && (
+                <button
+                  onClick={() => setAdminTab('contacts')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'contacts' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Mail className="w-4 h-4 shrink-0" />
+                  <span>6. Messages Citoyens</span>
+                </button>
+              )}
 
-            {/* Paramètres Système (Super Admin) */}
-            {currentRole === 'super_admin' && (
-              <button
-                onClick={() => setAdminTab('systeme')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'systeme' ? 'bg-amber-600 text-white shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Sliders className="w-4 h-4" />
-                <span>8. Paramètres Système & Urgences</span>
-              </button>
-            )}
+              {/* Archives & Patrimoine (Super Admin, Administrateur, Archiviste) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur' || currentRole === 'archiviste') && (
+                <button
+                  onClick={() => setAdminTab('patrimoine')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'patrimoine' ? 'bg-emerald-700 text-white dark:bg-emerald-600 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Archive className="w-4 h-4 shrink-0" />
+                  <span>7. Patrimoine & Archives</span>
+                </button>
+              )}
 
-            {/* Schéma SQL (Super Admin & Administrateur) */}
-            {(currentRole === 'super_admin' || currentRole === 'administrateur') && (
-              <button
-                onClick={() => setAdminTab('sql')}
-                type="button"
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs transition-all ${
-                  adminTab === 'sql' ? 'bg-slate-800 text-emerald-400 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Database className="w-4 h-4" />
-                <span>9. SQL Supabase</span>
-              </button>
-            )}
+              {/* Paramètres Système (Super Admin) */}
+              {currentRole === 'super_admin' && (
+                <button
+                  onClick={() => setAdminTab('systeme')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'systeme' ? 'bg-amber-600 text-white shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Sliders className="w-4 h-4 shrink-0" />
+                  <span>8. Système & Urgences</span>
+                </button>
+              )}
 
+              {/* Schéma SQL (Super Admin & Administrateur) */}
+              {(currentRole === 'super_admin' || currentRole === 'administrateur') && (
+                <button
+                  onClick={() => setAdminTab('sql')}
+                  type="button"
+                  className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs transition-all ${
+                    adminTab === 'sql' ? 'bg-slate-800 text-emerald-400 shadow-sm' : 'text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Database className="w-4 h-4 shrink-0" />
+                  <span>9. SQL Supabase</span>
+                </button>
+              )}
+
+            </div>
           </div>
 
           {/* ========================================================================= */}
@@ -1759,38 +1742,38 @@ export const AdminPage: React.FC = () => {
       {/* MODAL APERÇU MEDIA (PHOTOS, VIDÉOS, AUDIOS, PDF) */}
       {/* ========================================================================= */}
       {selectedPreviewMedia && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-3xl max-w-3xl w-full p-6 space-y-4 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+          <div className="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-2xl sm:rounded-3xl max-w-3xl w-[95vw] sm:w-full p-4 sm:p-6 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             
             <button
               onClick={() => setSelectedPreviewMedia(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors z-10"
             >
               <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
             </button>
 
-            <div className="space-y-1">
+            <div className="space-y-1 pr-8">
               <Badge variant="emerald">{selectedPreviewMedia.type.toUpperCase()}</Badge>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{selectedPreviewMedia.legende}</h3>
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">{selectedPreviewMedia.legende}</h3>
               <p className="text-xs text-slate-500">Catégorie: {selectedPreviewMedia.categorie}</p>
             </div>
 
-            <div className="rounded-2xl overflow-hidden bg-black flex items-center justify-center min-h-[300px] max-h-[500px]">
+            <div className="rounded-2xl overflow-hidden bg-black flex items-center justify-center min-h-[220px] sm:min-h-[300px] max-h-[450px]">
               {selectedPreviewMedia.type === 'photo' && (
-                <img src={selectedPreviewMedia.url} alt="" className="max-h-[450px] w-auto object-contain" />
+                <img src={selectedPreviewMedia.url} alt="" className="max-h-[420px] w-auto object-contain" />
               )}
               {selectedPreviewMedia.type === 'video' && (
-                <video src={selectedPreviewMedia.url} controls autoPlay className="w-full max-h-[450px]" />
+                <video src={selectedPreviewMedia.url} controls autoPlay className="w-full max-h-[420px]" />
               )}
               {selectedPreviewMedia.type === 'audio' && (
-                <div className="p-8 text-center space-y-4 w-full">
-                  <Music className="w-16 h-16 text-purple-400 mx-auto animate-bounce" />
+                <div className="p-6 sm:p-8 text-center space-y-4 w-full">
+                  <Music className="w-12 h-12 sm:w-16 sm:h-16 text-purple-400 mx-auto animate-bounce" />
                   <audio src={selectedPreviewMedia.url} controls autoPlay className="w-full" />
                 </div>
               )}
               {selectedPreviewMedia.type === 'document' && (
-                <div className="p-8 text-center space-y-4">
-                  <FileText className="w-16 h-16 text-amber-400 mx-auto" />
+                <div className="p-6 sm:p-8 text-center space-y-4">
+                  <FileText className="w-12 h-12 sm:w-16 sm:h-16 text-amber-400 mx-auto" />
                   <p className="text-white text-xs font-mono">Aperçu du Document PDF disponible via téléchargement direct</p>
                   <a href={selectedPreviewMedia.url} target="_blank" download className="inline-block px-4 py-2 rounded-xl bg-amber-600 text-white font-bold text-xs">
                     Télécharger et ouvrir le PDF
@@ -1799,10 +1782,10 @@ export const AdminPage: React.FC = () => {
               )}
             </div>
 
-            <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-xs">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-2 border-t border-slate-200 dark:border-slate-800 text-xs">
               <button
                 onClick={() => copyToClipboard(selectedPreviewMedia.share_url || selectedPreviewMedia.url, 'Lien direct')}
-                className="px-4 py-2 rounded-xl bg-emerald-700 text-white font-bold flex items-center gap-2"
+                className="px-4 py-2.5 rounded-xl bg-emerald-700 text-white font-bold flex items-center justify-center gap-2"
               >
                 <Share2 className="w-4 h-4" />
                 <span>Copier le Lien de Partage</span>
@@ -1819,24 +1802,24 @@ export const AdminPage: React.FC = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* MODAL CODE D INTÉGRATION HTML (EMBED) */}
+      {/* MODAL CODE D'INTÉGRATION HTML (EMBED) */}
       {/* ========================================================================= */}
       {embedMedia && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-3xl max-w-xl w-full p-6 space-y-4 shadow-2xl relative text-xs">
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+          <div className="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-2xl sm:rounded-3xl max-w-xl w-[95vw] sm:w-full p-4 sm:p-6 space-y-4 shadow-2xl relative text-xs max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setEmbedMedia(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 dark:bg-slate-800"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 rounded-full bg-slate-100 dark:bg-slate-800 z-10"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Code className="w-5 h-5 text-blue-600" />
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 pr-6">
+              <Code className="w-5 h-5 text-blue-600 shrink-0" />
               <span>Code d'Intégration HTML (Embed Snippet)</span>
             </h3>
 
-            <p className="text-slate-500">
+            <p className="text-slate-500 leading-relaxed">
               Copiez ce code pour intégrer directement le fichier <strong className="text-slate-900 dark:text-white">{embedMedia.legende}</strong> dans un article ou un autre site web.
             </p>
 
@@ -1858,7 +1841,7 @@ export const AdminPage: React.FC = () => {
                   setEmbedMedia(null);
                 }}
                 size="sm"
-                className="bg-blue-700 hover:bg-blue-800 text-white font-bold"
+                className="w-full sm:w-auto justify-center bg-blue-700 hover:bg-blue-800 text-white font-bold"
               >
                 Copier le Code Snippet
               </Button>

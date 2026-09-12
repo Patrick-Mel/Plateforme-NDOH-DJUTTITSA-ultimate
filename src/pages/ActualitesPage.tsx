@@ -5,10 +5,10 @@ import { Badge } from '../components/ui/Badge';
 import { Modal } from '../components/ui/Modal';
 import type { Actualite } from '../data/mockData';
 import { useContent } from '../context/ContentContext';
-import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
+import { Search, Calendar, User, Tag, ArrowRight, AlertTriangle } from 'lucide-react';
 
 export const ActualitesPage: React.FC = () => {
-  const { actualites } = useContent();
+  const { actualites, emergencyAlert } = useContent();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Toutes');
   const [selectedArticle, setSelectedArticle] = useState<Actualite | null>(null);
@@ -34,6 +34,24 @@ export const ActualitesPage: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         
+        {/* CARTE D'ALERTE COMMUNAUTAIRE PRIORITAIRE SI ACTIVÉE */}
+        {emergencyAlert.active && (
+          <div className="p-6 sm:p-8 rounded-3xl bg-amber-500/10 dark:bg-amber-500/20 border-2 border-amber-500/40 text-amber-950 dark:text-amber-100 flex flex-col sm:flex-row items-start sm:items-center gap-5 shadow-lg backdrop-blur-sm transition-all duration-300">
+            <div className="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-md">
+              <AlertTriangle className="w-6 h-6 animate-pulse" />
+            </div>
+            <div className="space-y-1.5 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="amber">ALERTE COMMUNAUTAIRE PRIORITAIRE</Badge>
+                <span className="text-xs font-bold text-amber-800 dark:text-amber-300">Communiqué Officiel de la Chefferie</span>
+              </div>
+              <p className="text-base sm:text-lg font-bold text-amber-950 dark:text-amber-50 leading-snug">
+                {emergencyAlert.text}
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Barre de Recherche et Filtres par Catégorie */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-sm transition-colors duration-300">
           
