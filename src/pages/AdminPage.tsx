@@ -25,6 +25,7 @@ import {
   FileText,
   Video,
   Eye,
+  EyeOff,
   Landmark,
   Sliders,
   Code,
@@ -54,9 +55,10 @@ export const AdminPage: React.FC = () => {
   const emergencyAlertActive = emergencyAlert.active;
   const emergencyAlertText = emergencyAlert.text;
   
-  // États d'authentification Supabase
+  // États d'authentification et affichage mot de passe
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState('');
   const [loggingIn, setLoggingIn] = useState(false);
 
@@ -232,17 +234,20 @@ export const AdminPage: React.FC = () => {
     setLoginError('');
     setLoggingIn(true);
 
+    const cleanEmail = email.trim().toLowerCase();
+    const cleanPassword = password.trim();
+
     try {
       if (isSupabaseConfigured && supabase) {
         const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
+          email: cleanEmail,
+          password: cleanPassword,
         });
         if (error) throw error;
       } else {
         // Mode authentification locale / RBAC
         const matchedRole = MOCK_USER_ROLES.find(
-          (r) => r.email.toLowerCase() === email.trim().toLowerCase() && r.password === password
+          (r) => r.email.toLowerCase() === cleanEmail && r.password.trim() === cleanPassword
         );
 
         if (matchedRole) {
@@ -254,8 +259,9 @@ export const AdminPage: React.FC = () => {
           else if (matchedRole.role === 'redacteur') setAdminTab('actualites');
           else if (matchedRole.role === 'moderateur') setAdminTab('contacts');
           else if (matchedRole.role === 'archiviste') setAdminTab('patrimoine');
+          else setAdminTab('medias');
         } else {
-          setLoginError('Identifiants incorrects. Veuillez vérifier votre adresse email et votre mot de passe.');
+          setLoginError('Adresse email ou mot de passe incorrect. Veuillez vérifier vos identifiants.');
         }
       }
     } catch (err: any) {
@@ -395,14 +401,24 @@ export const AdminPage: React.FC = () => {
 
               <div className="space-y-1.5">
                 <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Mot de passe</label>
-                <input
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••••••"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="••••••••••••"
+                    className="w-full pl-4 pr-11 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors p-1"
+                    title={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4 text-emerald-600" /> : <Eye className="w-4 h-4 text-slate-400" />}
+                  </button>
+                </div>
               </div>
 
               <Button
