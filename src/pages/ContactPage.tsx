@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 import { MapPin, Phone, Mail, Send, CheckCircle2, HelpCircle } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
+import { NdopBorder } from '../components/ui/NdopBorder';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({ nom: '', email: '', sujet: '', message: '' });
@@ -56,167 +57,162 @@ export const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-16 pb-20">
+    <div className="space-y-16 pb-20 bg-slate-50 dark:bg-[#090D16] transition-colors">
       <PageHeader
-        title="Contact & Localisation"
-        subtitle="Entrez en contact avec la Chefferie traditionnelle et le secrétariat communautaire de Ndoh-Djuttitsa."
-        badge="Nous Écrire"
-        bgImage="/images/monts-bamboutos.jpg"
+        title="Contact & Secrétariat de la Chefferie"
+        subtitle="Adressez vos questions, requêtes administratives ou messages aux services de la chefferie et du comité de développement."
+        badge="Écoute Citoyenne"
+        bgImage="/images/chefferie-ndoh-djuttitsa.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Formulaire de Contact */}
-          <Card className="p-8 space-y-6">
-            <div className="space-y-2">
-              <Badge variant="emerald">Secrétariat Communautaire</Badge>
-              <h2 className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
-                Envoyer un message direct
-              </h2>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
-                Vos messages sont enregistrés en toute confidentialité pour traitement par le comité du village.
-              </p>
-            </div>
-
-            {success ? (
-              <div className="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 space-y-3 text-emerald-900 dark:text-emerald-200">
-                <div className="flex items-center gap-2 font-bold text-base">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                  <span>Message transmis avec succès !</span>
-                </div>
-                <p className="text-xs leading-relaxed">
-                  Merci pour votre démarche. Le secrétariat de la localité donnera suite à votre demande.
-                </p>
-                <Button size="sm" onClick={() => setSuccess(false)} variant="outline" className="mt-2">
-                  Envoyer un autre message
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Nom & Prénom *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.nom}
-                    onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
-                    placeholder="ex. Jean-Marc Dongmo"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Adresse Email *</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="adresse@exemple.cm"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Objet de la demande</label>
-                  <input
-                    type="text"
-                    value={formData.sujet}
-                    onChange={(e) => setFormData({ ...formData, sujet: e.target.value })}
-                    placeholder="ex. Proposition / Question sur le village"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Message *</label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Rédigez votre message..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={submitting}
-                  size="lg"
-                  className="w-full bg-emerald-700 hover:bg-emerald-800 dark:bg-emerald-600 text-white"
-                  icon={<Send className="w-4 h-4" />}
-                >
-                  {submitting ? 'Envoi en cours...' : 'Envoyer le message'}
-                </Button>
-              </form>
-            )}
-          </Card>
-
-          {/* Coordonnées & Carte d'Accès */}
+          {/* Coordonnées */}
           <div className="space-y-6">
-            <Card className="p-6 space-y-4">
-              <h3 className="text-xl font-bold font-heading text-slate-900 dark:text-white">
-                Coordonnées de la Chefferie
-              </h3>
-              <ul className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold text-slate-900 dark:text-white block">Localisation :</span>
-                    Chefferie de Ndoh-Djuttitsa, Groupement Bafou, Arrondissement de Nkong-Ni, Département de la Menoua, Région de l'Ouest-Cameroun.
-                  </div>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0" />
-                  <div>
-                    <span className="font-bold text-slate-900 dark:text-white">CMA (Permanence & Urgences) :</span> +237 690 12 34 56
-                  </div>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                  <div>
-                    <span className="font-bold text-slate-900 dark:text-white">Email secrétariat :</span> contact@ndoh-djuttitsa.cm
-                  </div>
-                </li>
-              </ul>
+            <Card className="p-6 space-y-4 border border-slate-200 dark:border-slate-800">
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 dark:text-white text-sm">Localisation</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Ndoh Centre, Chefferie Traditionnelle, Nkong-Ni, Menoua</p>
+                </div>
+              </div>
             </Card>
 
-            {/* Carte simulée d'altitude */}
-              <div className="relative h-64 rounded-2xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
-                <img
-                  src="/images/monts-bamboutos.jpg"
-                  alt="Localisation Ndoh-Djuttitsa"
-                  className="w-full h-full object-cover opacity-75"
-                />
-              <div className="absolute inset-0 bg-slate-950/40 flex flex-col items-center justify-center text-white text-center p-4">
-                <MapPin className="w-8 h-8 text-amber-400 animate-bounce mb-2" />
-                <h4 className="font-bold font-heading text-lg text-white">Nkong-Ni · Groupement Bafou</h4>
-                <p className="text-xs text-slate-200">Altitude : 1 700 m - 2 050 m · Menoua</p>
+            <Card className="p-6 space-y-4 border border-slate-200 dark:border-slate-800">
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 dark:text-white text-sm">Téléphone & Permanence</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">+237 690 12 34 56 (Secrétariat & CMA 24h/24)</p>
+                </div>
               </div>
-            </div>
+            </Card>
+
+            <Card className="p-6 space-y-4 border border-slate-200 dark:border-slate-800">
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900 dark:text-white text-sm">Courrier Électronique</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">contact@ndoh-djuttitsa.cm</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Formulaire de Message */}
+          <div className="lg:col-span-2">
+            <Card className="p-8 space-y-6 border border-slate-200 dark:border-slate-800">
+              <div>
+                <Badge variant="amber" className="mb-2">Formulaire Officiel</Badge>
+                <h3 className="text-2xl font-bold font-heading text-slate-900 dark:text-white">
+                  Envoyer un message au Secrétariat
+                </h3>
+              </div>
+
+              {success ? (
+                <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 space-y-2 flex items-start gap-4">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-base">Message transmis avec succès !</h4>
+                    <p className="text-xs leading-relaxed">
+                      Votre message a bien été enregistré. Le secrétariat de la chefferie vous répondra dans les meilleurs délais.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Nom & Prénom *</label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.nom}
+                        onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
+                        placeholder="Votre nom complet"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-amber-500"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Email ou Téléphone *</label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="votre@email.com ou +237..."
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-amber-500"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Sujet de votre demande *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.sujet}
+                      onChange={(e) => setFormData({ ...formData, sujet: e.target.value })}
+                      placeholder="Ex: Renseignement touristique, projet communautaire..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-amber-500"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Message *</label>
+                    <textarea
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Rédigez votre message ici..."
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-amber-500"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={submitting}
+                    className="w-full sm:w-auto bg-amber-500 text-slate-950 font-bold hover:bg-amber-600"
+                    icon={<Send className="w-4 h-4" />}
+                  >
+                    {submitting ? 'Transmission en cours...' : 'Envoyer le Message'}
+                  </Button>
+                </form>
+              )}
+            </Card>
           </div>
 
         </div>
 
-        {/* FAQ */}
-        <div className="space-y-6 pt-6 border-t border-slate-200 dark:border-slate-800">
-          <div className="flex items-center gap-2">
-            <HelpCircle className="w-6 h-6 text-amber-500" />
-            <h3 className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
-              Questions Fréquentes (FAQ)
+        {/* Section FAQ */}
+        <div className="space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <Badge variant="amber">Foire Aux Questions</Badge>
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white">
+              Questions Fréquemment Posées
             </h3>
+            <NdopBorder variant="gold" height={14} className="max-w-xs mx-auto opacity-75" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {faqs.map((faq, idx) => (
-              <Card key={idx} className="p-6 space-y-2">
-                <h4 className="font-bold text-sm text-slate-900 dark:text-white">
-                  {faq.q}
-                </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <Card key={idx} className="p-6 space-y-3 border border-slate-200 dark:border-slate-800">
+                <div className="flex items-center gap-2 text-amber-500 font-bold text-sm">
+                  <HelpCircle className="w-5 h-5" />
+                  <h4>{faq.q}</h4>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {faq.a}
                 </p>
               </Card>
@@ -224,6 +220,7 @@ export const ContactPage: React.FC = () => {
           </div>
         </div>
 
+        <NdopBorder variant="gold" height={16} className="opacity-80" />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +11,7 @@
   }
   
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#0B0F19] dark:text-slate-100 antialiased selection:bg-emerald-600 selection:text-white min-h-screen flex flex-col;
+    @apply bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 antialiased selection:bg-emerald-600 selection:text-white min-h-screen flex flex-col;
     transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
   }
 
@@ -20,39 +20,65 @@
     letter-spacing: -0.02em;
   }
 
-  /* Transition fluide universelle pour le changement de thème */
-  div, header, nav, footer, section, article, button, input, select, textarea, a, card {
+  .font-royal {
+    font-family: 'Cinzel', serif;
+  }
+
+  div, header, nav, footer, section, article, button, input, select, textarea, a {
     transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out, color 300ms ease-in-out;
   }
 }
 
-/* Glassmorphism & Panneaux Épurés */
+/* Glassmorphism & Panneaux Épurés Sophistiqués */
 .glass-panel {
-  @apply bg-white/90 dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm;
+  @apply bg-white/90 dark:bg-[#090D16]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm;
 }
 
 .glass-card {
-  @apply bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300 rounded-2xl;
+  @apply bg-white dark:bg-[#111827]/90 border border-slate-200/90 dark:border-slate-800/90 shadow-sm hover:shadow-2xl hover:border-amber-500/40 dark:hover:border-amber-500/40 transition-all duration-300 rounded-3xl backdrop-blur-sm;
 }
 
-/* Overlay pour les bannières Héro en Thème Clair et Sombre */
+/* Motif Sacré Ndop Bamiléké en Filigrane SVG */
+.bg-ndop-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2310b981' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M30 0L60 30L30 60L0 30zM30 10L50 30L30 50L10 30zM30 20L40 30L30 40L20 30z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.dark .bg-ndop-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fbbf24' fill-opacity='0.035' fill-rule='evenodd'%3E%3Cpath d='M30 0L60 30L30 60L0 30zM30 10L50 30L30 50L10 30zM30 20L40 30L30 40L20 30z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Motif Ndop Frise Décorative */
+.bg-ndop-frieze {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L10 0 L20 10 L30 0 L40 10 L30 20 L20 10 L10 20 Z' fill='none' stroke='%23f59e0b' stroke-width='1.5' stroke-opacity='0.25'/%3E%3C/svg%3E");
+}
+
+/* Gradients Royaux Bamiléké */
+.royal-gold-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-700 dark:from-amber-300 dark:via-yellow-400 dark:to-amber-500 font-extrabold;
+}
+
+.royal-emerald-gradient {
+  @apply bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-800 dark:from-emerald-900 dark:via-emerald-800 dark:to-teal-950;
+}
+
 .hero-gradient-overlay {
-  @apply bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-50 dark:from-[#0B0F19]/90 dark:via-[#0B0F19]/70 dark:to-[#0B0F19];
+  @apply bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-50 dark:from-[#090D16]/90 dark:via-[#090D16]/70 dark:to-[#090D16];
 }
 
 .hero-text-shadow {
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* Scrollbar épurée */
+/* Scrollbar Épurée Royale */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-100 dark:bg-[#0B0F19];
+  @apply bg-slate-100 dark:bg-[#090D16];
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-emerald-600;
+  @apply bg-emerald-600/40 dark:bg-amber-500/40 rounded-full hover:bg-emerald-600 dark:hover:bg-amber-500;
 }
